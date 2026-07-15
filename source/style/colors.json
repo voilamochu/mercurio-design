@@ -1,0 +1,43 @@
+{
+  "$schema": "v1",
+  "description": "Mercurio Design System — Semantic Color Tokens",
+  "frame": {
+    "background": {
+      "primary": "#1A1A1A",
+      "secondary": "#242424"
+    },
+    "border": {
+      "primary": "#333333",
+      "secondary": "#2A2A2A"
+    }
+  },
+  "header": {
+    "background": "#141414",
+    "border": "#2A2A2A",
+    "text": "#E8E8E8"
+  },
+  "text": {
+    "primary": "#E8E8E8",
+    "secondary": "#9CA3AF",
+    "muted": "#6B7280"
+  },
+  "debug": {
+    "guide": "#EF4444",
+    "label": "#F59E0B"
+  },
+  "artwork": {
+    "placeholder": "#374151"
+  },
+  "resource": {
+    "slot": {
+      "default": "#374151",
+      "active": "#3B82F6",
+      "disabled": "#1F2937"
+    }
+  },
+  "status": {
+    "error": "#EF4444",
+    "success": "#22C55E",
+    "warning": "#F59E0B"
+  }
+}

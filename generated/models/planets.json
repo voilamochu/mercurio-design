@@ -1,0 +1,6241 @@
+{
+  "schema": "v1",
+  "generatedAt": "2026-07-15T15:21:21.877Z",
+  "planetCount": 81,
+  "planets": [
+    {
+      "id": "card_018_1",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_017_1",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_016_1",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_021_1",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_020_1",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_019_1",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_025_1",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_024_1",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_027_1",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_026_1",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_022_1",
+      "planetType": {
+        "id": "ice",
+        "displayName": "Ice",
+        "artwork": "ice-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_023_1",
+      "planetType": {
+        "id": "ice",
+        "displayName": "Ice",
+        "artwork": "ice-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_015_1",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_013_1",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_014_1",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_012_1",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_010_1",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_011_1",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_007_1",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_008_1",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_009_1",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_004_1",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_005_1",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_006_1",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_003_1",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_001_1",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_002_1",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_018_2",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_017_2",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_016_2",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_021_2",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_020_2",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_019_2",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_025_2",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_024_2",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_027_2",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_026_2",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_022_2",
+      "planetType": {
+        "id": "ice",
+        "displayName": "Ice",
+        "artwork": "ice-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_023_2",
+      "planetType": {
+        "id": "ice",
+        "displayName": "Ice",
+        "artwork": "ice-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_015_2",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_013_2",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_014_2",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_012_2",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_010_2",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_011_2",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_007_2",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_008_2",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_009_2",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_004_2",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_005_2",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_006_2",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_003_2",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_001_2",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_002_2",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_018_3",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_017_3",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_016_3",
+      "planetType": {
+        "id": "cold",
+        "displayName": "Cold",
+        "artwork": "cold-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_021_3",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_020_3",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_019_3",
+      "planetType": {
+        "id": "earth",
+        "displayName": "Earth",
+        "artwork": "earth-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_025_3",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_024_3",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_027_3",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_026_3",
+      "planetType": {
+        "id": "forge",
+        "displayName": "Forge",
+        "artwork": "forge-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_022_3",
+      "planetType": {
+        "id": "ice",
+        "displayName": "Ice",
+        "artwork": "ice-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_023_3",
+      "planetType": {
+        "id": "ice",
+        "displayName": "Ice",
+        "artwork": "ice-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_015_3",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_013_3",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_014_3",
+      "planetType": {
+        "id": "jungle",
+        "displayName": "Jungle",
+        "artwork": "jungle-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_012_3",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_010_3",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_011_3",
+      "planetType": {
+        "id": "ocean",
+        "displayName": "Ocean",
+        "artwork": "ocean-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_007_3",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_008_3",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_009_3",
+      "planetType": {
+        "id": "proto",
+        "displayName": "Proto",
+        "artwork": "proto-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_004_3",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "ore",
+            "displayName": "Ore"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_005_3",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_006_3",
+      "planetType": {
+        "id": "scrap",
+        "displayName": "Scrap",
+        "artwork": "scrap-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "water",
+            "displayName": "Water"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_003_3",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 1,
+          "position": {
+            "x": 12.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 37.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "crate",
+            "displayName": "Crate"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_001_3",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "robot",
+            "displayName": "Robot"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 25,
+            "y": 83
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 1,
+          "position": {
+            "x": 75,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 2,
+          "position": {
+            "x": 75,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "grain",
+            "displayName": "Grain"
+          },
+          "level": 3,
+          "position": {
+            "x": 75,
+            "y": 83
+          }
+        }
+      ]
+    },
+    {
+      "id": "card_002_3",
+      "planetType": {
+        "id": "swamp",
+        "displayName": "Swamp",
+        "artwork": "swamp-v1",
+        "background": "deep-space-v1"
+      },
+      "inputs": [
+        {
+          "resource": {
+            "id": "human",
+            "displayName": "Human"
+          },
+          "level": 1,
+          "position": {
+            "x": 25,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "electronics",
+            "displayName": "Electronics"
+          },
+          "level": 2,
+          "position": {
+            "x": 25,
+            "y": 54
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 62.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 1,
+          "position": {
+            "x": 87.5,
+            "y": 25
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 62.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 2,
+          "position": {
+            "x": 87.5,
+            "y": 54
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 62.5,
+            "y": 83
+          }
+        },
+        {
+          "resource": {
+            "id": "algae",
+            "displayName": "Algae"
+          },
+          "level": 3,
+          "position": {
+            "x": 87.5,
+            "y": 83
+          }
+        }
+      ]
+    }
+  ]
+}

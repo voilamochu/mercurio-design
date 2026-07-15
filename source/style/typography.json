@@ -1,0 +1,29 @@
+{
+  "$schema": "v1",
+  "description": "Mercurio Design System — Typography Tokens",
+  "family": {
+    "heading": ["system-ui", "Arial", "Helvetica", "sans-serif"],
+    "body": ["system-ui", "Arial", "Helvetica", "sans-serif"],
+    "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
+  },
+  "size": {
+    "heading": 32,
+    "subheading": 24,
+    "body": 16,
+    "label": 14,
+    "smallLabel": 12,
+    "caption": 11,
+    "debugLabel": 10
+  },
+  "weight": {
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700
+  },
+  "lineHeight": {
+    "tight": 1.1,
+    "normal": 1.4,
+    "relaxed": 1.6
+  }
+}

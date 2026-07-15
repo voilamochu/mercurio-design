@@ -1,0 +1,43 @@
+{
+  "$schema": "v1",
+  "description": "Mercurio Design System — Spacing Tokens",
+  "card": {
+    "radius": 8
+  },
+  "safe": {
+    "margin": 20
+  },
+  "slot": {
+    "radius": 4
+  },
+  "header": {
+    "height": 48
+  },
+  "footer": {
+    "height": 32
+  },
+  "border": {
+    "thin": 1,
+    "medium": 2,
+    "thick": 4
+  },
+  "padding": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32
+  },
+  "grid": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 32,
+    "xl": 64
+  },
+  "icon": {
+    "sm": 16,
+    "md": 24,
+    "lg": 32
+  }
+}

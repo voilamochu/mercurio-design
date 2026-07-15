@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744 1039" width="744" height="1039">
+  <g id="background"/>
+  <g id="frame">
+    <rect x="0" y="0" width="744" height="1039" rx="32" ry="32" fill="none" stroke="#333333" stroke-width="2"/>
+    <line x1="0" y1="92" x2="744" y2="92" stroke="#333333" stroke-width="1"/>
+  </g>
+  <g id="artwork">
+    <rect x="36" y="92" width="672" height="820" fill="none" stroke="#999999" stroke-dasharray="4,4"/>
+  </g>
+  <g id="header">
+    <circle cx="52" cy="46" r="32" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="52" y="92" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#333333">Planet Type</text>
+    <circle cx="260" cy="46" r="18" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="260" y="78" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#333333">VP</text>
+  </g>
+  <g id="inputs">
+    <circle cx="120" cy="250" r="20" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="120" y="250" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="7" fill="#333333">IN-L1-1</text>
+    <circle cx="120" cy="430" r="20" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="120" y="430" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="7" fill="#333333">IN-L2-1</text>
+    <circle cx="120" cy="610" r="20" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="120" y="610" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="7" fill="#333333">IN-L3-1</text>
+  </g>
+  <g id="outputs">
+    <circle cx="624" cy="250" r="20" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="624" y="250" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="7" fill="#333333">OUT-L1-1</text>
+    <circle cx="624" cy="430" r="20" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="624" y="430" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="7" fill="#333333">OUT-L2-1</text>
+    <circle cx="624" cy="610" r="20" fill="none" stroke="#333333" stroke-width="2"/>
+    <text x="624" y="610" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="7" fill="#333333">OUT-L3-1</text>
+  </g>
+  <g id="footer">
+    <rect x="0" y="1027" width="744" height="12" fill="#333333"/>
+  </g>
+  <g id="debug">
+    <rect x="24" y="24" width="696" height="991" fill="none" stroke="#FF0000" stroke-dasharray="2,2" stroke-width="1"/>
+    <text x="24" y="20" font-family="sans-serif" font-size="9" fill="#FF0000">Safe Margin</text>
+    <text x="36" y="86" font-family="sans-serif" font-size="9" fill="#FF0000">Artwork</text>
+    <text x="8" y="1023" font-family="sans-serif" font-size="9" fill="#FF0000">Footer</text>
+  </g>
+</svg>

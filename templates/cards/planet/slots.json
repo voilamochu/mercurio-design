@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+
+  "card": {
+    "width": 744,
+    "height": 1039,
+    "cornerRadius": 32,
+    "safeMargin": 24
+  },
+
+  "header": {
+    "height": 92,
+    "planetType": {
+      "id": "planet-type",
+      "x": 52,
+      "y": 46,
+      "size": 64
+    },
+    "vp": {
+      "id": "vp",
+      "x": 260,
+      "y": 46,
+      "iconSize": 36,
+      "textOffset": 20
+    }
+  },
+
+  "artwork": {
+    "id": "artwork",
+    "x": 36,
+    "y": 92,
+    "width": 672,
+    "height": 820
+  },
+
+  "inputs": [
+    { "id": "input-l1-1", "x": 120, "y": 250 },
+    { "id": "input-l2-1", "x": 120, "y": 430 },
+    { "id": "input-l3-1", "x": 120, "y": 610 }
+  ],
+
+  "outputs": [
+    { "id": "output-l1-1", "x": 624, "y": 250 },
+    { "id": "output-l2-1", "x": 624, "y": 430 },
+    { "id": "output-l3-1", "x": 624, "y": 610 }
+  ],
+
+  "footer": {
+    "id": "footer",
+    "x": 0,
+    "y": 1027,
+    "width": 744,
+    "height": 12
+  }
+}
