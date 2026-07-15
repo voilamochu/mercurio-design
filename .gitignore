@@ -1,0 +1,30 @@
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Generated assets
+exports/**/generated/
+exports/**/temp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
