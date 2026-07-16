@@ -28,3 +28,11 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# Generated artifacts (regenerable — build output)
+generated/cards/
+generated/design/
+generated/preview/
+generated/render-preview/
+generated/svg/
+templates/cards/planet/frame.svg

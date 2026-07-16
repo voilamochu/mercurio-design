@@ -45,12 +45,11 @@ function exists(p) {
   return fs.existsSync(p);
 }
 
-function findArtworkV2(typeId) {
-  for (const v of [`${typeId}-v2.png`, `${typeId}_v2.png`]) {
-    const p = path.join(PATHS.artworkPlanets, v);
-    if (exists(p)) return p;
-  }
-  return null;
+function loadArtworkDataUri(typeId) {
+  const filename = `${typeId}-v2.png`;
+  const p = path.join(PATHS.artworkPlanets, filename);
+  if (!exists(p)) return null;
+  return `data:image/png;base64,${fs.readFileSync(p).toString('base64')}`;
 }
 
 function loadResourceIconDataUri(resourceId) {
@@ -95,9 +94,8 @@ function iconCenters(count, cellCenter, offset) {
   return centers;
 }
 
-function renderPlanetSvg(planet, artworkPath, iconDataUris, outputDir) {
+function renderPlanetSvg(planet, artworkUri, iconDataUris) {
   const groups = groupByLevelSide(planet);
-  const artworkRel = path.relative(outputDir, artworkPath);
   const rowY = ROW_Y_PCT.map(p => Math.round((p / 100) * CARD_H));
 
   const dividerLines = [];
@@ -134,7 +132,7 @@ function renderPlanetSvg(planet, artworkPath, iconDataUris, outputDir) {
   ).join('\n');
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${CARD_W} ${CARD_H}" width="${CARD_W}" height="${CARD_H}">
-  <image href="${artworkRel}" x="0" y="0" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="xMidYMid slice" />
+  <image href="${artworkUri}" x="0" y="0" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="xMidYMid slice" />
 
   <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
 
@@ -182,9 +180,9 @@ function build() {
     seqId++;
     const typeId = planet.planetType.id;
     const displayName = planet.planetType.displayName;
-    const artworkPath = findArtworkV2(typeId);
+    const artworkUri = loadArtworkDataUri(typeId);
 
-    if (!artworkPath) {
+    if (!artworkUri) {
       warnings.push(`No V2 artwork for "${typeId}" (planet #${seqId}: ${planet.id})`);
       missingAssets.push({ planetId: planet.id, type: typeId, asset: 'artwork' });
       stats.skipped++;
@@ -195,7 +193,7 @@ function build() {
     const outputCount = planet.outputs.length;
     const totalIcons = inputCount + outputCount;
 
-    const svg = renderPlanetSvg(planet, artworkPath, iconDataUris, PATHS.outputDir);
+    const svg = renderPlanetSvg(planet, artworkUri, iconDataUris);
 
     const iconRefs = (svg.match(/<image /g) || []).length - 1;
     if (iconRefs !== totalIcons) {

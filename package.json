@@ -1,5 +1,10 @@
 {
   "name": "mercurio-design",
   "private": true,
-  "type": "commonjs"
+  "type": "commonjs",
+  "scripts": {
+    "build:model": "node compiler/build-card-model.js",
+    "build:cards": "node compiler/build-cards.js",
+    "build:all": "npm run build:model && npm run build:cards"
+  }
 }

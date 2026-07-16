@@ -7,21 +7,17 @@ This repository does **not** own gameplay implementation, the BoardGameArena fro
 ## Repository Structure
 
 ```
-compiler/       – Build scripts (card model, frame generation, preview)
+compiler/       – Build scripts (card model, card generation)
 data/           – Structured game data (boards, cards, icons, styles)
 docs/           – Architecture, specs, style guides, roadmap
 exports/        – Target platform outputs (BGA, print, TTS)
-fonts/          – Font assets
-generated/      – Compiler outputs (models, previews)
+generated/      – Compiler outputs (models, cards, previews)
 generators/     – Asset generators (boards, cards, sprites)
-icons/          – Rendered icon assets (PNG, SVG, WebP)
 illustrations/  – Illustration library (backgrounds, planets, etc.)
 prompts/        – AI prompt library (planets, events, technologies)
-references/     – Reference materials
 scripts/        – Build, export, and import utilities
-source/         – Source data (CSV), artwork, style tokens, AI prompts
+source/         – Source data (CSV), artwork, style tokens, icons
 templates/      – SVG templates (cards, boards, player boards)
-tmp/            – Working directory
 work/           – Design workspace
 ```
 
@@ -32,15 +28,17 @@ CSV Source Data
   ↓
 Canonical Card Model (compiler/build-card-model.js)
   ↓
-Layer 1: Planet Artwork (source/artwork/cards/planet/planets/)
-  +
-Layer 2: Information Panel (templates/cards/planet/resource-panel.svg)
-  +
-Layer 3: Gameplay Elements (programmatic)
+SVG Card Generation (compiler/build-cards.js)
   ↓
-SVG Composition (templates/, compiler/generate-frame.js)
-  ↓
-Asset Export
+Generated Card Deck (generated/cards/)
+```
+
+## Build
+
+```bash
+npm run build:model    # Parse CSV → planets.json
+npm run build:cards    # planets.json + artwork + icons → SVG cards
+npm run build:all      # Both steps
 ```
 
 ## Getting Started
@@ -50,6 +48,9 @@ This repository is under active development. The compiler scripts run on Node.js
 ## Documentation
 
 - [Architecture](docs/architecture.md)
+- [Asset Pipeline](docs/asset-pipeline.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Card Specification](docs/card-specification.md)
+- [Planet Card Rendering Rules](docs/specifications/planet-card-rendering-rules.md)
 - [AI Style Guide](docs/ai-style-guide.md)
+- [Render Implementation Report](docs/render-implementation-report.md)

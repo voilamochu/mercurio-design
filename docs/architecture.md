@@ -182,11 +182,13 @@ source/
 
     artwork/
 
-    fonts/
+    style/
 
     prompts/
 
 templates/
+
+compiler/
 
 exports/
 
