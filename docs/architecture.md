@@ -108,11 +108,11 @@ No layer should know about another layer's implementation.
 
 ---
 
-## Templates own layout
+## Renderer owns layout
 
 Planet cards are never manually positioned.
 
-Templates determine:
+The renderer determines:
 
 - cell layout for resource icons
 - margins
@@ -120,7 +120,7 @@ Templates determine:
 - clipping masks
 - panel position and dimensions
 
-Changing a template should regenerate every card automatically.
+Changing the renderer regenerates every card automatically.
 
 ---
 

@@ -21,15 +21,15 @@ const RESOURCE_DISPLAY_NAMES = {
 };
 
 const TYPE_ARTWORK = {
-  cold: 'cold-v1',
-  earth: 'earth-v1',
-  forge: 'forge-v1',
-  ice: 'ice-v1',
-  jungle: 'jungle-v1',
-  ocean: 'ocean-v1',
-  proto: 'proto-v1',
-  scrap: 'scrap-v1',
-  swamp: 'swamp-v1',
+  cold: 'cold-v2',
+  earth: 'earth-v2',
+  forge: 'forge-v2',
+  ice: 'ice-v2',
+  jungle: 'jungle-v2',
+  ocean: 'ocean-v2',
+  proto: 'proto-v2',
+  scrap: 'scrap-v2',
+  swamp: 'swamp-v2',
 };
 
 const BACKGROUND = 'deep-space-v1';

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { renderResourcePanel } = require('./svg/resource-panel');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -13,12 +14,9 @@ const PATHS = {
 const CARD_W = 744;
 const CARD_H = 1039;
 
-const ROW_Y_PCT = [57, 73, 89];
-const DIVIDER_LINE_START = 36;
-const DIVIDER_LINE_END = 708;
-const DIVIDER_COLOR = '#8F8575';
-const DIVIDER_STROKE_WIDTH = 3;
-const DIVIDER_OPACITY = 0.85;
+const PANEL_W = 664;
+const PANEL_H = 430;
+const BOTTOM_MARGIN = 24;
 
 const INPUT_CELL_CENTER_X = 160;
 const OUTPUT_CELL_CENTER_X = 584;
@@ -60,14 +58,47 @@ function loadResourceIconDataUri(resourceId) {
   return `data:image/png;base64,${fs.readFileSync(p).toString('base64')}`;
 }
 
-function groupByLevelSide(planet) {
+let _flowChevronSvg = null;
+function loadFlowChevronSvg() {
+  if (_flowChevronSvg) return _flowChevronSvg;
+  const p = path.join(ROOT, 'source', 'icons', 'chevron-right.svg');
+  const raw = fs.readFileSync(p, 'utf-8');
+  const match = raw.match(/<path[^>]*\/>/);
+  _flowChevronSvg = match ? match[0] : '<path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+  return _flowChevronSvg;
+}
+
+function groupByLevelSide(planet, stageCount) {
   const groups = {};
-  for (let level = 1; level <= 3; level++) {
+  for (let level = 1; level <= stageCount; level++) {
     const ins = planet.inputs.filter(r => r.level === level);
     const outs = planet.outputs.filter(r => r.level === level);
     groups[level] = { inputs: ins, outputs: outs };
   }
   return groups;
+}
+
+function getStageCount(planet) {
+  const levels = new Set();
+  for (const r of planet.inputs) {
+    levels.add(r.level);
+  }
+  return Math.max(1, levels.size);
+}
+
+function computeStageCenters(panelY, panelH, stageCount) {
+  if (stageCount === 2) {
+    const rowH = panelH / 3;
+    return [
+      Math.round(panelY + rowH / 2),
+      Math.round(panelY + rowH + (panelH - rowH) / 2),
+    ];
+  }
+  const centers = [];
+  for (let i = 0; i < stageCount; i++) {
+    centers.push(Math.round(panelY + (i + 0.5) * panelH / stageCount));
+  }
+  return centers;
 }
 
 function preloadAllIcons(planets) {
@@ -95,41 +126,51 @@ function iconCenters(count, cellCenter, offset) {
 }
 
 function renderPlanetSvg(planet, artworkUri, iconDataUris) {
-  const groups = groupByLevelSide(planet);
-  const rowY = ROW_Y_PCT.map(p => Math.round((p / 100) * CARD_H));
+  const inputLevelCount = getStageCount(planet);
 
-  const dividerLines = [];
-  for (let i = 0; i < rowY.length - 1; i++) {
-    dividerLines.push(Math.round((rowY[i] + rowY[i + 1]) / 2));
-  }
+  const panelX = Math.round((CARD_W - PANEL_W) / 2);
+  const panelY = CARD_H - BOTTOM_MARGIN - PANEL_H;
+  const chevronSvg = loadFlowChevronSvg();
+
+  const panelSvg = renderResourcePanel({
+    stageCount: inputLevelCount,
+    x: panelX,
+    y: panelY,
+    width: PANEL_W,
+    height: PANEL_H,
+    chevronSvg,
+  });
+
+  const inputRowY = computeStageCenters(panelY, PANEL_H, inputLevelCount);
+  const outputRowY = computeStageCenters(panelY, PANEL_H, 3);
 
   const iconLines = [];
-  for (let level = 1; level <= 3; level++) {
-    const y = rowY[level - 1];
-    const g = groups[level];
-    if (!g) continue;
 
-    const inputCenters = iconCenters(g.inputs.length, INPUT_CELL_CENTER_X, TWO_ICON_OFFSET);
-    const outputCenters = iconCenters(g.outputs.length, OUTPUT_CELL_CENTER_X, TWO_ICON_OFFSET);
+  for (let level = 1; level <= inputLevelCount; level++) {
+    const y = inputRowY[level - 1];
+    const ins = planet.inputs.filter(r => r.level === level);
+    const inputCenters = iconCenters(ins.length, INPUT_CELL_CENTER_X, TWO_ICON_OFFSET);
 
-    for (let i = 0; i < g.inputs.length; i++) {
-      const uri = iconDataUris[g.inputs[i].resource.id];
+    for (let i = 0; i < ins.length; i++) {
+      const uri = iconDataUris[ins[i].resource.id];
       if (!uri) continue;
       const cx = inputCenters[i];
       iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" />`);
     }
+  }
 
-    for (let i = 0; i < g.outputs.length; i++) {
-      const uri = iconDataUris[g.outputs[i].resource.id];
+  for (let level = 1; level <= 3; level++) {
+    const y = outputRowY[level - 1];
+    const outs = planet.outputs.filter(r => r.level === level);
+    const outputCenters = iconCenters(outs.length, OUTPUT_CELL_CENTER_X, TWO_ICON_OFFSET);
+
+    for (let i = 0; i < outs.length; i++) {
+      const uri = iconDataUris[outs[i].resource.id];
       if (!uri) continue;
       const cx = outputCenters[i];
       iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" />`);
     }
   }
-
-  const dividersSvg = dividerLines.map(y =>
-    `    <line x1="${DIVIDER_LINE_START}" y1="${y}" x2="${DIVIDER_LINE_END}" y2="${y}" stroke="${DIVIDER_COLOR}" stroke-width="${DIVIDER_STROKE_WIDTH}" opacity="${DIVIDER_OPACITY}" />`
-  ).join('\n');
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${CARD_W} ${CARD_H}" width="${CARD_W}" height="${CARD_H}">
   <image href="${artworkUri}" x="0" y="0" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="xMidYMid slice" />
@@ -137,7 +178,7 @@ function renderPlanetSvg(planet, artworkUri, iconDataUris) {
   <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
 
   <g id="top-layer">
-${dividersSvg}
+${panelSvg}
 ${iconLines.join('\n')}
   </g>
 </svg>`;

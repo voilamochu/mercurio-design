@@ -8,7 +8,7 @@ Each planet card has a unique ID (`card_NNN_M.webp` where NNN = 001–027, M = 1
 
 - **planetResources** (`data/planetResources.js`): maps card ID to `{ inputs: { l1, l2, l3 }, outputs: { l1, l2, l3 } }`. Each level is an ordered array of resource name strings (e.g. `["Algae", "Grain"]`).
 
-Slot positions are not stored per-card. All planet cards share the same cell layout defined by the information panel template (`templates/cards/planet/resource-panel.svg`).
+Slot positions are not stored per-card. All planet cards share the same cell layout defined by the renderer (`compiler/build-cards.js`).
 
 ### 1.2 Cell Layout Model
 
@@ -196,31 +196,28 @@ A production planet card consists of exactly three visual layers composited from
 | Layer | Content | Source | Description |
 |---|---|---|---|
 | 1 (bottom) | Planet Artwork | `source/artwork/cards/planet/planets/{type}-v2.png` | Single raster image including both the planet and surrounding space. One artwork per planet type. |
-| 2 | Information Panel | `templates/cards/planet/resource-panel.svg` | Reusable SVG panel occupying roughly the lower 40–45 % of the card. Provides panel background, row separators, column separator, rounded lower corners, and the gameplay surface. Contains no gameplay data, resource icons, or text. |
+| 2 | Information Panel | Rendered programmatically | Watermark cover (gradient overlay providing a dark backing behind gameplay information). Defined by the renderer, which hardcodes all layout constants for row positions, margins, and the watermark path. Contains no gameplay data, resource icons, or text. |
 | 3 (top) | Gameplay Elements | Rendered programmatically | Resource icons and future overlays. Centred within the cells defined by the information panel. |
 
 ### 6.1 Information Panel Responsibilities
 
 The information panel (Layer 2) provides:
 
-- Panel background with gradient fill transitioning from transparent at the top to opaque at the bottom
-- Top divider line separating the artwork region from the gameplay region
-- Row separators between production levels
-- Column separator between input and output columns
-- Rounded lower corners matching the card frame radius
-- Subtle guide circles marking cell centres for programmatic icon placement
+- Watermark cover with gradient fill transitioning from transparent at the top to opaque at the bottom
+- Gameplay dividers (two horizontal lines) separating production levels
+- Dark backing behind resource icons for readability
 
-The panel is defined in `templates/cards/planet/resource-panel.svg` and is shared across all planet cards. It contains no gameplay data, resource icons, or text.
+The panel is rendered programmatically by `compiler/build-cards.js`. It contains no gameplay data, resource icons, or text.
 
 ### 6.2 Gameplay Element Positioning
 
-Gameplay elements (Layer 3) are rendered programmatically into the cells defined by the information panel. Each cell is centred on the guide circle positions in the panel template:
+Gameplay elements (Layer 3) are rendered programmatically into fixed row positions. Each row is centred on Y coordinates defined by the renderer:
 
-| Level | Input Cell X | Output Cell X | Row Y |
-|---|---|---|---|
-| I | 130, 210 | 534, 614 | 680 |
-| II | 130, 210 | 534, 614 | 800 |
-| III | 130, 210 | 534, 614 | 920 |
+| Level | Input Cell Center X | Output Cell Center X | Row Y (px) | Row Y (% of 1039) |
+|---|---|---|---|---|---|
+| I | 160 | 584 | 592 | 57% |
+| II | 160 | 584 | 758 | 73% |
+| III | 160 | 584 | 925 | 89% |
 
 Resource icons are centred within each cell. Overlays (availability, satisfaction, etc.) are positioned relative to the cell centre.
 
@@ -242,7 +239,7 @@ Resource icons are centred within each cell. Overlays (availability, satisfactio
 card ID
   ├──→ PLANET_TYPES[cardId]                     → type string
   │     └──→ artwork path based on type          → Layer 1: Planet Artwork
-  ├──→ resource-panel.svg                        → Layer 2: Information Panel
+  ├──→ compiler/build-cards.js                   → Layer 2: Watermark / Information Panel (rendered programmatically)
   ├──→ PLANET_RESOURCES[cardId]                  → { inputs, outputs }
   │     └── per cell: RESOURCE_ICONS[name]       → resource icon asset (Layer 3)
   ├──→ PLANET_BENEFITS[cardId]                   → { l0, l1, l2, l3 } income values (engine use)

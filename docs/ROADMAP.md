@@ -1,4 +1,4 @@
-# Phase 0 – Foundation
+# Phase 1 – Foundation (Complete)
 - [x] Repository structure
 - [x] Architecture
 - [x] Card specification
@@ -6,18 +6,16 @@
 - [x] Design tokens
 - [x] AI style guide
 
-# Phase 1 – Planet Cards
+# Phase 2 – Planet Cards (Complete)
 - [x] Background artwork
-- [ ] Planet artwork library
-- [ ] Frame v2
-- [ ] First production card
-- [ ] Compiler integration
+- [x] Planet artwork library (9 V2 planet type PNGs)
+- [x] Frame v2
+- [x] Production card renderer (compiler/build-cards.js)
+- [x] Compiler integration (build-card-model → build-cards pipeline)
+- [x] BGA export pipeline (compiler/export-bga.js)
 
-# Phase 2 – Technologies
-...
-
-# Phase 3 – Boards
-...
-
-# Phase 4 – Export Pipeline
-...
+# Phase 3 – Future
+- Technology cards
+- Board generation
+- Additional export targets (print, TTS)
+- AI prompt library expansion

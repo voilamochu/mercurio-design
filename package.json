@@ -7,5 +7,8 @@
     "build:cards": "node compiler/build-cards.js",
     "build:all": "npm run build:model && npm run build:cards",
     "export:bga": "node compiler/export-bga.js"
+  },
+  "dependencies": {
+    "sharp": "^0.35.3"
   }
 }

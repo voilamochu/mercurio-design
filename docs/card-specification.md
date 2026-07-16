@@ -280,7 +280,7 @@ A reusable SVG panel occupying roughly the lower 40–45 % of the card. Provides
 
 Contains NO gameplay data, resource icons, or text.
 
-Location: `templates/cards/planet/resource-panel.svg`
+Location: defined by the renderer (`compiler/build-cards.js`)
 
 ---
 
@@ -377,7 +377,7 @@ Scaling must never alter:
 - icon ordering
 - typography hierarchy
 
-All dimensions should derive from the template.
+All dimensions are defined by the renderer.
 
 ---
 

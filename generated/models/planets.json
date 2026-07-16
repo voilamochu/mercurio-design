@@ -1,6 +1,6 @@
 {
   "schema": "v1",
-  "generatedAt": "2026-07-16T04:01:35.204Z",
+  "generatedAt": "2026-07-16T10:06:35.119Z",
   "planetCount": 81,
   "planets": [
     {
@@ -8,7 +8,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -70,7 +70,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -118,7 +118,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -166,7 +166,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -221,7 +221,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -276,7 +276,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -345,7 +345,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -393,7 +393,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -448,7 +448,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -503,7 +503,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -558,7 +558,7 @@
       "planetType": {
         "id": "ice",
         "displayName": "Ice",
-        "artwork": "ice-v1",
+        "artwork": "ice-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -599,7 +599,7 @@
       "planetType": {
         "id": "ice",
         "displayName": "Ice",
-        "artwork": "ice-v1",
+        "artwork": "ice-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -647,7 +647,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -709,7 +709,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -764,7 +764,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -833,7 +833,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -895,7 +895,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -950,7 +950,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -998,7 +998,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1039,7 +1039,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1080,7 +1080,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1128,7 +1128,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1176,7 +1176,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1224,7 +1224,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1272,7 +1272,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1334,7 +1334,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1389,7 +1389,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1458,7 +1458,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1520,7 +1520,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1568,7 +1568,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1616,7 +1616,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1671,7 +1671,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1726,7 +1726,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1795,7 +1795,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1843,7 +1843,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1898,7 +1898,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -1953,7 +1953,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2008,7 +2008,7 @@
       "planetType": {
         "id": "ice",
         "displayName": "Ice",
-        "artwork": "ice-v1",
+        "artwork": "ice-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2049,7 +2049,7 @@
       "planetType": {
         "id": "ice",
         "displayName": "Ice",
-        "artwork": "ice-v1",
+        "artwork": "ice-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2097,7 +2097,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2159,7 +2159,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2214,7 +2214,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2283,7 +2283,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2345,7 +2345,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2400,7 +2400,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2448,7 +2448,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2489,7 +2489,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2530,7 +2530,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2578,7 +2578,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2626,7 +2626,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2674,7 +2674,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2722,7 +2722,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2784,7 +2784,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2839,7 +2839,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2908,7 +2908,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -2970,7 +2970,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3018,7 +3018,7 @@
       "planetType": {
         "id": "cold",
         "displayName": "Cold",
-        "artwork": "cold-v1",
+        "artwork": "cold-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3066,7 +3066,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3121,7 +3121,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3176,7 +3176,7 @@
       "planetType": {
         "id": "earth",
         "displayName": "Earth",
-        "artwork": "earth-v1",
+        "artwork": "earth-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3245,7 +3245,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3293,7 +3293,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3348,7 +3348,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3403,7 +3403,7 @@
       "planetType": {
         "id": "forge",
         "displayName": "Forge",
-        "artwork": "forge-v1",
+        "artwork": "forge-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3458,7 +3458,7 @@
       "planetType": {
         "id": "ice",
         "displayName": "Ice",
-        "artwork": "ice-v1",
+        "artwork": "ice-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3499,7 +3499,7 @@
       "planetType": {
         "id": "ice",
         "displayName": "Ice",
-        "artwork": "ice-v1",
+        "artwork": "ice-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3547,7 +3547,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3609,7 +3609,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3664,7 +3664,7 @@
       "planetType": {
         "id": "jungle",
         "displayName": "Jungle",
-        "artwork": "jungle-v1",
+        "artwork": "jungle-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3733,7 +3733,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3795,7 +3795,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3850,7 +3850,7 @@
       "planetType": {
         "id": "ocean",
         "displayName": "Ocean",
-        "artwork": "ocean-v1",
+        "artwork": "ocean-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3898,7 +3898,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3939,7 +3939,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -3980,7 +3980,7 @@
       "planetType": {
         "id": "proto",
         "displayName": "Proto",
-        "artwork": "proto-v1",
+        "artwork": "proto-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -4028,7 +4028,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -4076,7 +4076,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -4124,7 +4124,7 @@
       "planetType": {
         "id": "scrap",
         "displayName": "Scrap",
-        "artwork": "scrap-v1",
+        "artwork": "scrap-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -4172,7 +4172,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -4234,7 +4234,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
@@ -4289,7 +4289,7 @@
       "planetType": {
         "id": "swamp",
         "displayName": "Swamp",
-        "artwork": "swamp-v1",
+        "artwork": "swamp-v2",
         "background": "deep-space-v1"
       },
       "inputs": [
