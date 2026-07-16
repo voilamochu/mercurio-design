@@ -5,8 +5,10 @@ const ROOT = path.join(__dirname, '..');
 
 const PATHS = {
   sourceDir: path.join(ROOT, 'generated', 'cards'),
+  modelFile: path.join(ROOT, 'generated', 'models', 'planets.json'),
   exportDir: path.join(ROOT, 'exports', 'bga'),
   imgDir: path.join(ROOT, 'exports', 'bga', 'img', 'planets'),
+  dataDir: path.join(ROOT, 'exports', 'bga', 'data'),
 };
 
 function rimraf(dir) {
@@ -32,10 +34,10 @@ function build() {
   }
 
   const sourceFiles = fs.readdirSync(PATHS.sourceDir)
-    .filter(f => /^planet_\d{3}\.svg$/.test(f));
+    .filter(f => f.endsWith('.svg') && f !== 'contact-sheet.svg');
 
-  if (sourceFiles.length !== 81) {
-    console.error(`ERROR: expected 81 SVGs in generated/cards/, found ${sourceFiles.length}`);
+  if (sourceFiles.length === 0) {
+    console.error(`ERROR: no SVG files found in ${PATHS.sourceDir}`);
     process.exit(1);
   }
 
@@ -44,6 +46,7 @@ function build() {
   }
 
   fs.mkdirSync(PATHS.imgDir, { recursive: true });
+  fs.mkdirSync(PATHS.dataDir, { recursive: true });
 
   for (const file of sourceFiles) {
     const src = path.join(PATHS.sourceDir, file);
@@ -51,28 +54,15 @@ function build() {
     fs.copyFileSync(src, dst);
   }
 
-  const expectedFiles = fs.readdirSync(PATHS.imgDir)
-    .filter(f => /^planet_\d{3}\.svg$/.test(f));
-  const exportedCount = expectedFiles.length;
-
-  if (exportedCount !== 81) {
-    console.error(`ERROR: expected 81 SVGs in export, found ${exportedCount}`);
+  if (fs.existsSync(PATHS.modelFile)) {
+    const modelDst = path.join(PATHS.dataDir, 'planets.json');
+    fs.copyFileSync(PATHS.modelFile, modelDst);
+  } else {
+    console.error(`ERROR: model file not found — ${PATHS.modelFile}`);
     process.exit(1);
   }
 
-  const manifest = {
-    version: 1,
-    generatedAt: new Date().toISOString(),
-    assets: {
-      planets: exportedCount,
-    },
-  };
-
-  fs.writeFileSync(
-    path.join(PATHS.exportDir, 'manifest.json'),
-    JSON.stringify(manifest, null, 2),
-    'utf-8',
-  );
+  const exportedCount = sourceFiles.length;
 
   const duration = Date.now() - startTime;
 

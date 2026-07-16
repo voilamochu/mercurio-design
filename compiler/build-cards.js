@@ -20,7 +20,7 @@ const BOTTOM_MARGIN = 24;
 
 const INPUT_CELL_CENTER_X = 160;
 const OUTPUT_CELL_CENTER_X = 584;
-const ICON_SIZE = 80;
+const ICON_SIZE = 96;
 const TWO_ICON_OFFSET = 50;
 
 const WATERMARK_PATCH_X = 620;
@@ -155,7 +155,7 @@ function renderPlanetSvg(planet, artworkUri, iconDataUris) {
       const uri = iconDataUris[ins[i].resource.id];
       if (!uri) continue;
       const cx = inputCenters[i];
-      iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" />`);
+      iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" filter="url(#icon-enhance)" />`);
     }
   }
 
@@ -168,11 +168,21 @@ function renderPlanetSvg(planet, artworkUri, iconDataUris) {
       const uri = iconDataUris[outs[i].resource.id];
       if (!uri) continue;
       const cx = outputCenters[i];
-      iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" />`);
+      iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" filter="url(#icon-enhance)" />`);
     }
   }
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${CARD_W} ${CARD_H}" width="${CARD_W}" height="${CARD_H}">
+  <defs>
+    <filter id="icon-enhance" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="1.35"/>
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="1.35"/>
+        <feFuncG type="linear" slope="1.35"/>
+        <feFuncB type="linear" slope="1.35"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
   <image href="${artworkUri}" x="0" y="0" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="xMidYMid slice" />
 
   <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
@@ -216,16 +226,15 @@ function build() {
   const indexEntries = [];
   const cardSvgContents = [];
 
-  let seqId = 0;
   for (const planet of planets) {
-    seqId++;
+    const canonicalId = planet.id;
     const typeId = planet.planetType.id;
     const displayName = planet.planetType.displayName;
     const artworkUri = loadArtworkDataUri(typeId);
 
     if (!artworkUri) {
-      warnings.push(`No V2 artwork for "${typeId}" (planet #${seqId}: ${planet.id})`);
-      missingAssets.push({ planetId: planet.id, type: typeId, asset: 'artwork' });
+      warnings.push(`No V2 artwork for "${typeId}" (${canonicalId})`);
+      missingAssets.push({ planetId: canonicalId, type: typeId, asset: 'artwork' });
       stats.skipped++;
       continue;
     }
@@ -238,17 +247,17 @@ function build() {
 
     const iconRefs = (svg.match(/<image /g) || []).length - 1;
     if (iconRefs !== totalIcons) {
-      warnings.push(`Icon count mismatch for ${planet.id}: expected ${totalIcons} icons, SVG has ${iconRefs}`);
+      warnings.push(`Icon count mismatch for ${canonicalId}: expected ${totalIcons} icons, SVG has ${iconRefs}`);
     }
 
-    const filename = `planet_${String(seqId).padStart(3, '0')}.svg`;
+    const filename = `${canonicalId}.svg`;
     const filePath = path.join(PATHS.outputDir, filename);
     fs.writeFileSync(filePath, svg, 'utf-8');
 
     cardSvgContents.push(svg);
 
     indexEntries.push({
-      id: seqId,
+      id: canonicalId,
       filename,
       planetType: displayName,
     });
