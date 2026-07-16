@@ -82,3 +82,23 @@ Updated `.gitignore` to comment out the `frame.svg` entry (file no longer exists
 ## Confirmation
 
 The repository documentation now accurately describes the implemented architecture.
+
+---
+
+## Post-Report Changes (Production Asset Finalization)
+
+After this report was written, the following additional changes were made:
+
+| Date | Change | Details |
+|---|---|---|
+| 2026-07-16 | Production resolutions adopted | Planet artwork: 576 px, Resource icons: 96 px |
+| 2026-07-16 | Original artwork archived | `source/archive/planets/`, `source/archive/icons/` |
+| 2026-07-16 | optimize-assets.js updated | Resize target changed from 744×1039 to 576 px width |
+| 2026-07-16 | build-cards.js consolidated | Now runs `optimize:assets` internally |
+| 2026-07-16 | export-bga.js consolidated | Now runs `optimize:svg` internally, generates `manifest.json` |
+| 2026-07-16 | Pipeline scripts reduced | From 5 to 3 (`build:model`, `build:cards`, `export:bga`) |
+| 2026-07-16 | Empty scaffolding removed | `exports/print/`, `exports/tts/`, `data/`, `templates/` |
+| 2026-07-16 | Obsolete files removed | `slots.json`, `source/style/README.md`, `backgrounds/README.md`, `refactor-plan.md` |
+| 2026-07-16 | Documentation refreshed | README, architecture.md, asset-pipeline.md, render-implementation-report.md |
+
+The repository is now internally consistent and ready for Version 1.0.

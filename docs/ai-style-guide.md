@@ -276,7 +276,7 @@ Layer 2:  Information Panel
           Reusable SVG panel occupying the lower 40–45 % of the card.
           Provides panel background, row/column separators, rounded
           lower corners, and gameplay surface. No gameplay data.
-          Location: templates/cards/planet/resource-panel.svg
+           Location: rendered programmatically by compiler/build-cards.js
           ─────────────────
 Layer 3:  Gameplay Elements
           Resource icons and future overlays, rendered programmatically.
@@ -337,7 +337,7 @@ text, signature, logo, frame, border, grid, crosshair, UI element
 
 1. **Same prompt structure, different biome attributes.** Only the biome-specific fill-in segments change between generations. The framing, angle, and quality descriptors remain identical.
 2. **Same negative prompt for every generation.** Do not add or remove negative terms per biome. Consistent negatives produce consistent output quality.
-3. **Same aspect ratio for every card artwork generation.** Always use the artwork region aspect ratio derived from `slots.json` (672:820 ≈ 0.82).
+3. **Same aspect ratio for every card artwork generation.** Always use the artwork region aspect ratio (672:820 ≈ 0.82) defined by the renderer.
 4. **Validate every output against the biome colour table** (see §2.4). Reject any output whose dominant hue does not match the target biome.
 5. **Validate horizon position.** The horizon must fall between 20 % and 35 % from the bottom edge. Reject outputs where the horizon is centred, missing, or extreme.
 
@@ -492,7 +492,7 @@ When new content is added via expansions:
 |---|---|
 | Artwork resolution (master) | 2048 × 2500 px |
 | Board resolution (master) | 7680 × 11520 px |
-| Card size (slots.json) | 744 × 1039 px |
+| Card size (renderer) | 744 × 1039 px |
 | Artwork region | 672 × 820 px |
 | Format (artwork) | WEBP for digital, PNG for print |
 | Format (all else) | SVG |

@@ -4,7 +4,6 @@ Version: 2.1 — Final Planet Card
 
 ## Summary
 - `compiler/build-card-model.js`, `generated/models/planets.json`, CSV source files, planet artwork PNGs, resource icon PNGs
-- `templates/cards/planet/slots.json`
 - `source/style/*`, `source/icons/*`
 
 ---
@@ -18,7 +17,7 @@ The card is composed of exactly three layers:
 | 1 | Planet Artwork | Single full-bleed raster image (744×1039 px), `xMidYMid slice`. The V2 artwork includes planet + surrounding space in one file. |
 | — | Watermark Cover | Gradient overlay (`#080D1A`, sampled from artwork space tones) from transparent at y=520 to solid at bottom. Follows card's 32px corner radius. Sits on top of artwork, below dividers and icons. |
 | 2 | Gameplay Dividers | Two horizontal lines (`#8F8575`, 3px stroke, 85% opacity) spanning x=36 to x=708. |
-| 3 | Resource Icons | Embedded base64 PNG icons (80×80 px) at fixed Y row centers, X centered per cell rules. |
+| 3 | Resource Icons | Embedded base64 PNG icons (96×96 px) at fixed Y row centers, X centered per cell rules. |
 
 Layer ordering: artwork → watermark → dividers → icons.
 
@@ -81,8 +80,8 @@ A gradient-filled path provides a dark backing behind the gameplay information:
 
 ## 6. Resource Icons
 
-- Loaded from `source/icons/resources/{Resource}.png` as base64 data URIs
-- Size: **80×80** pixels (unchanged from previous renderer)
+- Loaded from `generated/optimized-assets/icons/` as base64 data URIs
+- Size: **96×96** pixels
 - Y positions: fixed row centers (592, 758, 925)
 - X positions: computed per centering rules:
 
@@ -111,8 +110,7 @@ Total: 6 resource icons, 2 divider lines, 1 watermark path.
 ## 8. Planet Selection
 
 - Selected: `card_021_1` (first Earth World)
-- Artwork: `source/artwork/cards/planet/planets/earth-v2.png`
-- V2 artwork filename mapped automatically: tries `{type}-v2.png` first, then `{type}_v2.png`
+- Artwork: `generated/optimized-assets/artwork/earth-v2.png`
 
 ---
 
@@ -123,5 +121,4 @@ Total: 6 resource icons, 2 divider lines, 1 watermark path.
 - **Card frame border**: The SVG does not draw an outer rounded card border (`rx=32`). The watermark path respects the corner radius internally. A card frame border is expected as a runtime/compositing overlay.
 - **Single card**: Renders one Earth card. Full deck rendering is left to the card compiler.
 - **No text or level labels**: Design relies purely on icon positions and divider structure.
-- **V2 artwork naming inconsistency**: Some planets use hyphens (`earth-v2.png`, `cold-v2.png`), others use underscores (`forge_v2.png`). The renderer tries both patterns.
 - **Ownership footer**: Not rendered. Expected as a runtime overlay.

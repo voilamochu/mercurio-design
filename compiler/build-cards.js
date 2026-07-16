@@ -1,13 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 const { renderResourcePanel } = require('./svg/resource-panel');
+const { optimizeArtwork, optimizeIcons } = require('./optimize-assets');
 
 const ROOT = path.join(__dirname, '..');
 
 const PATHS = {
   model: path.join(ROOT, 'generated', 'models', 'planets.json'),
-  icons: path.join(ROOT, 'source', 'icons', 'resources'),
-  artworkPlanets: path.join(ROOT, 'source', 'artwork', 'cards', 'planet', 'planets'),
+  icons: path.join(ROOT, 'generated', 'optimized-assets', 'icons'),
+  artworkPlanets: path.join(ROOT, 'generated', 'optimized-assets', 'artwork'),
   outputDir: path.join(ROOT, 'generated', 'cards'),
 };
 
@@ -196,11 +197,16 @@ ${iconLines.join('\n')}
   return svg;
 }
 
-function build() {
+async function build() {
   const startTime = Date.now();
   const warnings = [];
   const missingAssets = [];
   const stats = { rendered: 0, skipped: 0 };
+
+  console.log('Optimizing assets...\n');
+  await optimizeArtwork();
+  await optimizeIcons();
+  console.log('');
 
   const raw = JSON.parse(fs.readFileSync(PATHS.model, 'utf-8'));
   if (!raw.planets || !raw.planets.length) {
@@ -364,4 +370,7 @@ function renderContactSheet(cardSvgContents) {
   return lines.join('\n');
 }
 
-build();
+build().catch(err => {
+  console.error('Fatal:', err.message);
+  process.exit(1);
+});

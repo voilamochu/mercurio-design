@@ -14,7 +14,7 @@ The following recommendations from the audit were **not executed** per project d
 | 1 | Add `generated/models/planets.json` to `.gitignore` | Kept tracked — it is the canonical intermediate model. |
 | 2 | Rename `compiler/build-card-model.js` → `compiler/build-model.js` | Kept original filename. |
 | 3 | Merge `docs/specifications/planet-card-rendering-rules.md` into `docs/card-specification.md` | Both documents retained separately. |
-| 4 | Delete `templates/cards/planet/slots.json` | Left untouched (was never proposed for deletion; the plan said to leave it). |
+| 4 | Delete `templates/cards/planet/slots.json` | Initially left untouched; deleted on 2026-07-16 as dead code (not consumed by any renderer). |
 
 All other recommendations were executed.
 
@@ -82,7 +82,7 @@ All V2 planet artwork files now use the consistent `{type}-v2.png` pattern.
 
 ## Generated Artifacts Removed from Git Tracking (87)
 
-These files remain on disk but are no longer tracked. They are regenerable via `npm run build:all`.
+These files remain on disk but are no longer tracked. They are regenerable via `npm run build`.
 
 | Pattern | Count |
 |---|---|
@@ -115,13 +115,14 @@ templates/cards/planet/frame.svg
 
 Note: `generated/models/` is intentionally absent — `planets.json` remains tracked.
 
-### `package.json` — Added build scripts
+### `package.json` — Production workflow scripts
 
 ```json
 "scripts": {
   "build:model": "node compiler/build-card-model.js",
   "build:cards": "node compiler/build-cards.js",
-  "build:all": "npm run build:model && npm run build:cards"
+  "export:bga": "node compiler/export-bga.js",
+  "build": "npm run build:model && npm run build:cards && npm run export:bga"
 }
 ```
 

@@ -176,17 +176,15 @@ Mercurio Design does NOT own
 
 source/
 
-    csv/
+    archive/      — archived original full-resolution artwork
 
-    icons/
+    csv/          — CSV game data
 
-    artwork/
+    icons/        — resource and planet-type icons
 
-    style/
+    artwork/      — planet artwork and backgrounds
 
-    prompts/
-
-templates/
+    style/        — design tokens
 
 compiler/
 
@@ -204,27 +202,20 @@ The following are canonical source assets.
 
 CSV
 
-Planet Layout
-
-Planet Resources
-
-Planet Types
-
-Planet Benefits
+    PlanetResources_v3.csv  — per-card inputs/outputs (consumed by pipeline)
+    PlanetType_v3.csv       — card-to-type mapping (consumed by pipeline)
 
 Icons
 
-Planet Type Icons
-
-Resource Icons
-
-Fonts
+    Resource Icons          — 8 PNGs embedded in card SVGs
+    Planet Type Icons       — 9 SVGs reserved for future cards
 
 AI Prompt Library
 
 Artwork
 
-Templates
+    Planet artwork (864×1216 px masters in source/artwork/)
+    Background assets
 
 ---
 

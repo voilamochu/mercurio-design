@@ -35,4 +35,16 @@ generated/design/
 generated/preview/
 generated/render-preview/
 generated/svg/
-# templates/cards/planet/frame.svg (deleted — no longer part of architecture)
+generated/optimized-assets/
+generated/experiments/
+
+# Archive of old generated binary assets (regenerable from source)
+source/archive/
+
+# Generated preview montage
+montage.png
+
+# Temporary work directory
+work/
+
+# Frame template was deleted — no longer part of architecture

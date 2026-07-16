@@ -1,0 +1,43 @@
+{
+  "$schema": "v1",
+  "project": "mercurio-design",
+  "exportType": "bga",
+  "generatedAt": "2026-07-16T14:12:49.978Z",
+  "assetVersion": 1,
+  "resolutions": {
+    "artwork": 576,
+    "icon": 96,
+    "card": {
+      "width": 744,
+      "height": 1039
+    }
+  },
+  "cardCount": 81,
+  "size": {
+    "totalBytes": 66682008,
+    "averageBytes": 823235,
+    "medianBytes": 821098,
+    "largestBytes": 892329,
+    "smallestBytes": 746205
+  },
+  "composition": {
+    "planetTypes": 9,
+    "resourceIcons": 8,
+    "copiesPerPlanet": 3,
+    "planetTypeDistribution": {
+      "Cold": 9,
+      "Earth": 9,
+      "Forge": 12,
+      "Ice": 6,
+      "Jungle": 9,
+      "Ocean": 9,
+      "Proto": 9,
+      "Scrap": 9,
+      "Swamp": 9
+    }
+  },
+  "files": {
+    "cards": "img/planets/",
+    "data": "data/planets.json"
+  }
+}

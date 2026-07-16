@@ -11,8 +11,8 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                      SOURCE ASSETS                              │
 │                                                                 │
-│  CSV Data     Artwork     Resource Icons     Templates          │
-│  (game data)  (PNG)       (PNG)             (SVG + JSON)       │
+│  CSV Data     Artwork (864×1216)     Resource Icons (352×384)   │
+│  (game data)  (9 PNGs)               (8 PNGs)                   │
 │                                                                 │
 │  Design Tokens  (colors.json, typography.json, spacing.json,    │
 │                   effects.json)                                 │
@@ -22,7 +22,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                  compiler/build-card-model.js                    │
 │                                                                 │
-│  Reads:  CSV source data                                        │
+│  Reads:  PlanetResources_v3.csv + PlanetType_v3.csv             │
 │  Validates:  resource names, planet types, card IDs             │
 │  Emits:  structured, validated card model                       │
 └──────────────────────────┬──────────────────────────────────────┘
@@ -40,9 +40,18 @@
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
+│              compiler/optimize-assets.js (internal)              │
+│                                                                 │
+│  Reads:  source artwork (864×1216) + source icons (352×384)     │
+│  Resizes:  artwork → 576×811, icons → 96×96 (high-quality)     │
+│  Emits:  generated/optimized-assets/ (PNGs)                     │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
 │                   compiler/build-cards.js                        │
 │                                                                 │
-│  Reads:  planets.json + artwork PNGs + icon PNGs + SVG template │
+│  Reads:  planets.json + optimized artwork + optimized icons     │
 │  Composes:  3-layer card (artwork → panel → icons)              │
 │  Emits:  81 individual card SVGs + contact sheet + index        │
 └──────────────────────────┬──────────────────────────────────────┘
@@ -51,36 +60,47 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                     generated/cards/                             │
 │                                                                 │
-│  planet_001.svg  ...  planet_081.svg                            │
+│  card_001_1.svg  ...  card_027_3.svg  (81 cards)               │
 │  index.json                     — card index for consumers      │
 │  contact-sheet.svg              — 9×9 visual grid of all cards  │
 │                                                                 │
 │  Every file in this directory is disposable.                    │
-│  Delete them all, run  npm run build:all , and they             │
+│  Delete them all, run  npm run build:cards , and they           │
 │  reappear identically.                                          │
-└─────────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      compiler/export-bga.js                       │
+│              compiler/optimize-svg.mjs (internal)                │
+│                                                                 │
+│  Reads:  generated/cards/card_*.svg                             │
+│  Optimizes:  SVGO multi-pass (remove metadata, minify, etc.)    │
+│  Rewrites:  optimized SVGs in place                             │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      compiler/export-bga.js                      │
 │                                                                  │
-│  Reads:  generated/cards/planet_*.svg                            │
-│  Copies:  → exports/bga/img/planets/                             │
-│  Verifies:  exactly 81 SVGs                                      │
-│  Emits:  manifest.json (version, generatedAt, asset counts)      │
+│  Reads:  generated/cards/card_*.svg + planets.json              │
+│  Copies:  SVGs → exports/bga/img/planets/                       │
+│  Copies:  planets.json → exports/bga/data/                      │
+│  Generates:  manifest.json (version, resolutions, statistics)   │
+│  Validates:  81 SVGs, artwork embedded, filenames match model   │
 └──────────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
+                           │
+                           ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                         exports/bga/                              │
 │                                                                  │
-│  img/planets/planet_001.svg  ...  planet_081.svg                 │
+│  img/planets/card_001_1.svg  ...  card_027_3.svg                │
+│  data/planets.json                                               │
 │  manifest.json                                                   │
 │                                                                  │
 │  Ready for BGA Studio import.                                    │
 └─────────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
+                           │
+                           ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                          BGA Studio                               │
 │                                                                  │
@@ -97,38 +117,34 @@ Source assets are manually curated, version-controlled, and immutable. They are 
 
 ### CSV Data — `source/csv/planets/`
 
-Four CSV files define every gameplay-relevant property of the 81 planet cards:
+Two CSV files are consumed by the pipeline to define the 81 planet cards:
 
-| File | Content |
-|---|---|
-| `PlanetResources_v3.csv` | Per-card input and output resources at each production level (L1, L2, L3) |
-| `PlanetType_v3.csv` | Maps each card filename to a planet type (Swamp, Scrap, Proto, etc.) |
-| `PlanetBenefits_v3.csv` | Victory-point and income values per card |
-| `Mercurio_planet_layout_v3.csv` | Slot positioning data per production level |
+| File | Content | Pipeline Stage |
+|---|---|---|
+| `PlanetResources_v3.csv` | Per-card input and output resources at each production level (L1, L2, L3) | `build:model` |
+| `PlanetType_v3.csv` | Maps each card filename to a planet type (Swamp, Scrap, Proto, etc.) | `build:model` |
+
+Two additional CSV files (`PlanetBenefits_v3.csv`, `Mercurio_planet_layout_v3.csv`) are present in the source directory for future use but are not yet consumed by the pipeline.
 
 CSV is the interchange format because it is human-editable in spreadsheets, diffable in version control, and language-agnostic. Game designers modify CSVs directly; they never touch code.
 
 ### Artwork — `source/artwork/cards/planet/planets/`
 
-One V2 PNG per planet type (9 files: `cold-v2.png`, `earth-v2.png`, ..., `swamp-v2.png`). Each is a single raster image at 2048×2500 px master resolution containing both the planet and its surrounding space. Multiple cards of the same type share the same artwork.
+One V2 PNG per planet type (9 files: `cold-v2.png`, `earth-v2.png`, ..., `swamp-v2.png`). Each is a single raster image at 864×1216 px containing both the planet and its surrounding space. Multiple cards of the same type share the same artwork.
 
-The space background — `source/artwork/cards/planet/backgrounds/deep-space-v1.png` — is used as a compositional fallback and may be reused by future card types.
+*Original full-resolution masters are archived at `source/archive/planets/`.*
+
+The space background — `source/artwork/cards/planet/backgrounds/deep-space-v1.png` — is a compositional fallback and may be reused by future card types.
 
 ### Resource Icons — `source/icons/resources/`
 
-Eight PNG icons (Algae, Crate, Electronics, Grain, Human, Ore, Robot, Water) at 80×80 px. These are embedded as base64 data URIs into card SVGs at build time. Icons are the only gameplay-communicating visual element on a card; artwork communicates theme only.
+Eight PNG icons (Algae, Crate, Electronics, Grain, Human, Ore, Robot, Water) at 352×384 px. These are resized to 96×96 px during the asset optimization stage and embedded as base64 data URIs into card SVGs at build time. Icons are the only gameplay-communicating visual element on a card; artwork communicates theme only.
+
+*Original full-resolution masters are archived at `source/archive/icons/`.*
 
 ### Planet Type Icons — `source/icons/planet-types/`
 
 Nine SVG icons, one per planet type. Currently reserved for future card layouts (technology cards, contract cards) that require a compact planet-type indicator.
-
-### SVG Templates — `templates/cards/planet/`
-
-| File | Role |
-|---|---|
-| `slots.json` | Slot coordinates for input/output cells. Defines card dimensions (744×1039), artwork bounds, header, and footer. |
-
-The renderer owns layout. Changing layout requires updating the renderer.
 
 ### Design Tokens — `source/style/`
 
@@ -226,9 +242,9 @@ A renderer should be replaceable. If the project switches from SVG to a differen
 ### Files
 
 | File | Contents |
-|---|---|
-| `planet_001.svg` ... `planet_081.svg` | Individual full-size planet card SVGs (744×1039 px) |
-| `index.json` | Card index mapping sequential IDs to planet types |
+|---|---|---|
+| `card_001_1.svg` ... `card_027_3.svg` | 81 individual full-size planet card SVGs (744×1039 px) |
+| `index.json` | Card index mapping IDs to planet types |
 | `contact-sheet.svg` | 9×9 grid contact sheet showing all 81 cards as thumbnails |
 
 ### Disposability
@@ -309,10 +325,11 @@ Artwork communicates planet type and atmosphere. It never carries gameplay infor
 
 ## 7. Repository Philosophy
 
-The repository intentionally contains only two compiler scripts:
+The repository contains three core pipeline scripts:
 
 - `compiler/build-card-model.js` — CSV → model
-- `compiler/build-cards.js` — model → SVGs
+- `compiler/build-cards.js` — optimize assets + model → SVGs
+- `compiler/export-bga.js` — SVGO + export + manifest + validation
 
 This minimalism is deliberate. Each script has exactly one input, one output, and one responsibility. There is no build system, no task runner, no configuration file to learn. The pipeline is transparent: you can open either script and understand exactly what it does in under a minute.
 
@@ -330,12 +347,14 @@ This philosophy makes the pipeline:
 ## 8. Build Commands
 
 ```bash
-npm run build:model    # node compiler/build-card-model.js
-npm run build:cards    # node compiler/build-cards.js
-npm run build:all      # both in sequence
+npm run build:model    # CSV → generated/models/planets.json
+npm run build:cards    # optimize PNGs + render 81 SVGs
+npm run export:bga     # SVGO → copy → manifest → exports/bga/
+
+npm run build          # all three in sequence
 ```
 
-For development, run `npm run build:all` after any change to CSV data, artwork, icons, or templates.
+For development, run `npm run build` after any change to CSV data, artwork, or icons.
 
 ---
 
