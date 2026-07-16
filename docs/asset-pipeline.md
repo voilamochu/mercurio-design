@@ -59,6 +59,34 @@
 │  Delete them all, run  npm run build:all , and they             │
 │  reappear identically.                                          │
 └─────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      compiler/export-bga.js                       │
+│                                                                  │
+│  Reads:  generated/cards/planet_*.svg                            │
+│  Copies:  → exports/bga/img/planets/                             │
+│  Verifies:  exactly 81 SVGs                                      │
+│  Emits:  manifest.json (version, generatedAt, asset counts)      │
+└──────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                         exports/bga/                              │
+│                                                                  │
+│  img/planets/planet_001.svg  ...  planet_081.svg                 │
+│  manifest.json                                                   │
+│                                                                  │
+│  Ready for BGA Studio import.                                    │
+└─────────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                          BGA Studio                               │
+│                                                                  │
+│  Final consumer. Imports exports/bga/ assets into the            │
+│  Board Game Arena project repository.                            │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
