@@ -32,6 +32,12 @@ CSV Source Data
   ↓
 Canonical Card Model (compiler/build-card-model.js)
   ↓
+Layer 1: Planet Artwork (source/artwork/cards/planet/planets/)
+  +
+Layer 2: Information Panel (templates/cards/planet/resource-panel.svg)
+  +
+Layer 3: Gameplay Elements (programmatic)
+  ↓
 SVG Composition (templates/, compiler/generate-frame.js)
   ↓
 Asset Export

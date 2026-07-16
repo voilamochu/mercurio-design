@@ -1,6 +1,6 @@
 {
   "schema": "v1",
-  "generatedAt": "2026-07-15T15:21:21.877Z",
+  "generatedAt": "2026-07-16T03:26:36.767Z",
   "planetCount": 81,
   "planets": [
     {
@@ -17,33 +17,21 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -52,44 +40,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -107,22 +79,14 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -131,33 +95,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -175,11 +127,7 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -188,44 +136,28 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -243,22 +175,14 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -267,44 +191,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -322,22 +230,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -346,44 +246,28 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -401,22 +285,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -425,66 +301,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -502,11 +354,7 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -515,44 +363,28 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -570,22 +402,14 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -594,44 +418,28 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -649,22 +457,14 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -673,44 +473,28 @@
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -728,22 +512,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -752,44 +528,28 @@
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -807,11 +567,7 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -820,33 +576,21 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -864,22 +608,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -888,33 +624,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -932,33 +656,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -967,44 +679,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1022,33 +718,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -1057,33 +741,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1101,22 +773,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1125,66 +789,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1202,33 +842,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1237,44 +865,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1292,33 +904,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -1327,33 +927,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1371,11 +959,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -1384,44 +968,28 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1439,11 +1007,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -1452,33 +1016,21 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1496,11 +1048,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -1509,33 +1057,21 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1553,22 +1089,14 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1577,33 +1105,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1621,22 +1137,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1645,33 +1153,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1689,22 +1185,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1713,33 +1201,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1757,22 +1233,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1781,33 +1249,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1825,33 +1281,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -1860,44 +1304,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1915,33 +1343,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -1950,33 +1366,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -1994,22 +1398,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2018,66 +1414,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2095,33 +1467,21 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2130,44 +1490,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2185,22 +1529,14 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -2209,33 +1545,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2253,11 +1577,7 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -2266,44 +1586,28 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2321,22 +1625,14 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2345,44 +1641,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2400,22 +1680,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2424,44 +1696,28 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2479,22 +1735,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2503,66 +1751,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2580,11 +1804,7 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -2593,44 +1813,28 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2648,22 +1852,14 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2672,44 +1868,28 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2727,22 +1907,14 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2751,44 +1923,28 @@
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2806,22 +1962,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2830,44 +1978,28 @@
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2885,11 +2017,7 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -2898,33 +2026,21 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -2942,22 +2058,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -2966,33 +2074,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3010,33 +2106,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3045,44 +2129,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3100,33 +2168,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -3135,33 +2191,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3179,22 +2223,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3203,66 +2239,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3280,33 +2292,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3315,44 +2315,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3370,33 +2354,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -3405,33 +2377,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3449,11 +2409,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -3462,44 +2418,28 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3517,11 +2457,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -3530,33 +2466,21 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3574,11 +2498,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -3587,33 +2507,21 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3631,22 +2539,14 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3655,33 +2555,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3699,22 +2587,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3723,33 +2603,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3767,22 +2635,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3791,33 +2651,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3835,22 +2683,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3859,33 +2699,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3903,33 +2731,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -3938,44 +2754,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -3993,33 +2793,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -4028,33 +2816,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4072,22 +2848,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4096,66 +2864,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4173,33 +2917,21 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4208,44 +2940,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4263,22 +2979,14 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -4287,33 +2995,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4331,11 +3027,7 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -4344,44 +3036,28 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4399,22 +3075,14 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4423,44 +3091,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4478,22 +3130,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4502,44 +3146,28 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4557,22 +3185,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4581,66 +3201,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4658,11 +3254,7 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -4671,44 +3263,28 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4726,22 +3302,14 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4750,44 +3318,28 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4805,22 +3357,14 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4829,44 +3373,28 @@
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4884,22 +3412,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -4908,44 +3428,28 @@
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -4963,11 +3467,7 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -4976,33 +3476,21 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5020,22 +3508,14 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5044,33 +3524,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5088,33 +3556,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5123,44 +3579,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5178,33 +3618,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -5213,33 +3641,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5257,22 +3673,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5281,66 +3689,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5358,33 +3742,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5393,44 +3765,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5448,33 +3804,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -5483,33 +3827,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5527,11 +3859,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -5540,44 +3868,28 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5595,11 +3907,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -5608,33 +3916,21 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5652,11 +3948,7 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         }
       ],
       "outputs": [
@@ -5665,33 +3957,21 @@
             "id": "water",
             "displayName": "Water"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5709,22 +3989,14 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5733,33 +4005,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5777,22 +4037,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5801,33 +4053,21 @@
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "ore",
             "displayName": "Ore"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5845,22 +4085,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5869,33 +4101,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5913,22 +4133,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "water",
             "displayName": "Water"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -5937,33 +4149,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -5981,33 +4181,21 @@
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 1,
-          "position": {
-            "x": 12.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 37.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "crate",
             "displayName": "Crate"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -6016,44 +4204,28 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "human",
             "displayName": "Human"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -6071,33 +4243,21 @@
             "id": "robot",
             "displayName": "Robot"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 25,
-            "y": 83
-          }
+          "level": 3
         }
       ],
       "outputs": [
@@ -6106,33 +4266,21 @@
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 1,
-          "position": {
-            "x": 75,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 2,
-          "position": {
-            "x": 75,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "grain",
             "displayName": "Grain"
           },
-          "level": 3,
-          "position": {
-            "x": 75,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     },
@@ -6150,22 +4298,14 @@
             "id": "human",
             "displayName": "Human"
           },
-          "level": 1,
-          "position": {
-            "x": 25,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "electronics",
             "displayName": "Electronics"
           },
-          "level": 2,
-          "position": {
-            "x": 25,
-            "y": 54
-          }
+          "level": 2
         }
       ],
       "outputs": [
@@ -6174,66 +4314,42 @@
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 62.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 1,
-          "position": {
-            "x": 87.5,
-            "y": 25
-          }
+          "level": 1
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 62.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 2,
-          "position": {
-            "x": 87.5,
-            "y": 54
-          }
+          "level": 2
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 62.5,
-            "y": 83
-          }
+          "level": 3
         },
         {
           "resource": {
             "id": "algae",
             "displayName": "Algae"
           },
-          "level": 3,
-          "position": {
-            "x": 87.5,
-            "y": 83
-          }
+          "level": 3
         }
       ]
     }

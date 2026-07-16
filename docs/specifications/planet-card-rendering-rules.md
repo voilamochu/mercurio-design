@@ -4,35 +4,36 @@
 
 ### 1.1 Data Sources
 
-Each planet card has a unique ID (`card_NNN_M.webp` where NNN = 001–027, M = 1–3 copy number). Two data tables keyed by card ID determine resource placement:
+Each planet card has a unique ID (`card_NNN_M.webp` where NNN = 001–027, M = 1–3 copy number). Resource data is keyed by card ID:
 
 - **planetResources** (`data/planetResources.js`): maps card ID to `{ inputs: { l1, l2, l3 }, outputs: { l1, l2, l3 } }`. Each level is an ordered array of resource name strings (e.g. `["Algae", "Grain"]`).
-- **planetLayoutData** (`data/planetLayoutData.js`): maps card ID to per-hitbox position data (x%, y% coordinates). Hitbox IDs follow the pattern `l{level}_{index}` (1-based index). CSV columns encode up to 2 input slots × 3 levels and 2 output slots × 3 levels.
 
-### 1.2 Slot Data Model
+Slot positions are not stored per-card. All planet cards share the same cell layout defined by the information panel template (`templates/cards/planet/resource-panel.svg`).
 
-A card's **hitboxes** structure is assembled at deck-construction time by merging layout data with resource data:
+### 1.2 Cell Layout Model
 
-```typescript
-// Assembled once, stored on the card object
-interface Hitboxes {
-  inputs: Hitbox[]   // ordered by level then index
-  outputs: Hitbox[]  // ordered by level then index
-}
+The information panel (Layer 2) defines a fixed grid of cells. Each cell is identified by side (input/output), level (I/II/III), and index within that level:
 
-interface Hitbox {
-  level: 1 | 2 | 3   // income level this slot belongs to
-  id: string          // e.g. "l1_1" — level + underscore + 1-based index
-  x: number           // horizontal position as percentage of card width (0–100)
-  y: number           // vertical position as percentage of card height (0–100)
-}
-```
+| ID | Side | Level | Position (x, y) |
+|---|---|---|---|
+| `input-I-1` | Input | I | (130, 680) |
+| `input-I-2` | Input | I | (210, 680) |
+| `input-II-1` | Input | II | (130, 800) |
+| `input-II-2` | Input | II | (210, 800) |
+| `input-III-1` | Input | III | (130, 920) |
+| `input-III-2` | Input | III | (210, 920) |
+| `output-I-1` | Output | I | (534, 680) |
+| `output-I-2` | Output | I | (614, 680) |
+| `output-II-1` | Output | II | (534, 800) |
+| `output-II-2` | Output | II | (614, 800) |
+| `output-III-1` | Output | III | (534, 920) |
+| `output-III-2` | Output | III | (614, 920) |
 
-Each hitbox carries no resource name. Resource names are looked up at render time using `planetResources[cardId].{inputs|outputs}["l{level}"][index]`, where `index = parseInt(hitbox.id.split('_')[1]) - 1`.
+Resource names are looked up at render time using `planetResources[cardId].{inputs|outputs}["l{level}"][index]`, where `level` is 1–3 and `index` is 0-based.
 
 ### 1.3 Input Slot Rendering
 
-**Position:** Each input hitbox is rendered at its (x, y) coordinate within the card bounds. Positions are percentages relative to the card's full dimensions (width × height). The hitbox center is positioned at (x%, y%).
+**Position:** Each resource icon is centred within its cell in the information panel. Cell centre coordinates are defined in Section 6.2.
 
 **Icon:** The resource icon is determined by looking up the resource name (from `planetResources.inputs["l{level}"][index]`) in a **RESOURCE_ICONS** map:
 
@@ -58,25 +59,25 @@ Each hitbox carries no resource name. Resource names are looked up at render tim
 
 Plural/singular variants (e.g. "Crate" vs "Crates") map to the same icon. "Population" maps to the same icon as "Human".
 
-**Ordering:** Inputs are ordered by their `id` (lexicographic within the hitboxes.inputs array). The array positions determine the index into the resource data arrays. **The hitbox id index directly maps to the array index** (zero-based after parsing): `id "l1_1" → index 0, "l1_2" → index 1`, etc.
+**Ordering:** Inputs are ordered by level then index. Level I cells are populated first (left to right), then Level II, then Level III.
 
-**Empty slots:** If a level has no resources defined for a given array index, or the resource name is undefined/null, that slot position does not exist in the hitboxes list. Hitboxes are only created for positions that have data in the CSV layout.
+**Empty slots:** If a level has no resources defined for a given array index, or the resource name is undefined/null, that cell is left empty — no icon is rendered in that position.
 
 ### 1.4 Output Slot Rendering
 
-**Position:** Identical coordinate system to inputs.
+**Position:** Same cell-based positioning as inputs, using the output column cells in the information panel.
 
 **Icon:** Same resource icon resolution via `planetResources.outputs["l{level}"][index]`.
 
-**Ordering:** Same as inputs — ordered by `id` within the `hitboxes.outputs` array.
+**Ordering:** Same as inputs — ordered by level then index.
 
-**Empty slots:** Same rule — no hitbox is created for layout positions that have no resource data.
+**Empty slots:** Same rule — empty cells render no icon.
 
 ### 1.5 Production Level Rules
 
 Three income levels (L1, L2, L3) each define input requirements and output rewards. Levels are hierarchical.
 
-**Input-to-Output Chaining:** When an input hitbox is toggled to "satisfied" (`true`), output availability is recomputed:
+**Input-to-Output Chaining:** When an input slot is toggled to "satisfied" (`true`), output availability is recomputed:
 
 - If the card has **1 input level**: all outputs at all levels become available when L1 inputs are satisfied.
 - If the card has **2 input levels**: L1 outputs become available when L1 inputs are satisfied; L2 and L3 outputs become available when L1 AND L2 inputs are satisfied.
@@ -95,7 +96,7 @@ If a level has zero output slots (empty array), that level is considered vacuous
 
 ---
 
-## 2. Planet Type Rendering
+## 2. Planet Identity
 
 ### 2.1 Planet Type Lookup
 
@@ -115,61 +116,31 @@ Planet type is determined from the card ID via the **PLANET_TYPES** table (`data
 
 Each card copy (M = 1, 2, 3) has the same type as its base card.
 
-### 2.2 Planet Type Icon Resolution
+### 2.2 Artwork Selection
 
-The type string is mapped through **PLANET_TYPE_ICONS** (`constants/icons.js`):
+Planet type is communicated visually through the planet artwork (Layer 1). The artwork is a single raster image that includes both the planet and its surrounding space.
 
-| Type | Icon Asset Path |
+| Type | Artwork Asset |
 |---|---|
-| Cold | `/assets/Cold.webp` |
-| Earth | `/assets/Earth.webp` |
-| Forge | `/assets/Forge.webp` |
-| Ice | `/assets/Ice.webp` |
-| Jungle | `/assets/Jungle.webp` |
-| Ocean | `/assets/Ocean.webp` |
-| Proto | `/assets/Proto.webp` |
-| Scrap | `/assets/Scrap.webp` |
-| Swamp | `/assets/Swamp.webp` |
+| Cold | `source/artwork/cards/planet/planets/cold-v2.png` |
+| Earth | `source/artwork/cards/planet/planets/earth-v2.png` |
+| Forge | `source/artwork/cards/planet/planets/forge-v2.png` |
+| Ice | `source/artwork/cards/planet/planets/ice-v2.png` |
+| Jungle | `source/artwork/cards/planet/planets/jungle-v2.png` |
+| Ocean | `source/artwork/cards/planet/planets/ocean-v2.png` |
+| Proto | `source/artwork/cards/planet/planets/proto-v2.png` |
+| Scrap | `source/artwork/cards/planet/planets/scrap-v2.png` |
+| Swamp | `source/artwork/cards/planet/planets/swamp-v2.png` |
 
-### 2.3 Artwork Selection (Future Specification)
-
-Card artwork is currently not selected by type. The fallback rendering uses the raw card image (`/assets/card_NNN_M.webp`). A future renderer SHOULD:
-
-1. Map planet type to a biome artwork variant.
-2. Map card ID to a unique terrain composition (craters, flora, structures).
-3. Composite the type icon, artwork, and hitbox elements into a single generated asset.
+One artwork exists per planet type. Multiple cards of the same type share the same artwork. The planet type icon and separate space background layer are no longer used — the planet artwork alone communicates planet identity.
 
 ---
 
-## 3. VP Rendering
+## 3. VP Indicator (Obsolete)
 
-### 3.1 VP Sources and Determination
+The VP indicator has been removed from the canonical planet card design.
 
-A planet can display VP icons for two distinct sources:
-
-| Source | Amount | When Granted | Persistence |
-|---|---|---|---|
-| **Settle VP** | +1 | Immediately when a card is played to a sector (engine: `cardReducer.settle.js`) | Permanent for the game |
-| **Development VP** | +1 | When all output slots are in the `true` (used) state (engine: `marketReducer.js` on SELL_RESOURCE, or hook on toggle) | Revocable — revoked if outputs become incomplete |
-
-No VP is shown for an unsettled card.
-
-### 3.2 VP Display Count Logic
-
-```
-if card is not settled:
-    display 0 VP icons
-else if all outputs are used (every activeOutputs[idx] === true):
-    display 2 VP icons
-else:
-    display 1 VP icon
-```
-
-"All outputs used" is determined by checking every element of `activeOutputs` corresponding to `hitboxes.outputs` — each must be `true`. An empty output list results in 1 VP (settle only), not 2.
-
-### 3.3 VP Icon Rendering
-
-VP icons use the `vpIcon` asset. Each icon is rendered at a fixed small size (relative to card scale). Multiple VP icons are displayed adjacent to the planet type icon in the card's title bar area.
+The card's upper portion communicates flavour, not gameplay data. VP is tracked through game-state UI outside the card surface.
 
 ---
 
@@ -178,14 +149,14 @@ VP icons use the `vpIcon` asset. Each icon is rendered at a fixed small size (re
 ### 4.1 Runtime-Only Overlays (Must Never Be Baked into Generated Assets)
 
 | Overlay | Location | Visual | Condition |
-|---|---|---|---|
-| **Unsatisfied input badge** | Input hitbox | Red X icon (bottom-right of hitbox circle) | Card is settled AND the input is not satisfied (`activeInputs[idx] !== true`) AND the card is not in distribution mode |
-| **Available output badge** | Output hitbox | Green checkmark icon (bottom-right of hitbox circle) | Card is settled AND output is `false` (available) AND not in sale mode |
-| **Pirate raid target** | Output hitbox | Pulsing red border | A `pirateRaidState` matches this card's sector + slot index, AND the output is available |
-| **Sale mode — seller** | Output hitbox | Green pulse + ring when selected | Player is in sale mode, owns the card, and the output matches the good being sold |
-| **Sale mode — non-seller** | Output hitbox | Dimmed/disabled (opacity reduced) | Sale mode is active but the player is not the seller |
-| **Distribution mode — receivable** | Input hitbox | Amber pulse | Distribution is active, the input is not satisfied, and the distributed resource type matches the input requirement |
-| **Distribution mode — non-receivable** | Input hitbox | Disabled (button disabled, no pulse) | Distribution is active but resource type does not match |
+|---|---|---|---|---|
+| **Unsatisfied input badge** | Input cell | Red X icon (bottom-right of cell) | Card is settled AND the input is not satisfied (`activeInputs[idx] !== true`) AND the card is not in distribution mode |
+| **Available output badge** | Output cell | Green checkmark icon (bottom-right of cell) | Card is settled AND output is `false` (available) AND not in sale mode |
+| **Pirate raid target** | Output cell | Pulsing red border | A `pirateRaidState` matches this card's sector + slot index, AND the output is available |
+| **Sale mode — seller** | Output cell | Green pulse + ring when selected | Player is in sale mode, owns the card, and the output matches the good being sold |
+| **Sale mode — non-seller** | Output cell | Dimmed/disabled (opacity reduced) | Sale mode is active but the player is not the seller |
+| **Distribution mode — receivable** | Input cell | Amber pulse | Distribution is active, the input is not satisfied, and the distributed resource type matches the input requirement |
+| **Distribution mode — non-receivable** | Input cell | Disabled (button disabled, no pulse) | Distribution is active but resource type does not match |
 
 ### 4.2 Asset-Generation Safe Overlays (May Be Baked)
 
@@ -210,7 +181,7 @@ None of the overlays listed in 4.1 are safe to bake. All depend on runtime game 
 | `p4` | Emerald |
 | `neutral` | Slate/Grey |
 
-The owner indicator bar MUST NOT be baked into generated card assets — it is purely a runtime UI concern.
+The owner indicator bar MUST NOT be baked into generated card assets — it is purely a runtime UI concern. It is rendered below the information panel, along the bottom edge of the card.
 
 ### 5.2 Settled State
 
@@ -218,38 +189,40 @@ A card is considered "settled" (owned by a player and placed on the board) when 
 
 ---
 
-## 6. Rendering Order (Layer Stack)
+## 6. Composition (Three-Layer Stack)
 
-From back to front:
+A production planet card consists of exactly three visual layers composited from back to front:
 
-| Layer | Z-order | Content |
-|---|---|---|
-| 1 (bottom) | auto | Card image (raw asset) or digital background |
-| 2 | z-5 | Divider line separating title bar from hitbox area (horizontal, at `topBarPercent`) |
-| 3 | z-5 | Vertical centreline (for reference grid) |
-| 4 | z-10 | Input hitboxes — circular overlays at percentage positions |
-| 5 | z-10 | Output hitboxes — circular overlays at percentage positions |
-| 6 | z-20 | Title bar — planet type icon (left) + VP icons (right) |
-| 7 | auto | Owner indicator bar — thin strip at bottom edge |
-| 8 (top) | auto | Children/descendant content |
+| Layer | Content | Source | Description |
+|---|---|---|---|
+| 1 (bottom) | Planet Artwork | `source/artwork/cards/planet/planets/{type}-v2.png` | Single raster image including both the planet and surrounding space. One artwork per planet type. |
+| 2 | Information Panel | `templates/cards/planet/resource-panel.svg` | Reusable SVG panel occupying roughly the lower 40–45 % of the card. Provides panel background, row separators, column separator, rounded lower corners, and the gameplay surface. Contains no gameplay data, resource icons, or text. |
+| 3 (top) | Gameplay Elements | Rendered programmatically | Resource icons and future overlays. Centred within the cells defined by the information panel. |
 
-### 6.1 Title Bar
+### 6.1 Information Panel Responsibilities
 
-The title bar occupies the top `topBarPercent`% of the card height. Default is 12% for raw image mode, 20% for digital layout mode. It contains:
+The information panel (Layer 2) provides:
 
-- **Left:** Planet type icon (18× scale px). Falls back to truncated card ID text if no type icon is available.
-- **Right:** VP icon(s) (11× scale px each), zero or more per VP count logic above.
+- Panel background with gradient fill transitioning from transparent at the top to opaque at the bottom
+- Top divider line separating the artwork region from the gameplay region
+- Row separators between production levels
+- Column separator between input and output columns
+- Rounded lower corners matching the card frame radius
+- Subtle guide circles marking cell centres for programmatic icon placement
 
-A horizontal divider line separates the title bar from the hitbox area.
+The panel is defined in `templates/cards/planet/resource-panel.svg` and is shared across all planet cards. It contains no gameplay data, resource icons, or text.
 
-### 6.2 Hitbox Y-Coordinate Remapping
+### 6.2 Gameplay Element Positioning
 
-When the title bar height changes (e.g. from 12% base to 20% in digital mode), hitbox Y positions must be remapped linearly:
+Gameplay elements (Layer 3) are rendered programmatically into the cells defined by the information panel. Each cell is centred on the guide circle positions in the panel template:
 
-- If y ≤ baseTopBarPercent: `newY = (y / baseTopBarPercent) × topBarPercent`
-- If y > baseTopBarPercent: `newY = topBarPercent + ((y - baseTopBarPercent) / (100 - baseTopBarPercent)) × (100 - topBarPercent)`
+| Level | Input Cell X | Output Cell X | Row Y |
+|---|---|---|---|
+| I | 130, 210 | 534, 614 | 680 |
+| II | 130, 210 | 534, 614 | 800 |
+| III | 130, 210 | 534, 614 | 920 |
 
-X coordinates are never remapped.
+Resource icons are centred within each cell. Overlays (availability, satisfaction, etc.) are positioned relative to the cell centre.
 
 ---
 
@@ -257,9 +230,9 @@ X coordinates are never remapped.
 
 | Mode | Trigger | Behaviour |
 |---|---|---|
-| **Raw image** | Default (no data props, variant != 'digital') | Show `<img>` asset. No type icon, no VP, no hitboxes. Cannot interact. |
-| **Digital** | `resources` or `benefits` data props provided, OR `variant === "digital"` | Render title bar + hitbox overlays + owner bar. Full interactivity. |
-| **Special face** | Raw image mode AND card ID contains `card_028` (Asteroid) or `card_029` (Lost Fleet) | Render special face component instead of image. Non-interactive. |
+| **Composited** | Default | Compose all three layers: planet artwork → information panel → gameplay elements. Full card with interactivity. |
+| **Artwork only** | Preview / selection context | Show only Layer 1 (planet artwork). No panel, no gameplay elements. |
+| **Special face** | Card ID contains `card_028` (Asteroid) or `card_029` (Lost Fleet) | Render special face component instead of the three-layer composition. Non-interactive. |
 
 ---
 
@@ -267,14 +240,17 @@ X coordinates are never remapped.
 
 ```
 card ID
-  ├──→ PLANET_TYPES[cardId]              → type string
-  │     └──→ PLANET_TYPE_ICONS[type]      → type icon asset path
-  ├──→ PLANET_RESOURCES[cardId]           → { inputs, outputs }
-  │     └── per hitbox: RESOURCE_ICONS[name] → resource icon asset
-  ├──→ PLANET_BENEFITS[cardId]            → { l0, l1, l2, l3 } income/vp values (engine use)
-  ├──→ hitboxes (from deck build)         → position data (x%, y%)
-  ├──→ activeInputs (runtime)             → boolean[] — satisfied state
-  ├──→ activeOutputs (runtime)            → (boolean|null)[] — locked/available/used
-  ├──→ ownerRole (runtime)                → settlement + theme
-  └──→ sectorIndex (runtime)              → settled state gate
+  ├──→ PLANET_TYPES[cardId]                     → type string
+  │     └──→ artwork path based on type          → Layer 1: Planet Artwork
+  ├──→ resource-panel.svg                        → Layer 2: Information Panel
+  ├──→ PLANET_RESOURCES[cardId]                  → { inputs, outputs }
+  │     └── per cell: RESOURCE_ICONS[name]       → resource icon asset (Layer 3)
+  ├──→ PLANET_BENEFITS[cardId]                   → { l0, l1, l2, l3 } income values (engine use)
+  ├──→ activeInputs (runtime)                    → boolean[] — satisfied state
+  ├──→ activeOutputs (runtime)                   → (boolean|null)[] — locked/available/used
+  ├──→ ownerRole (runtime)                       → settlement + theme
+  └──→ sectorIndex (runtime)                     → settled state gate
+```
+
+The two fixed layers (artwork and information panel) are resolved at compile time. Gameplay elements and runtime overlays are resolved at render time.
 ```

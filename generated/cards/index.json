@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "filename": "planet_001.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 2,
+    "filename": "planet_002.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 3,
+    "filename": "planet_003.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 4,
+    "filename": "planet_004.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 5,
+    "filename": "planet_005.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 6,
+    "filename": "planet_006.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 7,
+    "filename": "planet_007.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 8,
+    "filename": "planet_008.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 9,
+    "filename": "planet_009.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 10,
+    "filename": "planet_010.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 11,
+    "filename": "planet_011.svg",
+    "planetType": "Ice"
+  },
+  {
+    "id": 12,
+    "filename": "planet_012.svg",
+    "planetType": "Ice"
+  },
+  {
+    "id": 13,
+    "filename": "planet_013.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 14,
+    "filename": "planet_014.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 15,
+    "filename": "planet_015.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 16,
+    "filename": "planet_016.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 17,
+    "filename": "planet_017.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 18,
+    "filename": "planet_018.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 19,
+    "filename": "planet_019.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 20,
+    "filename": "planet_020.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 21,
+    "filename": "planet_021.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 22,
+    "filename": "planet_022.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 23,
+    "filename": "planet_023.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 24,
+    "filename": "planet_024.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 25,
+    "filename": "planet_025.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 26,
+    "filename": "planet_026.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 27,
+    "filename": "planet_027.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 28,
+    "filename": "planet_028.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 29,
+    "filename": "planet_029.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 30,
+    "filename": "planet_030.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 31,
+    "filename": "planet_031.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 32,
+    "filename": "planet_032.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 33,
+    "filename": "planet_033.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 34,
+    "filename": "planet_034.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 35,
+    "filename": "planet_035.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 36,
+    "filename": "planet_036.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 37,
+    "filename": "planet_037.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 38,
+    "filename": "planet_038.svg",
+    "planetType": "Ice"
+  },
+  {
+    "id": 39,
+    "filename": "planet_039.svg",
+    "planetType": "Ice"
+  },
+  {
+    "id": 40,
+    "filename": "planet_040.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 41,
+    "filename": "planet_041.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 42,
+    "filename": "planet_042.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 43,
+    "filename": "planet_043.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 44,
+    "filename": "planet_044.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 45,
+    "filename": "planet_045.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 46,
+    "filename": "planet_046.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 47,
+    "filename": "planet_047.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 48,
+    "filename": "planet_048.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 49,
+    "filename": "planet_049.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 50,
+    "filename": "planet_050.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 51,
+    "filename": "planet_051.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 52,
+    "filename": "planet_052.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 53,
+    "filename": "planet_053.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 54,
+    "filename": "planet_054.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 55,
+    "filename": "planet_055.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 56,
+    "filename": "planet_056.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 57,
+    "filename": "planet_057.svg",
+    "planetType": "Cold"
+  },
+  {
+    "id": 58,
+    "filename": "planet_058.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 59,
+    "filename": "planet_059.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 60,
+    "filename": "planet_060.svg",
+    "planetType": "Earth"
+  },
+  {
+    "id": 61,
+    "filename": "planet_061.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 62,
+    "filename": "planet_062.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 63,
+    "filename": "planet_063.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 64,
+    "filename": "planet_064.svg",
+    "planetType": "Forge"
+  },
+  {
+    "id": 65,
+    "filename": "planet_065.svg",
+    "planetType": "Ice"
+  },
+  {
+    "id": 66,
+    "filename": "planet_066.svg",
+    "planetType": "Ice"
+  },
+  {
+    "id": 67,
+    "filename": "planet_067.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 68,
+    "filename": "planet_068.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 69,
+    "filename": "planet_069.svg",
+    "planetType": "Jungle"
+  },
+  {
+    "id": 70,
+    "filename": "planet_070.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 71,
+    "filename": "planet_071.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 72,
+    "filename": "planet_072.svg",
+    "planetType": "Ocean"
+  },
+  {
+    "id": 73,
+    "filename": "planet_073.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 74,
+    "filename": "planet_074.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 75,
+    "filename": "planet_075.svg",
+    "planetType": "Proto"
+  },
+  {
+    "id": 76,
+    "filename": "planet_076.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 77,
+    "filename": "planet_077.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 78,
+    "filename": "planet_078.svg",
+    "planetType": "Scrap"
+  },
+  {
+    "id": 79,
+    "filename": "planet_079.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 80,
+    "filename": "planet_080.svg",
+    "planetType": "Swamp"
+  },
+  {
+    "id": 81,
+    "filename": "planet_081.svg",
+    "planetType": "Swamp"
+  }
+]

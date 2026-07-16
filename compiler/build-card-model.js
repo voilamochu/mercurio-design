@@ -6,7 +6,7 @@ const OUTPUT_DIR = path.join(__dirname, '..', 'generated', 'models');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'planets.json');
 
 const RESOURCES_CSV = path.join(CSV_DIR, 'PlanetResources_v3.csv');
-const LAYOUT_CSV = path.join(CSV_DIR, 'Mercurio_planet_layout_v3.csv');
+
 const TYPES_CSV = path.join(CSV_DIR, 'PlanetType_v3.csv');
 
 const RESOURCE_DISPLAY_NAMES = {
@@ -75,26 +75,7 @@ function buildResourceEntry(resourceName) {
   };
 }
 
-function parseLayoutRow(row) {
-  const positions = { inputs: {}, outputs: {} };
-  LEVELS.forEach(level => {
-    const inputSlots = [];
-    const outputSlots = [];
-    for (let slot = 1; slot <= 2; slot++) {
-      const ix = parseFloat(row[`ip_l${level}_${slot}_x`]);
-      const iy = parseFloat(row[`ip_l${level}_${slot}_y`]);
-      if (!isNaN(ix) && !isNaN(iy)) inputSlots.push({ x: ix, y: iy });
-      const ox = parseFloat(row[`op_l${level}_${slot}_x`]);
-      const oy = parseFloat(row[`op_l${level}_${slot}_y`]);
-      if (!isNaN(ox) && !isNaN(oy)) outputSlots.push({ x: ox, y: oy });
-    }
-    positions.inputs[level] = inputSlots;
-    positions.outputs[level] = outputSlots;
-  });
-  return positions;
-}
-
-function buildPlanetModel(resourceRow, typeRow, layoutRow) {
+function buildPlanetModel(resourceRow, typeRow) {
   const cardFilename = resourceRow.Card_Filename;
   const cardId = cardFilename.replace(/\.webp$/i, '');
   const planetTypeName = typeRow.Type;
@@ -106,36 +87,21 @@ function buildPlanetModel(resourceRow, typeRow, layoutRow) {
 
   const inputs = [];
   const outputs = [];
-  const positions = parseLayoutRow(layoutRow);
 
   LEVELS.forEach(level => {
     const inputCell = resourceRow[`Level${level}_Input`] || '';
     const inputResources = parseResourceCell(inputCell);
-    const inputPositions = positions.inputs[level];
-    if (inputResources.length !== inputPositions.length) {
-      throw new Error(
-        `Card ${cardId}: Level ${level} input has ${inputResources.length} resource(s) but ${inputPositions.length} position(s)`
-      );
-    }
-    inputResources.forEach((resName, idx) => {
+    inputResources.forEach(resName => {
       const entry = buildResourceEntry(resName);
       entry.level = level;
-      entry.position = { x: inputPositions[idx].x, y: inputPositions[idx].y };
       inputs.push(entry);
     });
 
     const outputCell = resourceRow[`Level${level}_Output`] || '';
     const outputResources = parseResourceCell(outputCell);
-    const outputPositions = positions.outputs[level];
-    if (outputResources.length !== outputPositions.length) {
-      throw new Error(
-        `Card ${cardId}: Level ${level} output has ${outputResources.length} resource(s) but ${outputPositions.length} position(s)`
-      );
-    }
-    outputResources.forEach((resName, idx) => {
+    outputResources.forEach(resName => {
       const entry = buildResourceEntry(resName);
       entry.level = level;
-      entry.position = { x: outputPositions[idx].x, y: outputPositions[idx].y };
       outputs.push(entry);
     });
   });
@@ -173,7 +139,6 @@ function validatePlanetModel(planets) {
       if (!planet.planetType.artwork) errors.push(`Planet ${planet.id}: missing planetType.artwork mapping`);
     }
 
-    const positionKeys = new Set();
     [...planet.inputs, ...planet.outputs].forEach(res => {
       if (!res.resource || !res.resource.id) {
         errors.push(`Planet ${planet.id}: resource missing resource id`);
@@ -181,15 +146,8 @@ function validatePlanetModel(planets) {
       if (!res.resource || !res.resource.displayName) {
         errors.push(`Planet ${planet.id}: resource missing displayName`);
       }
-      if (!res.position || res.position.x === undefined || res.position.y === undefined) {
-        errors.push(`Planet ${planet.id}: resource ${res.resource?.id} missing x/y coordinates`);
-      }
-      if (res.position) {
-        const pk = `${res.position.x},${res.position.y}`;
-        if (positionKeys.has(pk)) {
-          errors.push(`Planet ${planet.id}: duplicate position ${pk}`);
-        }
-        positionKeys.add(pk);
+      if (res.level === undefined) {
+        errors.push(`Planet ${planet.id}: resource ${res.resource?.id} missing level`);
       }
     });
   });
@@ -201,14 +159,10 @@ function validatePlanetModel(planets) {
 
 function main() {
   const resourceRows = loadCsv(RESOURCES_CSV);
-  const layoutRows = loadCsv(LAYOUT_CSV);
   const typeRows = loadCsv(TYPES_CSV);
 
   const typeIndex = {};
   typeRows.forEach(row => { typeIndex[row.Card_Filename] = row; });
-
-  const layoutIndex = {};
-  layoutRows.forEach(row => { layoutIndex[row['Card ID']] = row; });
 
   const planets = [];
 
@@ -217,10 +171,7 @@ function main() {
     const typeRow = typeIndex[cardFilename];
     if (!typeRow) throw new Error(`Missing planet type for ${cardFilename}`);
 
-    const layoutRow = layoutIndex[cardFilename];
-    if (!layoutRow) throw new Error(`Missing layout for ${cardFilename}`);
-
-    planets.push(buildPlanetModel(resourceRow, typeRow, layoutRow));
+    planets.push(buildPlanetModel(resourceRow, typeRow));
   });
 
   validatePlanetModel(planets);

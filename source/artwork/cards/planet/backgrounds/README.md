@@ -1,202 +1,67 @@
-\# Planet Card Backgrounds
+# Planet Card Backgrounds
 
-
+**Status: OBSOLETE for planet cards**
 
 Version: 1.0
 
+---
 
+## Purpose
 
-\---
+This directory previously contained the canonical deep-space background artwork used when composing Mercurio planet cards.
 
+**The separate space background layer is no longer part of the canonical planet card composition.** Planet artwork is now a single raster image that includes both the planet and its surrounding space. See `source/artwork/cards/planet/planets/` for the current artwork assets.
 
+---
 
-\## Purpose
-
-
-
-This directory contains the canonical deep-space background artwork used when composing Mercurio planet cards.
-
-
-
-These backgrounds are reusable visual layers.
-
-
-
-They are intentionally independent of:
-
-
-
-\- planet artwork
-
-\- card frames
-
-\- gameplay information
-
-\- runtime overlays
-
-
-
-The Asset Compiler composites these backgrounds together with other layers to produce production-ready card assets.
-
-
-
-\---
-
-
-
-\## Current Assets
-
-
+## Current Assets
 
 | Asset | Status | Notes |
+|-------|--------|-------|
+| deep-space-v1.png | Archived | No longer used in planet card composition |
 
-|--------|--------|-------|
+---
 
-| deep-space-v1.png | Approved | Primary background for Version 1 |
+## Historical Usage
 
-
-
-\---
-
-
-
-\## Usage
-
-
-
-Backgrounds occupy the lowest visual layer in the composition stack.
-
-
+In the previous design, backgrounds occupied the lowest visual layer in the composition stack:
 
 ```
-
-Space Background
-
+Space Background  (obsolete — now part of planet artwork)
 ↓
-
-Planet Artwork
-
+Planet Artwork    (now includes background)
 ↓
-
 Frame
-
 ↓
-
-Gameplay Icons
-
+Gameplay Elements
 ↓
-
-Text
-
-↓
-
 Runtime Overlays
-
 ```
 
-
-
-Backgrounds should never contain:
-
-
-
-\- planets
-
-\- moons
-
-\- spacecraft
-
-\- UI
-
-\- text
-
-\- borders
-
-\- gameplay information
-
-
-
-\---
-
-
-
-\## Design Goals
-
-
-
-Backgrounds should provide atmosphere without competing with gameplay information.
-
-
-
-The central region of the artwork should remain visually quiet so that planet artwork remains the focal point.
-
-
-
-Visual complexity should be concentrated near the edges.
-
-
-
-\---
-
-
-
-\## Master Assets
-
-
-
-Store master artwork in PNG format.
-
-
-
-The Asset Compiler is responsible for generating optimized WEBP assets.
-
-
-
-\---
-
-
-
-\## Naming Convention
-
-
+The current three-layer composition is:
 
 ```
+Layer 1: Planet Artwork (raster, planet + space in one image)
+Layer 2: Information Panel (SVG template)
+Layer 3: Gameplay Elements (programmatic)
+```
 
+---
+
+## Remaining Uses
+
+The deep-space-v1.png asset may still be used for non-planet card types (events, technologies, contracts) that require a separate space background. Refer to the AI Style Guide (§4) for details.
+
+---
+
+## Naming Convention (Legacy)
+
+```
 deep-space-v1.png
-
 deep-space-v2.png
-
 deep-space-dark-v1.png
-
 deep-space-nebula-v1.png
-
 ```
 
-
-
-\---
-
-
-
-\## Future Variants
-
-
-
-Potential future additions include:
-
-
-
-\- Minimal
-
-\- Dense Nebula
-
-\- Galactic Core
-
-\- Outer Rim
-
-\- Dark Void
-
-
-
-Variants should share the same artistic language.
+Future variants for non-planet card types should follow the same convention.
 

@@ -114,12 +114,11 @@ Planet cards are never manually positioned.
 
 Templates determine:
 
-- resource locations
+- cell layout for resource icons
 - margins
 - artwork bounds
 - clipping masks
-- title position
-- VP position
+- panel position and dimensions
 
 Changing a template should regenerate every card automatically.
 

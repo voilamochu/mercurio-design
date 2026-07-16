@@ -43,8 +43,9 @@ The same gameplay element must always appear in the same location.
 
 Examples:
 
-- VP is always top-right.
-- Planet Type is always top-left.
+- Planet identity is always communicated through artwork.
+- Resource inputs always appear on the left within the information panel.
+- Resource outputs always appear on the right.
 - Inputs always appear on the left side.
 - Outputs always appear on the right side.
 
@@ -69,10 +70,9 @@ Cards are assembled from reusable components.
 Examples:
 
 - Frame
-- Background
-- Artwork
-- Header
-- Icons
+- Planet Artwork (raster, includes space)
+- Information Panel (SVG)
+- Gameplay Elements (programmatic)
 - Status overlays
 - Ownership strip
 
@@ -92,37 +92,33 @@ No manual editing of generated cards is permitted.
 
 # 3. Card Anatomy
 
-Every card is composed from a set of visual regions.
+A production planet card consists of exactly three visual layers.
 
 ```
 +------------------------------------------------+
-
- Header
-
- Planet Type                     VP
-
---------------------------------------------------
-
- Artwork
-
---------------------------------------------------
-
- Gameplay Area
-
- Inputs                Outputs
-
---------------------------------------------------
-
- Footer
-
- Ownership Strip
-
+|                                                  |
+|  Layer 1:  Planet Artwork                        |
+|            (raster, includes surrounding space)  |
+|                                                  |
+|                                                  |
+|                                                  |
+|                                                  |
+|--------------------------------------------------|
+|  Layer 2:  Information Panel (SVG)              |
+|            ┌──────────────┬──────────────────┐  |
+|            │  Input Cell  │  Output Cell      │  |
+|            │  Icons (L3)  │  Icons (L3)       │  |
+|            ├──────────────┼──────────────────┤  |
+|            │  Input Cell  │  Output Cell      │  |
+|            │  Icons (L3)  │  Icons (L3)       │  |
+|            ├──────────────┼──────────────────┤  |
+|            │  Input Cell  │  Output Cell      │  |
+|            │  Icons (L3)  │  Icons (L3)       │  |
+|            └──────────────┴──────────────────┘  |
 +------------------------------------------------+
 ```
 
-Not every card type uses every region.
-
-However, every card should follow this overall structure whenever applicable.
+Not every card type uses every layer. However, planet cards should follow this three-layer structure.
 
 ---
 
@@ -162,14 +158,17 @@ Rules
 
 Purpose
 
-Provides thematic identity.
+Provides thematic identity and communicates planet type.
 
 Rules
 
-- Occupies dedicated artwork region
-- Uses clipping mask
+- Single raster image that includes both the planet and surrounding space
+- No separate space background layer
+- One artwork per planet type (shared across cards of the same type)
 - May be AI-generated
 - Determined by card type
+
+
 
 Artwork should represent categories rather than individual cards wherever possible.
 
@@ -183,12 +182,13 @@ Contains identifying information.
 
 Examples
 
-- Planet Type
 - Technology Type
 - Contract Faction
 - Event Category
 
 Header contents vary by card type.
+
+Planet cards do not use a header. Planet identity is communicated through the artwork layer.
 
 ---
 
@@ -199,6 +199,8 @@ Purpose
 Displays gameplay information.
 
 Only gameplay information belongs here.
+
+On planet cards, the gameplay region is the information panel (Layer 2) populated with programmatic gameplay elements (Layer 3).
 
 Examples
 
@@ -249,22 +251,11 @@ They should never be baked into exported assets.
 
 # 5. Planet Card Specification
 
-Planet cards use the following layout.
+Planet cards use a three-layer composition.
 
-## Header
+## Layer 1 — Planet Artwork
 
-Contains
-
-- Planet Type Icon
-- Victory Points
-
----
-
-## Artwork
-
-Represents the planet type.
-
-Artwork is determined by the planet category rather than the individual card.
+A single raster image that includes both the planet and its surrounding illustrated space. There is no separate space background layer. Artwork is determined by planet type; multiple cards of the same type share the same artwork.
 
 Examples
 
@@ -273,39 +264,64 @@ Examples
 - Forge World
 - Jungle World
 
-Multiple cards may share the same artwork.
+Location: `source/artwork/cards/planet/planets/{type}-v2.png`
+
+---
+
+## Layer 2 — Information Panel
+
+A reusable SVG panel occupying roughly the lower 40–45 % of the card. Provides:
+
+- Panel background
+- Row separators
+- Column separator
+- Rounded lower corners
+- Gameplay surface (cells for resource icons)
+
+Contains NO gameplay data, resource icons, or text.
+
+Location: `templates/cards/planet/resource-panel.svg`
+
+---
+
+## Layer 3 — Gameplay Elements
+
+Rendered programmatically into the cells defined by the information panel. Includes:
+
+- Resource icons — centered within each cell
+- Future overlays (if any)
 
 ---
 
 ## Inputs
 
-Displayed on the left.
+Displayed in the left column of the information panel.
 
 Rules
 
 - Grouped by production level
-- Ordered vertically
-- Fixed slot locations
+- Ordered vertically (Level I → II → III)
+- Fixed cell locations
 - Always use canonical resource icons
 
 ---
 
 ## Outputs
 
-Displayed on the right.
+Displayed in the right column of the information panel.
 
 Rules
 
 - Grouped by production level
-- Ordered vertically
-- Fixed slot locations
+- Ordered vertically (Level I → II → III)
+- Fixed cell locations
 - Always use canonical resource icons
 
 ---
 
 ## Ownership Strip
 
-Displayed along the bottom edge.
+Displayed along the bottom edge of the card, below the information panel.
 
 Colour determined by owning player.
 
@@ -339,15 +355,13 @@ Runtime overlays should be composited by the consuming application.
 
 # 7. Rendering Order
 
-Cards should be composed using the following layer order.
+Planet cards should be composed using the following three-layer order.
 
-1. Background
-2. Frame
-3. Artwork
-4. Header
-5. Gameplay Area
-6. Footer
-7. Runtime Overlays
+1. Planet Artwork — single raster including planet and surrounding space
+2. Information Panel — reusable SVG panel with cell grid
+3. Gameplay Elements — resource icons and future overlays, rendered programmatically
+
+Runtime overlays (ownership bar, status badges, selection glow) are composited on top by the consuming application. They must never be baked into exported assets.
 
 Layers must remain independent.
 
