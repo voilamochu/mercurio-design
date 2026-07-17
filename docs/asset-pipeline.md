@@ -83,7 +83,7 @@
 │                      compiler/export-bga.js                      │
 │                                                                  │
 │  Reads:  generated/cards/card_*.svg + planets.json              │
-│  Copies:  SVGs → exports/bga/img/planets/                       │
+│  Copies:  SVGs → exports/bga/img/                              │
 │  Copies:  planets.json → exports/bga/data/                      │
 │  Generates:  manifest.json (version, resolutions, statistics)   │
 │  Validates:  81 SVGs, artwork embedded, filenames match model   │
@@ -93,7 +93,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                         exports/bga/                              │
 │                                                                  │
-│  img/planets/card_001_1.svg  ...  card_027_3.svg                │
+│  img/card_001_1.svg  ...  card_027_3.svg                       │
 │  data/planets.json                                               │
 │  manifest.json                                                   │
 │                                                                  │
@@ -346,12 +346,27 @@ This philosophy makes the pipeline:
 
 ## 8. Build Commands
 
+The canonical build command runs the full pipeline:
+
+```bash
+npm run build
+```
+
+This executes: `build:model` → `build:cards` → `export:bga`.
+
+After `npm run build` completes successfully:
+
+- A BGA export bundle is generated at `exports/bga/`
+- Runtime assets are written to `exports/bga/img/` — 81 SVGs (`card_001_1.svg` … `card_027_3.svg`)
+- The runtime layout is flat (no `img/planets/` subdirectory)
+- `exports/bga/manifest.json` contains production metadata
+
+Individual pipeline steps (for reference):
+
 ```bash
 npm run build:model    # CSV → generated/models/planets.json
 npm run build:cards    # optimize PNGs + render 81 SVGs
 npm run export:bga     # SVGO → copy → manifest → exports/bga/
-
-npm run build          # all three in sequence
 ```
 
 For development, run `npm run build` after any change to CSV data, artwork, or icons.

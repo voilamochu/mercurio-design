@@ -45,13 +45,27 @@ The pipeline is deterministic. Identical source assets always produce identical 
 
 ## Production Workflow
 
+The canonical build command runs the full pipeline:
+
+```bash
+npm run build
+```
+
+This executes: `build:model` → `build:cards` → `export:bga`.
+
+After `npm run build` completes successfully:
+
+- A BGA export bundle is generated at `exports/bga/`
+- Runtime assets are written to `exports/bga/img/` — 81 SVGs (`card_001_1.svg` … `card_027_3.svg`)
+- The runtime layout is flat (no `img/planets/` subdirectory)
+- `exports/bga/manifest.json` contains production metadata
+
+Individual pipeline steps (for reference):
+
 ```bash
 npm run build:model    # Parse CSV → generated/models/planets.json
 npm run build:cards    # Optimize PNGs + render 81 SVG cards
 npm run export:bga     # SVGO → copy → manifest.json → exports/bga/
-
-# Or all at once:
-npm run build
 ```
 
 ## Production Resolutions
@@ -79,7 +93,7 @@ The `exports/bga/` directory is a self-contained production bundle:
 
 ```
 exports/bga/
-├── img/planets/       – 81 planet card SVGs (card_001_1.svg … card_027_3.svg)
+├── img/               – 81 planet card SVGs (card_001_1.svg … card_027_3.svg)
 ├── data/planets.json  – Canonical card model
 └── manifest.json      – Production metadata (version, resolutions, statistics)
 ```

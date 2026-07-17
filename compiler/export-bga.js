@@ -8,7 +8,7 @@ const PATHS = {
   sourceDir: path.join(ROOT, 'generated', 'cards'),
   modelFile: path.join(ROOT, 'generated', 'models', 'planets.json'),
   exportDir: path.join(ROOT, 'exports', 'bga'),
-  imgDir: path.join(ROOT, 'exports', 'bga', 'img', 'planets'),
+  imgDir: path.join(ROOT, 'exports', 'bga', 'img'),
   dataDir: path.join(ROOT, 'exports', 'bga', 'data'),
   manifestFile: path.join(ROOT, 'exports', 'bga', 'manifest.json'),
   optimizeScript: path.join(ROOT, 'compiler', 'optimize-svg.mjs'),
@@ -100,7 +100,7 @@ function buildManifest(cardFiles, modelData) {
       planetTypeDistribution: typeCounts,
     },
     files: {
-      cards: 'img/planets/',
+      cards: 'img/',
       data: 'data/planets.json',
     },
   };
