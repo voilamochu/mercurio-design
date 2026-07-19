@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744 1039" width="744" height="1039">
+  <metadata>technology:tech_027</metadata>
+  <rect x="24" y="24" width="696" height="991" rx="32" ry="32" fill="#f7f7f5" stroke="#0b1020" stroke-width="6" />
+  <rect x="48" y="48" width="648" height="420" rx="18" ry="18" fill="#c9ccd1" />
+  <text x="372" y="258" font-family="sans-serif" font-size="22" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">artwork: unassigned</text>
+  <rect x="48" y="488" width="648" height="76" rx="12" ry="12" fill="#e8eaf0" />
+  <text x="72" y="526" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1a1a1a" text-anchor="start" dominant-baseline="middle">Academia</text>
+  <rect x="616" y="498" width="56" height="56" rx="10" ry="10" fill="#1f2937" />
+  <text x="644" y="526" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">II</text>
+  <rect x="48" y="580" width="648" height="300" rx="12" ry="12" fill="#eef0f4" />
+  <text x="70" y="610" font-family="sans-serif" font-size="20" fill="#1f2937" text-anchor="start" dominant-baseline="middle">Produce 2 influence.</text>
+  <rect x="48" y="896" width="648" height="48" rx="12" ry="12" fill="#e0e3ea" />
+  <text x="72" y="920" font-family="sans-serif" font-size="20" font-weight="bold" fill="#374151" text-anchor="start" dominant-baseline="middle">Active</text>
+</svg>
