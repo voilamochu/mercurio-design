@@ -24,8 +24,10 @@ async function optimizeArtwork() {
     const outputPath = path.join(outDir, file);
 
     await sharp(inputPath)
-      .resize({ width: ARTWORK_SIZE, kernel: 'lanczos3' })
-      .png({ compressionLevel: 9, palette: false })
+      .resize({ width: ARTWORK_SIZE, kernel: 'lanczos3', withoutEnlargement: true })
+      .flatten()
+      .withMetadata()
+      .png({ compressionLevel: 9, palette: false, effort: 10, adaptiveFiltering: true })
       .toFile(outputPath);
   }
 
@@ -48,8 +50,10 @@ async function optimizeIcons() {
         fit: 'contain',
         background: { r: 0, g: 0, b: 0, alpha: 0 },
         kernel: 'lanczos3',
+        withoutEnlargement: true,
       })
-      .png({ compressionLevel: 9, palette: true })
+      .withMetadata()
+      .png({ compressionLevel: 9, palette: true, effort: 10, adaptiveFiltering: true })
       .toFile(outputPath);
   }
 

@@ -32,7 +32,11 @@ async function createFallbackBuffer(domainId, w, h) {
     <rect width="${w}" height="${h}" fill="#c9ccd1"/>
     <text x="${w / 2}" y="${h / 2}" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">artwork: ${domainId}</text>
   </svg>`;
-  return sharp(Buffer.from(fallbackSvg)).png({ compressionLevel: 9 }).toBuffer();
+  return sharp(Buffer.from(fallbackSvg))
+    .flatten()
+    .withMetadata()
+    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+    .toBuffer();
 }
 
 async function composeArtwork(domainId, overlayId, rect) {
@@ -47,7 +51,8 @@ async function composeArtwork(domainId, overlayId, rect) {
 
   const domainResized = await sharp(domainBuf)
     .resize(w, h, { fit: 'cover', kernel: 'lanczos3' })
-    .png({ compressionLevel: 9 })
+    .withMetadata()
+    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
     .toBuffer();
 
   const overlayBuf = loadOverlay(overlayId);
@@ -57,12 +62,15 @@ async function composeArtwork(domainId, overlayId, rect) {
 
   const overlayResized = await sharp(overlayBuf)
     .resize(w, h, { fit: 'cover', kernel: 'lanczos3' })
-    .png({ compressionLevel: 9 })
+    .withMetadata()
+    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
     .toBuffer();
 
   const result = await sharp(domainResized)
     .composite([{ input: overlayResized, blend: ART_CONFIG.blendMode, opacity: ART_CONFIG.overlayOpacity }])
-    .png({ compressionLevel: 9 })
+    .flatten()
+    .withMetadata()
+    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
     .toBuffer();
 
   return result;

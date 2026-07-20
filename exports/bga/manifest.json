@@ -2,7 +2,7 @@
   "$schema": "v1",
   "project": "mercurio-design",
   "exportType": "bga",
-  "generatedAt": "2026-07-20T04:00:26.304Z",
+  "generatedAt": "2026-07-20T07:26:22.468Z",
   "assetVersion": 1,
   "resolutions": {
     "artwork": 576,
@@ -14,11 +14,11 @@
   },
   "cardCount": 81,
   "size": {
-    "totalBytes": 66682008,
-    "averageBytes": 823235,
-    "medianBytes": 821098,
-    "largestBytes": 892329,
-    "smallestBytes": 746205
+    "totalBytes": 52651842,
+    "averageBytes": 650023,
+    "medianBytes": 644774,
+    "largestBytes": 685596,
+    "smallestBytes": 599240
   },
   "composition": {
     "planetTypes": 9,

@@ -12,23 +12,22 @@ async function loadConfig() {
   return cfg.default;
 }
 
-async function main() {
-  const cardsDir = path.join(ROOT, 'generated', 'cards');
-  if (!fs.existsSync(cardsDir)) {
-    console.error('Cards directory not found');
-    process.exit(1);
+async function optimizeDir(dir, label) {
+  if (!fs.existsSync(dir)) {
+    console.log(`  ${label}: directory not found, skipping`);
+    return;
   }
 
   const config = await loadConfig();
-  const files = fs.readdirSync(cardsDir)
-    .filter(f => f.endsWith('.svg') && f.startsWith('card_'))
+  const files = fs.readdirSync(dir)
+    .filter(f => f.endsWith('.svg'))
     .sort();
 
   let totalSaved = 0;
   let optimized = 0;
 
   for (const file of files) {
-    const filePath = path.join(cardsDir, file);
+    const filePath = path.join(dir, file);
     const beforeSize = fs.statSync(filePath).size;
 
     const svgStr = fs.readFileSync(filePath, 'utf-8');
@@ -41,7 +40,15 @@ async function main() {
     if (saved > 0) optimized++;
   }
 
-  console.log(`SVGO: ${files.length} files, ${optimized} optimized, saved ${totalSaved} bytes (${totalSaved > 1024 ? (totalSaved / 1024).toFixed(1) + 'KB' : totalSaved + 'B'})`);
+  console.log(`  ${label}: ${files.length} files, ${optimized} optimized, saved ${totalSaved} bytes (${totalSaved > 1024 ? (totalSaved / 1024).toFixed(1) + 'KB' : totalSaved + 'B'})`);
+}
+
+async function main() {
+  const cardsDir = path.join(ROOT, 'generated', 'cards');
+  const cardsTechDir = path.join(ROOT, 'generated', 'cards-tech');
+
+  await optimizeDir(cardsDir, 'Planet cards');
+  await optimizeDir(cardsTechDir, 'Tech cards');
 }
 
 main().catch(err => {
