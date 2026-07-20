@@ -44,7 +44,7 @@ function computeFooterY(flavorY) {
   return flavorY + FLAVOR_BOX.height + 14;
 }
 
-function renderTechSvg(tech, mapping) {
+async function renderTechSvg(tech, mapping) {
   const hasProject = isProject(tech);
 
   const rulesY = computeRulesBoxY(hasProject);
@@ -61,7 +61,7 @@ function renderTechSvg(tech, mapping) {
     throw new Error(`No artwork mapping for technology id: ${tech.id}`);
   }
 
-  const art = renderArtwork(tech.assetId, ARTWORK_WINDOW, entry.domain, entry.overlay);
+  const art = await renderArtwork(tech.assetId, ARTWORK_WINDOW, entry.domain, entry.overlay);
 
   const body = [
     renderOuterFrame(tech.frameStyle),
@@ -88,7 +88,7 @@ function isWellFormedSvg(content) {
   return opens === 1 && closes === 1;
 }
 
-function main() {
+async function main() {
   if (!fs.existsSync(MODEL_FILE)) {
     throw new Error(`Renderer model not found: ${MODEL_FILE}. Run npm run build:tech-model first.`);
   }
@@ -119,7 +119,7 @@ function main() {
   const missingAssets = [];
 
   for (const tech of technologies) {
-    const svg = renderTechSvg(tech, mapping);
+    const svg = await renderTechSvg(tech, mapping);
     const filename = `${tech.assetId}.svg`;
 
     if (seenFilenames.has(filename)) {
@@ -157,4 +157,8 @@ function main() {
   }
 }
 
-main();
+main().catch(err => {
+  console.error('tech-cards build failed:');
+  console.error(err.message);
+  process.exit(1);
+});

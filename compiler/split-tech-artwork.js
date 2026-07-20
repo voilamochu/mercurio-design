@@ -7,13 +7,10 @@ const TECH_DIR = path.join(ROOT, 'source', 'artwork', 'technology');
 const DOMAIN_OUT_DIR = path.join(TECH_DIR, 'domains');
 const OVERLAY_OUT_DIR = path.join(TECH_DIR, 'overlays');
 
-// Canonical source collages are read row-major (left-to-right, top-to-bottom).
-// Tile names are declared explicitly so the mapping is deterministic and auditable.
 const JOBS = [
   {
     label: 'domain',
-    // Accept either the current canonical filename or the spec alias.
-    inputCandidates: ['tech_domain.png', 'domain-collage.png'],
+    inputCandidates: ['domain-collage.png', 'tech_domain.png'],
     outputDir: DOMAIN_OUT_DIR,
     columns: 4,
     rows: 2,
@@ -30,7 +27,7 @@ const JOBS = [
   },
   {
     label: 'overlay',
-    inputCandidates: ['tech_overlay.png', 'overlay-collage.png'],
+    inputCandidates: ['overlay-collage.png', 'tech_overlay.png'],
     outputDir: OVERLAY_OUT_DIR,
     columns: 5,
     rows: 1,
@@ -43,6 +40,8 @@ const JOBS = [
     ],
   },
 ];
+
+const force = process.argv.includes('--force');
 
 function resolveInput(job) {
   for (const candidate of job.inputCandidates) {
@@ -64,6 +63,29 @@ function ensureWritableDir(dir) {
   } catch (err) {
     throw new Error(`Output directory not writable: ${dir} (${err.message})`);
   }
+}
+
+function allOutputPaths() {
+  const paths = [];
+  for (const job of JOBS) {
+    for (const name of job.tiles) {
+      paths.push(path.join(job.outputDir, `${name}.png`));
+    }
+  }
+  return paths;
+}
+
+function checkOverwrite() {
+  const existing = allOutputPaths().filter(p => fs.existsSync(p));
+  if (existing.length === 0) return;
+  if (force) {
+    console.log(`Force mode: overwriting ${existing.length} existing tile(s).`);
+    return;
+  }
+  console.log('Artwork already exists. Refusing to overwrite canonical source artwork.');
+  console.log('Use: npm run bootstrap:tech-artwork -- --force');
+  console.log('if you intentionally want to regenerate everything.');
+  process.exit(0);
 }
 
 async function splitJob(job) {
@@ -110,8 +132,6 @@ async function splitJob(job) {
       const top = row * tileHeight;
       const outPath = path.join(job.outputDir, `${name}.png`);
 
-      // Fresh sharp instance per tile: extract does not mutate the source pixels,
-      // so colours and transparency are preserved exactly.
       await sharp(inputPath)
         .extract({ left, top, width: tileWidth, height: tileHeight })
         .png()
@@ -171,6 +191,8 @@ function validate(result) {
 }
 
 async function main() {
+  checkOverwrite();
+
   const results = [];
   for (const job of JOBS) {
     results.push(await splitJob(job));
@@ -181,7 +203,7 @@ async function main() {
     throw new Error('Validation failed:\n' + allErrors.map(e => '  ' + e).join('\n'));
   }
 
-  console.log('Technology artwork split complete.\n');
+  console.log('Technology artwork bootstrap complete.\n');
   for (const r of results) {
     console.log(
       `[${r.label}] ${path.relative(ROOT, r.inputPath)} ` +
@@ -209,7 +231,7 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error('split-tech-artwork failed:');
+  console.error('bootstrap:tech-artwork failed:');
   console.error(err.message);
   process.exit(1);
 });

@@ -375,40 +375,69 @@ For development, run `npm run build` after any change to CSV data, artwork, or i
 
 ## 9. Technology Artwork
 
-Technology cards use collage source art rather than one PNG per card. Two canonical
-collages are the immutable source; the individual tile PNGs are disposable generated
-assets, mirroring the same source/generated philosophy used throughout the pipeline.
+Technology cards use collage source art that is split into individual tile PNGs.
+The tile PNGs are now the **canonical source artwork** and are hand-editable.
+They are never overwritten by any normal build.
+
+### Ownership model
+
+| Path | Role | Modified by |
+|---|---|---|
+| `source/artwork/technology/domain-collage.png` | Reference import asset | Artist only |
+| `source/artwork/technology/overlay-collage.png` | Reference import asset | Artist only |
+| `source/artwork/technology/domains/*.png` | **Canonical source artwork** | Artist or `bootstrap:tech-artwork --force` |
+| `source/artwork/technology/overlays/*.png` | **Canonical source artwork** | Artist or `bootstrap:tech-artwork --force` |
+
+### Lifecycle
 
 ```
-Technology collages
-        ↓
-split-tech-artwork
-        ↓
-individual PNG assets
-        ↓
-technology renderer
+Artist
+    ↓
+domain-collage.png
+overlay-collage.png
+
+    │  npm run bootstrap:tech-artwork   (one-time import)
+    ▼
+
+domains/*.png              ← CANONICAL SOURCE — hand-editable
+overlays/*.png               Never overwritten during normal builds.
+
+    │  npm run build:tech-cards   (read-only consumer)
+    ▼
+
+generated/cards-tech/*.svg
 ```
 
-### Canonical source collages — `source/artwork/technology/`
+### Reference collages — `source/artwork/technology/`
 
-- `tech_domain.png` — 4 columns × 2 rows (8 domain tiles)
-- `tech_overlay.png` — 5 columns × 1 row (5 overlay tiles)
+- `domain-collage.png` (also accepted: `tech_domain.png`) — 4 columns × 2 rows (8 domain tiles)
+- `overlay-collage.png` (also accepted: `tech_overlay.png`) — 5 columns × 1 row (5 overlay tiles)
 
-The collages are hand-authored and version-controlled. They are never overwritten by
-the pipeline.
+The collages are hand-authored and version-controlled. They serve as the reference
+source for the one-time bootstrap. They are never modified by the pipeline.
 
-### Splitter — `compiler/split-tech-artwork.js`
+### Bootstrap — `compiler/split-tech-artwork.js`
 
-`npm run split:tech-artwork` reads each collage, computes tile size from the image
+`npm run bootstrap:tech-artwork` reads each collage, computes tile size from the image
 dimensions (`tileWidth = width / columns`, `tileHeight = height / rows` — no hardcoded
 coordinates), crops every tile row-major (left-to-right, top-to-bottom), and writes
 named PNGs. Colours and transparency are preserved; tiles are cropped, never resized.
 
-The script fails with a clear error if a collage is missing, if the dimensions are not
-divisible by the grid, or if an output directory cannot be written. It overwrites any
-existing generated tiles and prints a validation summary.
+**Safe by default:** if any destination tile already exists, the bootstrap refuses to
+overwrite it and prints:
 
-### Generated tiles
+```
+Artwork already exists. Refusing to overwrite canonical source artwork.
+Use: npm run bootstrap:tech-artwork -- --force
+if you intentionally want to regenerate everything.
+```
+
+Pass `--force` to overwrite all tiles.
+
+The script fails with a clear error if a collage is missing, if the dimensions are not
+divisible by the grid, or if an output directory cannot be written.
+
+### Canonical tile PNGs
 
 `source/artwork/technology/domains/` (8 PNGs):
 
@@ -423,9 +452,11 @@ biosphere.png    civilization.png commerce.png        transcendence.png
 construction.png  optimization.png  conversion.png  expansion.png  mastery.png
 ```
 
-These tiles are consumed downstream by the technology renderer. Like everything in
-`generated/`, they can be deleted and rebuilt from the collages with zero information
-loss by re-running `npm run split:tech-artwork`.
+These tiles are the **canonical source artwork**. They can be hand-edited in place.
+Re-running `npm run bootstrap:tech-artwork -- --force` regenerates them from the collages.
+
+The technology renderer (`build-tech-cards`) is a **read-only consumer**. It never
+writes to these directories.
 
 ---
 

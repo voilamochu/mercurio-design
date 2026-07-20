@@ -1,5 +1,46 @@
 # Technology Card Renderer
 
+## Artwork lifecycle
+
+```
+Artist
+    ↓
+domain-collage.png         ← reference/import asset (source/artwork/technology/)
+overlay-collage.png
+    │
+    ▼
+npm run bootstrap:tech-artwork   ← one-time import (safe — refuses to overwrite)
+    │
+    ▼
+domains/*.png              ← CANONICAL SOURCE ARTWORK (hand-editable)
+overlays/*.png               Never overwritten by any normal build.
+    │
+    ├── npm run build:tech-cards
+    │       ▼
+    │   generated/cards-tech/tech_*.svg
+    │
+    └── npm run generate:tech-preview
+            ▼
+        generated/cards-tech/preview/artwork/tech_*.png
+```
+
+## Ownership rules
+
+| Path | Role | Modified by |
+|---|---|---|
+| `source/artwork/technology/domain-collage.png` | Reference import asset | Artist only |
+| `source/artwork/technology/overlay-collage.png` | Reference import asset | Artist only |
+| `source/artwork/technology/domains/*.png` | **Canonical source artwork** | Artist or `bootstrap:tech-artwork --force` |
+| `source/artwork/technology/overlays/*.png` | **Canonical source artwork** | Artist or `bootstrap:tech-artwork --force` |
+| `generated/cards-tech/*.svg` | Build output | `build:tech-cards` |
+| `generated/cards-tech/preview/` | Build output | `generate:tech-preview` |
+
+`build:tech-cards` and `generate:tech-preview` are **read-only** consumers.
+They never write to `source/artwork/technology/`.
+
+`bootstrap:tech-artwork` is a **one-time import tool**. It refuses to overwrite
+existing domain/overlay PNGs unless `--force` is passed.
+
 ## Renderer pipeline
 
 ```
@@ -9,9 +50,14 @@ source/data/technologies.json          (canonical — Step 1, hand-authored)
 generated/models/technologies.json     (renderer model — Step 2)
         │
 source/data/technology-artwork-map.json  (domain + overlay per technology id)
-        │  npm run build:tech-cards
-        ▼
-generated/cards-tech/tech_000.svg ... tech_039.svg   (Step 4 — artwork composition)
+        │
+        ├── npm run build:tech-cards
+        │       ▼
+        │   generated/cards-tech/tech_*.svg   (40 SVGs — Sharp-composed artwork embedded)
+        │
+        └── npm run generate:tech-preview
+                ▼
+            generated/cards-tech/preview/artwork/tech_*.png   (40 artwork previews)
 ```
 
 The renderer reads **only** `generated/models/technologies.json` and the artwork map
@@ -60,15 +106,20 @@ Copies and runtime information are intentionally excluded.
 
 ## Module responsibilities
 
+`compiler/split-tech-artwork.js` — one-time bootstrap. Splits the reference collages
+into individual tile PNGs. Safe by default (refuses to overwrite existing tiles).
+Run via `npm run bootstrap:tech-artwork`. Only executed when explicitly requested;
+never part of any normal build pipeline.
+
 `compiler/build-tech-cards.js` — orchestrator. Loads the model, iterates technologies,
-computes dynamic rule/footer Y positions, writes one SVG per technology, and validates
-exactly 40 well-formed, uniquely-named SVGs.
+computes dynamic rule/footer Y positions, calls `renderArtwork` (async), writes one SVG
+per technology, and validates exactly 40 well-formed, uniquely-named SVGs.
 
 `compiler/lib/technology/`
 - `layout.js` — all reusable layout constants (card size, margins, region rects, fonts, frame colors).
 - `frame.js` — renders the outer frame rectangle.
-- `artwork.js` — legacy placeholder artwork renderer (superseded by the compositor; retained for reference).
-- `artwork-compositor.js` — loads domain + overlay PNGs as base64, builds clip/gradient/vignette defs, and composes the artwork layers. No layout logic.
+- `sharp-artwork-compositor.js` — Sharp-based artwork renderer. Loads domain + overlay PNGs, composites them with colour grading, lighting, overlay blend modes, and vignette. Returns a composed PNG buffer. Single source of truth for all artwork generation.
+- `artwork-compositor.js` — thin SVG wrapper around `sharp-artwork-compositor.js`. Calls the Sharp compositor, receives the composed PNG, embeds it as a base64 `<image>` inside the artwork-window `<clipPath>`. No SVG-level compositing logic.
 - `title.js` — renders the title bar + roman level (integrated, right-aligned); also exports `escapeXml` and `fontAttr`.
 - `project.js` — renders the conditional project box.
 - `rules.js` — renders the rules text box (word-wrapped).
@@ -81,8 +132,9 @@ minimal changes.
 
 ## Artwork pipeline
 
-Artwork is composed, not merely embedded. `compiler/lib/technology/artwork-compositor.js`
-does the composition; the renderer (`build-tech-cards.js`) supplies the artwork-window
+Artwork is composed via Sharp and embedded as a single base64 PNG.
+`compiler/lib/technology/sharp-artwork-compositor.js` is the single source of truth
+for all artwork generation. The renderer (`build-tech-cards.js`) supplies the artwork-window
 rectangle and the per-technology `domain` / `overlay` from the mapping file.
 
 ### Artwork mapping
@@ -102,71 +154,50 @@ A missing asset file is not fatal: the compositor falls back to a grey placehold
 with the missing domain id, and the renderer prints a warning. This keeps all 40 cards
 renderable while art is still being produced.
 
-### Layer order
+### Compositor pipeline
 
-Inside a rounded-rect `<clipPath>` matching the artwork window:
-
-```
-Layer 1  Domain artwork          (full-bleed, xMidYMid slice)
-Layer 2  Soft dark gradient       (linear, ~28% opacity, bottom-weighted)
-Layer 3  Overlay artwork          (scaled / rotated / anchored, ~15–25% opacity)
-Layer 4  Subtle vignette          (radial gradient, ~16% opacity, reduced strength)
-```
-
-SVG blend modes (`mix-blend-mode`) are used for the overlay and glow, not normal alpha.
-
-### Renderer v2 — multi-pass artwork compositor
-
-`artwork-compositor.js` (Renderer v2) replaces the flat paste with a 7-pass pipeline, all
-inside the artwork-window clip:
+All composition happens in `sharp-artwork-compositor.js` using Sharp's image processing
+pipeline. The composition is minimal — no colour grading, lighting, glow, or masking:
 
 ```
-Pass 1  Domain artwork          (full-bleed, xMidYMid slice)
-Pass 2  Colour grading          (subtle saturate-down + warm shadows / cool highlights)
-Pass 3  Lighting pass           (soft radial light behind overlay, gaussian-blurred, screen)
-Pass 4  Overlay mask            (SVG mask; radial white→transparent, ~75% visible, no hard edges)
-Pass 5  Overlay render          (masked, opacity ~18–28%, blend mode, rotation + anchor kept)
-Pass 6  Overlay glow            (blurred overlay duplicate, screen blend, low opacity)
-Pass 7  Global vignette         (reduced strength)
+Step 1  Domain artwork    resized to artwork window (fit: cover, lanczos3)
+Step 2  Overlay artwork   resized to same dimensions (fit: cover, lanczos3)
+Step 3  Composite         overlay blended over domain (overlay mode, ~12% opacity)
 ```
-
-All tuning lives in a single `ART_CONFIG` object at the top of the compositor — adjust only
-those constants to retune the renderer. `OVERLAY_PRESETS` keeps per-overlay `scale` /
-`rotation` / `anchor`; `overlayOpacity` comes from `ART_CONFIG` unless a preset overrides it.
 
 #### ART_CONFIG fields
 
-- `blendMode` — overlay blend (`soft-light`, `screen`, `lighten`, …)
-- `overlayOpacity` — overlay opacity (0.18–0.28)
-- `overlayGlowOpacity` — glow opacity
-- `overlayGlowBlur` — glow gaussian blur radius
-- `lightingOpacity` — radial light opacity
-- `lightingRadius` — light radius (fraction of window)
-- `lightingBlur` — light gaussian blur radius
-- `overlayMaskRadius` — visible fraction of overlay (~0.75)
-- `overlayMaskFeather` — edge feather fraction
-- `vignetteOpacity` — global vignette (reduced vs v1)
-- `colourGradeStrength` — colour-grade intensity
-- `gradientOpacity` — bottom-weighted dark gradient
+- `blendMode` — overlay blend mode (`overlay`)
+- `overlayOpacity` — overlay opacity (0.12)
 
 ### Overlay placement
 
-Overlays never stretch across the full window. Each overlay is transformed by configurable
-constants in the compositor:
+The overlay covers the full artwork window at the same position and size as the
+domain. No scaling, rotation, anchor, or position offsets are applied. The overlay
+extends edge-to-edge and is cropped by the artwork clipping rectangle.
 
-- `scale` — size relative to the window (e.g. 0.45–0.8)
-- `rotation` — degrees
-- `anchor` — point within the window (`center`, `top-left`, `top-right`, `bottom-left`, `bottom-right`, `top`, `bottom`)
-- `opacity` — 0.15–0.25
-- `crop` — reserved hook (currently `null`)
+### SVG embedding
 
-Per-overlay presets live in `OVERLAY_PRESETS`; `OVERLAY_DEFAULTS` provides the base. Future
-cards may override individual overlays by extending the preset table — no renderer change
-required.
+`artwork-compositor.js` is a thin wrapper that calls the Sharp compositor, receives the
+composed PNG, and embeds it into SVG:
+
+```xml
+<g clip-path="url(#artclip-xxx)">
+  <image href="data:image/png;base64,..." width="696" height="420" preserveAspectRatio="xMidYMid slice" />
+</g>
+```
+
+The SVG renderer no longer performs any pixel-level compositing. All blend modes, masks,
+gradients, lighting, and vignette effects are handled by Sharp at the raster level.
+
+### Preview generation
+
+`compiler/generate-tech-preview.js` calls `composeArtwork()` directly and writes the
+resulting PNG to `generated/cards-tech/preview/artwork/`. The preview artwork is the
+exact same buffer embedded in the SVG card — guaranteed pixel-identical.
 
 ### Future extension points
 
-- **Blend modes** — swap normal alpha for `mix-blend-mode` on the overlay/domain layers.
 - **Per-card overrides** — add per-technology transform overrides in the mapping file and
   have the compositor read them.
 - **Real assets** — drop the domain/overlay PNGs into the paths above; no code change needed.
@@ -174,7 +205,7 @@ required.
 
 ## SVG requirements
 
-Pure SVG. Artwork is embedded as base64 PNG `<image>` elements inside a clipping group; all
+Pure SVG. Artwork is embedded as a single base64 PNG `<image>` inside a clipping group; all
 other regions use rounded rectangles and text. No external runtime assets, no gradients on
 the card frame, no flavor generation.
 
@@ -191,3 +222,21 @@ The renderer aborts on failure if:
 
 Missing domain/overlay **asset files** do not abort — they fall back to the grey
 placeholder and are reported as warnings, so the full set of 40 cards always renders.
+
+### Determinism
+
+Running `npm run build:tech-cards` twice produces identical SVG output. The Sharp
+compositor uses deterministic settings (lanczos3 kernel, PNG compression level 9,
+no random seeds).
+
+### Preview verification
+
+Preview artwork is generated by calling the same `composeArtwork()` function that
+produces the embedded SVG artwork. The preview PNGs in
+`generated/cards-tech/preview/artwork/` are byte-identical to the artwork embedded
+in the SVGs.
+
+### Single compositor
+
+`sharp-artwork-compositor.js` is the only module that performs pixel-level artwork
+composition. `artwork-compositor.js` is a thin SVG wrapper with no compositing logic.
