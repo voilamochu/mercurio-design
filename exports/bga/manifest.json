@@ -2,7 +2,7 @@
   "$schema": "v1",
   "project": "mercurio-design",
   "exportType": "bga",
-  "generatedAt": "2026-07-20T08:30:26.421Z",
+  "generatedAt": "2026-07-20T08:42:20.197Z",
   "assetVersion": 1,
   "resolutions": {
     "artwork": 576,
@@ -38,6 +38,8 @@
   },
   "files": {
     "cards": "img/",
-    "data": "data/planets.json"
-  }
+    "data": "data/planets.json",
+    "technologies": "data/technologies.json"
+  },
+  "technologyCount": 40
 }
