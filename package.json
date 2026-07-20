@@ -4,21 +4,28 @@
   "type": "commonjs",
   "scripts": {
     "bootstrap:tech-artwork": "node compiler/split-tech-artwork.js",
+    "bootstrap:contract-artwork": "node compiler/bootstrap-contract-artwork.js",
 
     "build:model": "node compiler/build-card-model.js",
     "build:cards": "node compiler/build-cards.js",
     "build:tech-model": "node compiler/build-tech-model.js",
     "build:tech-cards": "node compiler/build-tech-cards.js",
+    "build:contract-model": "node compiler/build-contract-model.js",
+    "build:contract-cards": "node compiler/build-contract-cards.js",
+    "build:resource-icons": "node compiler/export-resource-icons.js",
 
     "optimize:planet": "node compiler/optimize-planet.js",
     "optimize:tech": "node compiler/optimize-tech.js",
 
     "export:planet-bga": "node compiler/export-bga.js",
     "export:tech-bga": "node compiler/export-tech-bga.js",
+    "export:contract-bga": "node compiler/export-contract-bga.js",
+    "export:resource-icons-bga": "node compiler/export-resource-icons-bga.js",
 
-    "build": "npm run build:model && npm run build:cards && npm run build:tech-model && npm run build:tech-cards",
-    "deploy": "npm run export:planet-bga && npm run export:tech-bga",
-    "release": "npm run build && npm run optimize:planet && npm run optimize:tech && npm run deploy",
+    "build": "npm run build:model && npm run build:cards && npm run build:tech-model && npm run build:tech-cards && npm run build:contract-model && npm run build:contract-cards",
+    "build:assets": "npm run build:cards && npm run build:tech-cards && npm run build:contract-cards && npm run build:resource-icons",
+    "deploy": "npm run export:planet-bga && npm run export:tech-bga && npm run export:contract-bga && npm run export:resource-icons-bga",
+    "release": "npm run build && npm run build:resource-icons && npm run optimize:planet && npm run optimize:tech && npm run deploy",
 
     "generate:tech-preview": "node compiler/experiments/generate-tech-preview.js"
   },

@@ -1,0 +1,32 @@
+{
+  "schema": "v1",
+  "description": "Maps every contract id to its artwork filename.",
+  "contractCount": 25,
+  "mapping": {
+    "aelyr-1": "liaison-office.png",
+    "aelyr-2": "crate-science-power.png",
+    "aelyr-3": "cultural-spires.png",
+    "aelyr-4": "population-output-planets.png",
+    "aelyr-5": "lost-fleet-electronics.png",
+    "varuuk-1": "ore-power.png",
+    "varuuk-2": "mass-reactor.png",
+    "varuuk-3": "planets-ore-outputs.png",
+    "varuuk-4": "projects.png",
+    "varuuk-5": "robot.png",
+    "ephydri-1": "types-planets-resources.png",
+    "ephydri-2": "water-algae.png",
+    "ephydri-3": "planets-algae-water.png",
+    "ephydri-4": "beam-tap-goods-turn.png",
+    "ephydri-5": "agri-dome.png",
+    "thyrnekin-1": "science-electronics-power.png",
+    "thyrnekin-2": "research-arrays.png",
+    "thyrnekin-3": "explore-lost-fleets.png",
+    "thyrnekin-4": "power.png",
+    "thyrnekin-5": "cards-hand.png",
+    "korrn-1": "trade-ports.png",
+    "korrn-2": "buy-sell-good-turn.png",
+    "korrn-3": "tap-counter.png",
+    "korrn-4": "basic-goods.png",
+    "korrn-5": "value-trade.png"
+  }
+}

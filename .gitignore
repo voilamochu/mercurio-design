@@ -41,6 +41,9 @@ generated/experiments/
 # Archive of old generated binary assets (regenerable from source)
 source/archive/
 
+# Generated BGA resource icons
+generated/bga/
+
 # Generated preview montage
 montage.png
 

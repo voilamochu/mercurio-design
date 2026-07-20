@@ -1,0 +1,269 @@
+{
+  "schema": "v1",
+  "generatedAt": "2026-07-20T10:03:06.815Z",
+  "description": "Canonical, engine-independent contract card data for Mercurio. Single source of truth for renderers.",
+  "contractCount": 25,
+  "contracts": [
+    {
+      "id": "liaison-office",
+      "originalId": "aelyr_1",
+      "faction": "Aelyr",
+      "contract": "Have 1 liaison office",
+      "benefit": "Gain 2vp",
+      "type": 1,
+      "requiredTech": null,
+      "row": 0
+    },
+    {
+      "id": "crate-science-power",
+      "originalId": "aelyr_2",
+      "faction": "Aelyr",
+      "contract": "Deliver 1 Crate + 1 Science + 1 Power",
+      "benefit": "Gain a slot. Gain a L1 tech (free).",
+      "type": 2,
+      "requiredTech": null,
+      "row": 0
+    },
+    {
+      "id": "cultural-spires",
+      "originalId": "aelyr_3",
+      "faction": "Aelyr",
+      "contract": "Build a Cultural Spires",
+      "benefit": "Gain 1 vp",
+      "type": 1,
+      "requiredTech": [
+        "collectives"
+      ],
+      "row": 0
+    },
+    {
+      "id": "population-output-planets",
+      "originalId": "aelyr_4",
+      "faction": "Aelyr",
+      "contract": "Settle 3 Population Output Planets",
+      "benefit": "Gain 1 population",
+      "type": 1,
+      "requiredTech": null,
+      "row": 0
+    },
+    {
+      "id": "lost-fleet-electronics",
+      "originalId": "aelyr_5",
+      "faction": "Aelyr",
+      "contract": "Spend an extra electronics when exploring a Lost Fleet",
+      "benefit": "Gain 2 credits and 1 reputation.",
+      "type": 1,
+      "requiredTech": null,
+      "row": 0
+    },
+    {
+      "id": "ore-power",
+      "originalId": "varuuk_1",
+      "faction": "Varuuk",
+      "contract": "Deliver 2 Ore + 1 Power",
+      "benefit": "Gain 2 vp and 2 credits",
+      "type": 1,
+      "requiredTech": null,
+      "row": 1
+    },
+    {
+      "id": "mass-reactor",
+      "originalId": "varuuk_2",
+      "faction": "Varuuk",
+      "contract": "Build 1 reactor core or mass reactor",
+      "benefit": "Gain 1 science",
+      "type": 1,
+      "requiredTech": [
+        "fusion",
+        "overdrive"
+      ],
+      "row": 1
+    },
+    {
+      "id": "planets-ore-outputs",
+      "originalId": "varuuk_3",
+      "faction": "Varuuk",
+      "contract": "Have 2 planets with ore outputs",
+      "benefit": "Gain 3 credits",
+      "type": 1,
+      "requiredTech": null,
+      "row": 1
+    },
+    {
+      "id": "projects",
+      "originalId": "varuuk_4",
+      "faction": "Varuuk",
+      "contract": "Have 3 projects",
+      "benefit": "Get a free sell action immediately",
+      "type": 2,
+      "requiredTech": null,
+      "row": 1
+    },
+    {
+      "id": "robot",
+      "originalId": "varuuk_5",
+      "faction": "Varuuk",
+      "contract": "Deliver 1 Robot",
+      "benefit": "Gain 1 influence",
+      "type": 1,
+      "requiredTech": null,
+      "row": 1
+    },
+    {
+      "id": "types-planets-resources",
+      "originalId": "ephydri_1",
+      "faction": "Ephydri",
+      "contract": "Settle 3 different types of planets producing 3 different resources",
+      "benefit": "Draw 2 cards and keep 1.",
+      "type": 2,
+      "requiredTech": null,
+      "row": 2
+    },
+    {
+      "id": "water-algae",
+      "originalId": "ephydri_2",
+      "faction": "Ephydri",
+      "contract": "Deliver Water +  Algae",
+      "benefit": "Gain 2 credits",
+      "type": 1,
+      "requiredTech": null,
+      "row": 2
+    },
+    {
+      "id": "planets-algae-water",
+      "originalId": "ephydri_3",
+      "faction": "Ephydri",
+      "contract": "Settle 3 planets that produce Algae or Water",
+      "benefit": "Gain 2 population",
+      "type": 1,
+      "requiredTech": null,
+      "row": 2
+    },
+    {
+      "id": "beam-tap-goods-turn",
+      "originalId": "ephydri_4",
+      "faction": "Ephydri",
+      "contract": "Beam/Tap 3 goods in a single turn",
+      "benefit": "Gain 3 science or 1 influence",
+      "type": 1,
+      "requiredTech": null,
+      "row": 2
+    },
+    {
+      "id": "agri-dome",
+      "originalId": "ephydri_5",
+      "faction": "Ephydri",
+      "contract": "Build 1 agri dome",
+      "benefit": "Gain 2vp",
+      "type": 1,
+      "requiredTech": [
+        "hydroponics"
+      ],
+      "row": 2
+    },
+    {
+      "id": "science-electronics-power",
+      "originalId": "thyrnekin_1",
+      "faction": "Thyrnekin",
+      "contract": "Deliver Science + Electronics + Power",
+      "benefit": "Claim a card for free",
+      "type": 2,
+      "requiredTech": null,
+      "row": 3
+    },
+    {
+      "id": "research-arrays",
+      "originalId": "thyrnekin_2",
+      "faction": "Thyrnekin",
+      "contract": "Build 1 Research Arrays",
+      "benefit": "Hand Limit +1",
+      "type": 4,
+      "requiredTech": [
+        "discovery"
+      ],
+      "row": 3
+    },
+    {
+      "id": "explore-lost-fleets",
+      "originalId": "thyrnekin_3",
+      "faction": "Thyrnekin",
+      "contract": "Explore 2 Lost Fleets",
+      "benefit": "Gain 2 science",
+      "type": 1,
+      "requiredTech": null,
+      "row": 3
+    },
+    {
+      "id": "power",
+      "originalId": "thyrnekin_4",
+      "faction": "Thyrnekin",
+      "contract": "Deliver Power",
+      "benefit": "Gain 1 tech slot",
+      "type": 4,
+      "requiredTech": null,
+      "row": 3
+    },
+    {
+      "id": "cards-hand",
+      "originalId": "thyrnekin_5",
+      "faction": "Thyrnekin",
+      "contract": "Have 3 cards in hand",
+      "benefit": "Gain 2vp or 3 credits",
+      "type": 1,
+      "requiredTech": null,
+      "row": 3
+    },
+    {
+      "id": "trade-ports",
+      "originalId": "korrn_1",
+      "faction": "Korrn",
+      "contract": "Build 1 Trade Ports",
+      "benefit": "Gain 1 credit",
+      "type": 1,
+      "requiredTech": [
+        "nexus"
+      ],
+      "row": 4
+    },
+    {
+      "id": "buy-sell-good-turn",
+      "originalId": "korrn_2",
+      "faction": "Korrn",
+      "contract": "Buy and Sell the same good in a turn",
+      "benefit": "Gain 2vp",
+      "type": 1,
+      "requiredTech": null,
+      "row": 4
+    },
+    {
+      "id": "tap-counter",
+      "originalId": "korrn_3",
+      "faction": "Korrn",
+      "contract": "Tap counter at 2",
+      "benefit": "Gain 1 credit",
+      "type": 2,
+      "requiredTech": null,
+      "row": 4
+    },
+    {
+      "id": "basic-goods",
+      "originalId": "korrn_4",
+      "faction": "Korrn",
+      "contract": "Deliver 3 different basic goods",
+      "benefit": "Gain 1 free L1 tech and 1 credit",
+      "type": "hybrid",
+      "requiredTech": null,
+      "row": 4
+    },
+    {
+      "id": "value-trade",
+      "originalId": "korrn_5",
+      "faction": "Korrn",
+      "contract": "Sell a good when value is 1 or Buy a good when value is 6",
+      "benefit": "Gain 2vp",
+      "type": 1,
+      "requiredTech": null,
+      "row": 4
+    }
+  ]
+}

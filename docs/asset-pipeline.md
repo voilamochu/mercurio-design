@@ -23,6 +23,7 @@
 │  build:cards            Optimize PNGs → render 81 planet card SVGs  │
 │  build:tech-model       technologies.json → generated/models/       │
 │  build:tech-cards       Render 40 technology card SVGs              │
+│  build:resource-icons   Optimize + export 11 resource icon PNGs     │
 │                                                                     │
 │  These commands NEVER:                                              │
 │  • Copy files into another repository                               │
@@ -43,8 +44,9 @@
 ┌─────────────────────────────────────────────────────────────────────┐
 │  4. DEPLOYMENT                                                      │
 │  ──────────────                                                     │
-│  export:planet-bga      Copy + manifest → exports/bga/              │
-│  export:tech-bga        (placeholder — copies tech assets)          │
+│  export:planet-bga        Copy + manifest → exports/bga/            │
+│  export:tech-bga          Copy tech SVGs + data → exports/bga/      │
+│  export:resource-icons-bga  Copy resource icon PNGs → exports/bga/  │
 │                                                                     │
 │  These commands NEVER:                                              │
 │  • Rebuild assets                                                   │
@@ -186,11 +188,33 @@ One V2 PNG per planet type (9 files: `cold-v2.png`, `earth-v2.png`, ..., `swamp-
 
 The space background — `source/artwork/cards/planet/backgrounds/deep-space-v1.png` — is a compositional fallback and may be reused by future card types.
 
-### Resource Icons — `source/icons/resources/`
+### Card Resource Icons — `source/icons/resources/`
 
 Eight PNG icons (Algae, Crate, Electronics, Grain, Human, Ore, Robot, Water) at 352×384 px. These are resized to 96×96 px during the asset optimization stage and embedded as base64 data URIs into card SVGs at build time. Icons are the only gameplay-communicating visual element on a card; artwork communicates theme only.
 
 *Original full-resolution masters are archived at `source/archive/icons/`.*
+
+### Standalone Resource Icons — `source/artwork/resources/`
+
+Eleven PNG icons (`grain.png`, `water.png`, `algae.png`, `ore.png`, `robot.png`, `electronics.png`, `crate.png`, `power.png`, `science.png`, `population.png`, `influence.png`) — the complete resource icon set as standalone export assets.
+
+These are the **canonical source assets** for the resource icon pipeline. They are never modified by any build. The manifest at `source/data/resource-icons.json` is the single source of truth — the exporter consumes only this manifest and never scans directories.
+
+Unlike the card resource icons (which are optimized and embedded into card SVGs), these icons are exported as standalone PNGs for direct use by the BGA client. They undergo metadata stripping and deterministic compression but are never resized or recolored.
+
+| Resource | File | Role |
+|---|---|---|
+| Grain | `grain.png` | Basic food resource |
+| Water | `water.png` | Basic liquid resource |
+| Algae | `algae.png` | Organic resource |
+| Ore | `ore.png` | Mineral resource |
+| Robot | `robot.png` | Automated labor |
+| Electronics | `electronics.png` | Advanced component |
+| Crate | `crate.png` | Manufactured goods |
+| Power | `power.png` | Energy resource |
+| Science | `science.png` | Research output |
+| Population | `population.png` | Workforce |
+| Influence | `influence.png` | Political capital |
 
 ### Planet Type Icons — `source/icons/planet-types/`
 
@@ -404,50 +428,63 @@ This philosophy makes the pipeline:
 | Command | Purpose |
 |---|---|
 | `bootstrap:tech-artwork` | One-time split of technology collages into domain/overlay tiles |
-| `build` | Generate all artwork assets (model + cards for both planets and technology) |
+| `build` | Generate all artwork assets (model + cards for planets, technology, and contracts) |
+| `build:assets` | Generate all visual assets (planet cards + tech cards + resource icons) |
 | `build:model` | CSV → `generated/models/planets.json` |
 | `build:cards` | Optimize PNGs → render 81 planet card SVGs |
 | `build:tech-model` | `technologies.json` → `generated/models/technologies.json` |
 | `build:tech-cards` | Render 40 technology card SVGs |
+| `build:resource-icons` | Optimize + export 11 resource icon PNGs |
 | `optimize:planet` | (Placeholder) Optimize planet card SVGs |
 | `optimize:tech` | (Placeholder) Optimize technology card SVGs |
 | `deploy` | Run all export commands |
 | `export:planet-bga` | SVGO → copy → manifest → `exports/bga/` |
-| `export:tech-bga` | (Placeholder) Copy technology assets to BGA repository |
+| `export:tech-bga` | Copy technology SVGs + data to BGA export |
+| `export:resource-icons-bga` | Copy resource icon PNGs to BGA export |
 | `release` | Full pipeline: build → optimize → deploy |
 
 ### Primary Commands
 
-**Build — generate all assets (no deployment, no optimization):**
+**Build — generate all game data assets (no deployment, no optimization):**
 ```bash
 npm run build
 ```
-Executes: `build:model` → `build:cards` → `build:tech-model` → `build:tech-cards`
+Executes: `build:model` → `build:cards` → `build:tech-model` → `build:tech-cards` → `build:contract-model`
+
+**Build Assets — generate all visual assets (no deployment, no optimization):**
+```bash
+npm run build:assets
+```
+Executes: `build:cards` → `build:tech-cards` → `build:resource-icons`
+
+This is the recommended command after changing any artwork, icons, or card templates.
 
 **Release — full pipeline before committing:**
 ```bash
 npm run release
 ```
-Executes: `build` → `optimize:planet` → `optimize:tech` → `deploy`
+Executes: `build` → `build:resource-icons` → `optimize:planet` → `optimize:tech` → `deploy`
 
 **Deploy — copy generated assets to target repository (no rebuild, no optimization):**
 ```bash
 npm run deploy
 ```
-Executes: `export:planet-bga` → `export:tech-bga`
+Executes: `export:planet-bga` → `export:tech-bga` → `export:resource-icons-bga`
 
 ### Individual Stages
 
 ```bash
-npm run build:model          # CSV → generated/models/planets.json
-npm run build:cards          # Optimize PNGs + render 81 planet card SVGs
-npm run build:tech-model     # technologies.json → generated/models/technologies.json
-npm run build:tech-cards     # Render 40 technology card SVGs
-npm run export:planet-bga    # SVGO → copy → manifest → exports/bga/
-npm run export:tech-bga      # (Not yet implemented)
+npm run build:model              # CSV → generated/models/planets.json
+npm run build:cards              # Optimize PNGs + render 81 planet card SVGs
+npm run build:tech-model         # technologies.json → generated/models/technologies.json
+npm run build:tech-cards         # Render 40 technology card SVGs
+npm run build:resource-icons     # Optimize + export 11 resource icon PNGs
+npm run export:planet-bga        # Copy planet SVGs + data → exports/bga/
+npm run export:tech-bga          # Copy tech SVGs + data → exports/bga/
+npm run export:resource-icons-bga # Copy resource icon PNGs → exports/bga/
 ```
 
-For development, run `npm run build` after any change to CSV data, artwork, or icons.
+For development, run `npm run build:assets` after any change to artwork, icons, or card templates.
 
 ---
 
@@ -538,7 +575,142 @@ writes to these directories.
 
 ---
 
-## 10. Compatibility
+## 10. Resource Icons Pipeline
+
+### Ownership
+
+| Path | Role | Modified by |
+|---|---|---|
+| `source/artwork/resources/*.png` | **Canonical source artwork** | Artist only |
+| `source/data/resource-icons.json` | **Canonical manifest** | Developer when adding/removing icons |
+| `generated/bga/img/*.png` | Build output (disposable) | `build:resource-icons` |
+| `exports/bga/img/*.png` | BGA export | `export:resource-icons-bga` |
+
+### Pipeline Diagram
+
+```
+source/artwork/resources/*.png         ← CANONICAL SOURCE (11 PNGs)
+source/data/resource-icons.json        ← CANONICAL MANIFEST
+    │
+    ▼  npm run build:resource-icons  (compiler/export-resource-icons.js)
+    │
+generated/bga/img/*.png               ← optimized PNGs (disposable)
+    │
+    ▼  npm run export:resource-icons-bga  (compiler/export-resource-icons-bga.js)
+    │
+exports/bga/img/*.png                 ← BGA-ready (alongside card SVGs)
+```
+
+### Pipeline Script — `compiler/export-resource-icons.js`
+
+Responsibilities:
+
+1. **Read** `source/data/resource-icons.json` manifest
+2. **Validate** every asset exists, no duplicate ids, no duplicate filenames, no orphaned PNGs, no invalid ids
+3. **Optimize** each PNG using deterministic Sharp settings (metadata stripping, `compressionLevel: 9`, `palette: true`, `effort: 10`, `adaptiveFiltering: true`)
+4. **Write** output to `generated/bga/img/` preserving filenames
+
+Rules the pipeline enforces:
+
+- No resizing — source dimensions are preserved exactly
+- No recoloring — pixel data is never modified
+- No directory scanning — the manifest is the sole source of truth
+- Fail fast on any validation error with a clear message
+
+### BGA Export — `compiler/export-resource-icons-bga.js`
+
+Copies optimized PNGs from `generated/bga/img/` to `exports/bga/img/` (flat, alongside planet and technology card SVGs) and updates `manifest.json` with resource icon metadata.
+
+### Validation Guarantees
+
+| Check | Mechanism |
+|---|---|
+| Manifest exists | Fails fast if `source/data/resource-icons.json` missing |
+| Exactly 11 icons | Validates `resources.length === 11` |
+| Every manifest entry exported | Post-export check: all manifest files present in output |
+| No orphan PNGs | Rejects source files not in manifest |
+| Duplicate ids | Detects and rejects |
+| Duplicate filenames | Detects and rejects |
+| Invalid ids | Must be lowercase alphanumeric starting with a letter |
+| Missing source files | Detects and rejects before any optimization |
+| Deterministic output | Fixed Sharp settings produce byte-identical output across runs |
+| Source unchanged | Pipeline is read-only on `source/artwork/resources/` |
+
+### Future Extension
+
+To add a new resource icon:
+
+1. Place the new PNG in `source/artwork/resources/`
+2. Add an entry to `source/data/resource-icons.json`
+3. Update `EXPECTED_COUNT` in both `compiler/export-resource-icons.js` and `compiler/export-resource-icons-bga.js`
+4. Run `npm run build:resource-icons` to verify
+
+### Asset Pipeline Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   ASSET PIPELINE (three tracks)                   │
+│                                                                   │
+│  Planet Cards          Technology Cards        Resource Icons     │
+│  ─────────────         ───────────────         ──────────────     │
+│                        │                        │                 │
+│  source/csv/           source/data/             source/data/      │
+│   planets/              technologies.json        resource-        │
+│                        │                        icons.json       │
+│  source/artwork/       source/artwork/          source/artwork/   │
+│   cards/planet/         technology/              resources/       │
+│   planets/               domains/                (11 PNGs)       │
+│   (9 PNGs)              overlays/                                 │
+│                        (8+5 PNGs)                                 │
+│  source/icons/                                                      │
+│   resources/                                                       │
+│   (8 PNGs)                                                         │
+│                        │                        │                 │
+│  ┌──────────────────┐  ┌──────────────────┐    ┌───────────────┐  │
+│  │ build:model      │  │ build:tech-model  │    │ build:        │  │
+│  │ build:cards      │  │ build:tech-cards  │    │ resource-icons│  │
+│  └────────┬─────────┘  └────────┬─────────┘    └───────┬───────┘  │
+│           │                     │                       │          │
+│  generated/cards/      generated/cards-tech/    generated/bga/     │
+│  (81 SVGs)             (40 SVGs)               img/               │
+│                                                  (flat PNGs)      │
+│           │                     │                       │          │
+│           └─────────┬───────────┘                       │          │
+│                     │                                   │          │
+│                     ▼                                   ▼          │
+│           ┌─────────────────────┐              ┌───────────────┐   │
+│           │ export:planet-bga   │              │ export:       │   │
+│           │ export:tech-bga     │              │ resource-icons│   │
+│           └─────────┬───────────┘              │ -bga          │   │
+│                     │                          └───────┬───────┘   │
+│                     │                                   │          │
+│                     ▼                                   ▼          │
+│           ┌──────────────────────────────────────────────────────┐  │
+│           │              exports/bga/                              │  │
+│           │                                                        │  │
+│           │  img/  (planet SVGs + tech SVGs + resource PNGs)       │  │
+│           │  data/planets.json, data/technologies.json              │  │
+│           │  manifest.json                                          │  │
+│           └────────────────────────────────────────────────────────┘  │
+│                                    │                                  │
+│                                    ▼                                  │
+│                          bga-mercurio (sync)                          │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### Comparison with Card Pipelines
+
+| Aspect | Planet Cards | Technology Cards | Resource Icons |
+|---|---|---|---|
+| Source data | CSV files | `technologies.json` | `resource-icons.json` |
+| Source artwork | 9 planet PNGs | 13 domain/overlay PNGs | 11 icon PNGs |
+| Generation | SVG render | SVG render | PNG optimization only |
+| Output format | SVGs (744×1039) | SVGs (744×1039) | PNGs (source resolution) |
+| Optimization | SVGO | SVGO | Sharp PNG compression |
+| BGA export | `export:planet-bga` | `export:tech-bga` | `export:resource-icons-bga` |
+| BGA export dir | `exports/bga/img/` | `exports/bga/img/` | `exports/bga/img/` |
+
+## 11. Compatibility
 
 This document describes the pipeline as of pipeline version 2.0. The schema of `planets.json` is versioned via the `schema` field. Future pipeline revisions should bump this version when making backwards-incompatible changes to the model schema.
 

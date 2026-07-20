@@ -1,0 +1,17 @@
+{
+  "schema": "v1",
+  "generatedAt": "2026-07-20T00:00:00.000Z",
+  "resources": [
+    { "id": "algae",       "file": "algae.png" },
+    { "id": "crate",       "file": "crate.png" },
+    { "id": "electronics", "file": "electronics.png" },
+    { "id": "grain",       "file": "grain.png" },
+    { "id": "influence",   "file": "influence.png" },
+    { "id": "ore",         "file": "ore.png" },
+    { "id": "population",  "file": "population.png", "source": "human" },
+    { "id": "power",       "file": "power.png" },
+    { "id": "robot",       "file": "robot.png" },
+    { "id": "science",     "file": "science.png" },
+    { "id": "water",       "file": "water.png" }
+  ]
+}

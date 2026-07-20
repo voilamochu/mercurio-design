@@ -2,7 +2,7 @@
   "$schema": "v1",
   "project": "mercurio-design",
   "exportType": "bga",
-  "generatedAt": "2026-07-20T08:49:29.899Z",
+  "generatedAt": "2026-07-20T17:20:24.345Z",
   "assetVersion": 1,
   "resolutions": {
     "artwork": 576,
@@ -14,11 +14,11 @@
   },
   "cardCount": 81,
   "size": {
-    "totalBytes": 15733710,
-    "averageBytes": 194243,
-    "medianBytes": 191239,
-    "largestBytes": 224360,
-    "smallestBytes": 167846
+    "totalBytes": 15761418,
+    "averageBytes": 194585,
+    "medianBytes": 191510,
+    "largestBytes": 224736,
+    "smallestBytes": 168100
   },
   "composition": {
     "planetTypes": 9,
@@ -39,7 +39,13 @@
   "files": {
     "cards": "img/",
     "data": "data/planets.json",
-    "technologies": "data/technologies.json"
+    "technologies": "data/technologies.json",
+    "contracts": "data/contracts.json"
   },
-  "technologyCount": 40
+  "technologyCount": 40,
+  "contractCount": 25,
+  "resourceIcons": {
+    "count": 11,
+    "files": "img/"
+  }
 }

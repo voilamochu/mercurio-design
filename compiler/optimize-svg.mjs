@@ -47,16 +47,20 @@ async function main() {
   const args = process.argv.slice(2);
   const planetOnly = args.includes('--planet-only');
   const techOnly = args.includes('--tech-only');
+  const contractOnly = args.includes('--contract-only');
 
   const cardsDir = path.join(ROOT, 'generated', 'cards');
   const cardsTechDir = path.join(ROOT, 'generated', 'cards-tech');
+  const contractsDir = path.join(ROOT, 'generated', 'contracts');
 
-  if (!planetOnly && !techOnly) {
+  if (!planetOnly && !techOnly && !contractOnly) {
     await optimizeDir(cardsDir, 'Planet cards');
     await optimizeDir(cardsTechDir, 'Tech cards');
+    await optimizeDir(contractsDir, 'Contract cards');
   } else {
     if (planetOnly) await optimizeDir(cardsDir, 'Planet cards');
     if (techOnly) await optimizeDir(cardsTechDir, 'Tech cards');
+    if (contractOnly) await optimizeDir(contractsDir, 'Contract cards');
   }
 }
 
