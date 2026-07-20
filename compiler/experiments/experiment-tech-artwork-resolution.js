@@ -1,21 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const MODEL_FILE = path.join(ROOT, 'generated', 'models', 'technologies.json');
 const MAP_FILE = path.join(ROOT, 'source', 'data', 'technology-artwork-map.json');
 const OUTPUT_DIR = path.join(ROOT, 'generated', 'experiments', 'tech-artwork-resolution');
 const REPORT_DIR = path.join(ROOT, 'docs', 'experiments');
 
-const { composeArtworkDataUri, loadDomain, loadOverlay } = require('./lib/technology/sharp-artwork-compositor');
-const { ARTWORK_WINDOW, OUTER_FRAME, RULES_BOX, PROJECT_BOX, FLAVOR_TEXT } = require('./lib/technology/layout');
-const { renderOuterFrame } = require('./lib/technology/frame');
-const { renderTitleBar } = require('./lib/technology/title');
-const { renderProjectBox } = require('./lib/technology/project');
-const { renderRulesBox } = require('./lib/technology/rules');
-const { renderFlavorText } = require('./lib/technology/flavor');
-const { wrapSvg } = require('./lib/technology/svg');
-const { generateFontCss } = require('./lib/svg/font-embed');
+const { composeArtworkDataUri, loadDomain, loadOverlay } = require('../lib/technology/sharp-artwork-compositor');
+const { ARTWORK_WINDOW, OUTER_FRAME, RULES_BOX, PROJECT_BOX, FLAVOR_TEXT } = require('../lib/technology/layout');
+const { renderOuterFrame } = require('../lib/technology/frame');
+const { renderTitleBar } = require('../lib/technology/title');
+const { renderProjectBox } = require('../lib/technology/project');
+const { renderRulesBox } = require('../lib/technology/rules');
+const { renderFlavorText } = require('../lib/technology/flavor');
+const { wrapSvg } = require('../lib/technology/svg');
+const { generateFontCss } = require('../lib/svg/font-embed');
 
 const TARGET_TECHS = ['tech_000', 'tech_006', 'tech_018', 'tech_037', 'tech_038'];
 

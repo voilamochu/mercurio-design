@@ -2,13 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const MODEL_FILE = path.join(ROOT, 'generated', 'models', 'technologies.json');
 const MAP_FILE = path.join(ROOT, 'source', 'data', 'technology-artwork-map.json');
 const OUTPUT_DIR = path.join(ROOT, 'generated', 'cards-tech', 'preview');
 
-const { ARTWORK_WINDOW } = require('./lib/technology/layout');
-const { composeArtwork } = require('./lib/technology/sharp-artwork-compositor');
+const { ARTWORK_WINDOW } = require('../lib/technology/layout');
+const { composeArtwork } = require('../lib/technology/sharp-artwork-compositor');
 
 async function main() {
   if (!fs.existsSync(MODEL_FILE)) {

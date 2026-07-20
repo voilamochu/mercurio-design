@@ -3,7 +3,7 @@ const path = require('path');
 const sharp = require('sharp');
 const { execSync } = require('child_process');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const INPUT_DIR = path.join(ROOT, 'generated', 'experiments', 'icon-resolution');
 const OUTPUT_DIR = INPUT_DIR;
 const PNG_OUTPUT = path.join(OUTPUT_DIR, 'contact-sheet-icons.png');

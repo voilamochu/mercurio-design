@@ -20,7 +20,7 @@
     "deploy": "npm run export:planet-bga && npm run export:tech-bga",
     "release": "npm run build && npm run optimize:planet && npm run optimize:tech && npm run deploy",
 
-    "generate:tech-preview": "node compiler/generate-tech-preview.js"
+    "generate:tech-preview": "node compiler/experiments/generate-tech-preview.js"
   },
   "dependencies": {
     "sharp": "^0.35.3"

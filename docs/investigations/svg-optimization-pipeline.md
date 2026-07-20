@@ -797,7 +797,7 @@ The embedded base64 PNG dominates all sizes. Real optimization requires either:
 **Effort:** Medium (3–5 days including visual review).
 
 **Action:**
-- Extend `experiment-image-resolution.js` to also generate contact sheets
+- Extend `compiler/experiments/experiment-image-resolution.js` to also generate contact sheets
 - Run resolution sweep: 744 (display-native), 660, 576 (current), 480, 384
 - Designer reviews contact sheet blind
 - Set `ARTWORK_SIZE` in `optimize-assets.js` and layout.js once consensus reached
@@ -885,8 +885,8 @@ The embedded base64 PNG dominates all sizes. Real optimization requires either:
 | `compiler/lib/technology/svg.js` | Current tech SVG document wrapper |
 | `compiler/lib/svg/font-embed.js` | Current font embedding module |
 | `compiler/lib/technology/layout.js` | Current tech card layout constants (includes ARTWORK_WINDOW) |
-| `compiler/experiment-image-resolution.js` | Existing resolution experiment |
-| `compiler/experiment-icon-resolution.js` | Existing icon resolution experiment |
+| `compiler/experiments/experiment-image-resolution.js` | Existing resolution experiment |
+| `compiler/experiments/experiment-icon-resolution.js` | Existing icon resolution experiment |
 | `docs/experiments/image-resolution.md` | Existing experiment report |
 | `docs/experiments/icon-resolution.md` | Existing experiment report |
 | `docs/asset-pipeline.md` | Existing pipeline documentation |

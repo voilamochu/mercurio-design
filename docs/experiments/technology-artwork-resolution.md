@@ -37,30 +37,30 @@ SVG layout) are identical across all builds.
 
 | Card | 576×480 | 512×427 | 448×373 | 384×320 |
 |------|---------|---------|---------|---------|
-| Frontiers | 410.7 KB (-0%) | 357.0 KB (-13.1%) | 312.3 KB (-24%) | 272.9 KB (-33.5%) |
-| Surveyors | 410.2 KB (-0%) | 356.4 KB (-13.1%) | 311.7 KB (-24%) | 272.4 KB (-33.6%) |
-| Quantum Computing | 418.8 KB (-0%) | 366.9 KB (-12.4%) | 322.4 KB (-23%) | 279.4 KB (-33.3%) |
-| Architects | 442.3 KB (-0%) | 382.1 KB (-13.6%) | 332.5 KB (-24.8%) | 285.2 KB (-35.5%) |
-| Metropolis | 442.3 KB (-0%) | 382.1 KB (-13.6%) | 332.5 KB (-24.8%) | 285.2 KB (-35.5%) |
+| Frontiers | 272.9 KB (-0%) | 272.9 KB (-0%) | 272.9 KB (-0%) | 272.9 KB (-0%) |
+| Surveyors | 272.4 KB (-0%) | 272.4 KB (-0%) | 272.4 KB (-0%) | 272.4 KB (-0%) |
+| Quantum Computing | 279.4 KB (-0%) | 279.4 KB (-0%) | 279.4 KB (-0%) | 279.4 KB (-0%) |
+| Architects | 285.2 KB (-0%) | 285.2 KB (-0%) | 285.2 KB (-0%) | 285.2 KB (-0%) |
+| Metropolis | 285.2 KB (-0%) | 285.2 KB (-0%) | 285.2 KB (-0%) | 285.2 KB (-0%) |
 
 ### Per-Card Artwork (Base64 Encoded) Size
 
 | Card | 576×480 | 512×427 | 448×373 | 384×320 |
 |------|---------|---------|---------|---------|
-| Frontiers | 259.4 KB (-0%) | 205.7 KB (-20.7%) | 161.0 KB (-37.9%) | 121.7 KB (-53.1%) |
-| Surveyors | 259.4 KB (-0%) | 205.7 KB (-20.7%) | 161.0 KB (-37.9%) | 121.7 KB (-53.1%) |
-| Quantum Computing | 268.2 KB (-0%) | 216.3 KB (-19.4%) | 171.8 KB (-35.9%) | 128.8 KB (-52%) |
-| Architects | 291.6 KB (-0%) | 231.4 KB (-20.6%) | 181.8 KB (-37.7%) | 134.5 KB (-53.9%) |
-| Metropolis | 291.6 KB (-0%) | 231.4 KB (-20.6%) | 181.8 KB (-37.7%) | 134.5 KB (-53.9%) |
+| Frontiers | 121.7 KB (-0%) | 121.7 KB (-0%) | 121.7 KB (-0%) | 121.7 KB (-0%) |
+| Surveyors | 121.7 KB (-0%) | 121.7 KB (-0%) | 121.7 KB (-0%) | 121.7 KB (-0%) |
+| Quantum Computing | 128.8 KB (-0%) | 128.8 KB (-0%) | 128.8 KB (-0%) | 128.8 KB (-0%) |
+| Architects | 134.5 KB (-0%) | 134.5 KB (-0%) | 134.5 KB (-0%) | 134.5 KB (-0%) |
+| Metropolis | 134.5 KB (-0%) | 134.5 KB (-0%) | 134.5 KB (-0%) | 134.5 KB (-0%) |
 
 ### Averages
 
 | Resolution | Avg SVG Size | Avg Artwork (b64) | vs 576 Baseline |
 |------------|-------------|-------------------|-----------------|
-| 576×480 | 424.8 KB | 274.1 KB | 0.0% |
-| 512×427 | 368.9 KB | 218.1 KB | -13.2% |
-| 448×373 | 322.3 KB | 171.5 KB | -24.1% |
-| 384×320 | 279.0 KB | 128.2 KB | -34.3% |
+| 576×480 | 279.0 KB | 128.2 KB | 0.0% |
+| 512×427 | 279.0 KB | 128.2 KB | 0.0% |
+| 448×373 | 279.0 KB | 128.2 KB | 0.0% |
+| 384×320 | 279.0 KB | 128.2 KB | 0.0% |
 
 ## Visual Quality Assessment
 
@@ -87,12 +87,14 @@ at 100%, 200%, and 300% zoom levels. Compare the following artifacts:
 
 Based on size reduction and visual quality:
 
-| Resolution | SVG Reduction | Artwork (b64) Reduction | Visual Grade | Recommended? |
-|------------|--------------|------------------------|--------------|-------------|
-| 576×480 | — | — | Excellent | **Current (baseline)** |
-| 512×427 | −13.2% | −20.4% | Very Good | **Recommended** — best trade-off |
-| 448×373 | −24.1% | −37.3% | Acceptable | Maybe — requires designer review |
-| 384×320 | −34.3% | −53.0% | Poor | No — too soft |
+| Resolution | SVG Reduction | Visual Grade | Recommended? |
+|------------|--------------|--------------|-------------|
+| 576×480 | — | Excellent | **Current (baseline)** |
+| 512×427 | ~XX% | Very Good | **Likely** — best trade-off |
+| 448×373 | ~XX% | Acceptable | Maybe — requires designer review |
+| 384×320 | ~XX% | Poor | No — too soft |
+
+*(Update percentages and recommendation after visual review)*
 
 ## Contact Sheet
 

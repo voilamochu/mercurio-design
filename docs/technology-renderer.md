@@ -192,7 +192,7 @@ gradients, lighting, and vignette effects are handled by Sharp at the raster lev
 
 ### Preview generation
 
-`compiler/generate-tech-preview.js` calls `composeArtwork()` directly and writes the
+`compiler/experiments/generate-tech-preview.js` calls `composeArtwork()` directly and writes the
 resulting PNG to `generated/cards-tech/preview/artwork/`. The preview artwork is the
 exact same buffer embedded in the SVG card — guaranteed pixel-identical.
 

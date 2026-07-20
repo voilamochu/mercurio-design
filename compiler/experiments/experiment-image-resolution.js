@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
-const { renderResourcePanel } = require('./svg/resource-panel');
+const { renderResourcePanel } = require('../svg/resource-panel');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 
 const CARD_W = 744;
 const CARD_H = 1039;
