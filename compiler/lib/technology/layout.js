@@ -30,7 +30,7 @@ const OUTER_FRAME = {
   ry: RADIUS,
   stroke: '#0b1020',
   strokeWidth: 14,
-  fill: '#f7f7f5',
+  fill: '#0C1118',
 };
 
 const TITLE_BAR = {
@@ -40,76 +40,55 @@ const TITLE_BAR = {
   height: 76,
   rx: RADIUS,
   ry: RADIUS,
-  fill: '#e8eaf0',
+  fill: '#141C27',
   paddingX: 28,
   levelInset: 36,
   nameFont: 36,
   levelFont: 34,
-  levelColor: '#1f2937',
+  levelColor: '#D5DCE5',
 };
 
 const ARTWORK_WINDOW = {
   x: MARGIN + 24,
-  y: TITLE_BAR.y + TITLE_BAR.height + 16,
+  y: TITLE_BAR.y + TITLE_BAR.height + 12,
   width: CARD_W - MARGIN * 2 - 48,
-  height: 420,
+  height: 580,
   rx: RADIUS,
   ry: RADIUS,
-  fill: '#c9ccd1',
+  fill: '#141C27',
 };
 
 const PROJECT_BOX = {
   x: MARGIN + 24,
-  y: ARTWORK_WINDOW.y + ARTWORK_WINDOW.height + 16,
+  y: ARTWORK_WINDOW.y + ARTWORK_WINDOW.height + 10,
   width: CARD_W - MARGIN * 2 - 48,
-  height: 104,
+  height: 100,
   rx: RADIUS,
   ry: RADIUS,
-  fill: '#dfe3ea',
+  fill: '#141C27',
   paddingX: 28,
-  nameFont: 24,
-  nameYOffset: 40,
-  descFont: 19,
-  descYOffset: 76,
+  nameFont: 28,
+  nameYOffset: 44,
+  descFont: 26,
+  descYOffset: 80,
 };
 
 const RULES_BOX = {
   x: MARGIN + 24,
   width: CARD_W - MARGIN * 2 - 48,
-  height: 168,
+  height: 150,
   rx: RADIUS,
   ry: RADIUS,
-  fill: '#eef0f4',
+  fill: '#141C27',
   paddingX: 28,
-  font: 22,
-  lineGap: 30,
-  firstYOffset: 42,
+  font: 28,
+  lineGap: 34,
+  firstYOffset: 44,
 };
 
-const FLAVOR_BOX = {
-  x: MARGIN + 24,
-  width: CARD_W - MARGIN * 2 - 48,
-  height: 76,
-  rx: RADIUS,
-  ry: RADIUS,
-  fill: '#f3f1ec',
-  paddingX: 28,
-  font: 18,
-  fontStyle: 'italic',
-  fillColor: '#6b6478',
-  firstYOffset: 40,
-  lineGap: 26,
-};
-
-const FOOTER = {
-  x: MARGIN + 24,
-  width: CARD_W - MARGIN * 2 - 48,
-  height: 44,
-  rx: RADIUS,
-  ry: RADIUS,
-  fill: '#e0e3ea',
-  paddingX: 28,
-  font: 22,
+const FLAVOR_TEXT = {
+  font: 24,
+  fillColor: '#A8B4C5',
 };
 
 module.exports = {
@@ -124,6 +103,5 @@ module.exports = {
   ARTWORK_WINDOW,
   PROJECT_BOX,
   RULES_BOX,
-  FLAVOR_BOX,
-  FOOTER,
+  FLAVOR_TEXT,
 };

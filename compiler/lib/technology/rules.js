@@ -29,10 +29,10 @@ function renderRulesBox(description) {
   const innerWidth = b.width - b.paddingX * 2;
   const lines = wrapText(description, innerWidth, b.font);
 
-  const rect = `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" />`;
+  const rect = `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" stroke="#3A4658" stroke-opacity="0.4" stroke-width="1" />`;
   const textLines = lines.map((line, i) => {
     const y = b.y + b.firstYOffset + i * b.lineGap;
-    return `  <text x="${b.x + b.paddingX}" y="${y}" ${fontAttr(FONTS.rules, b.font)} fill="#1f2937" text-anchor="start" dominant-baseline="middle">${escapeXml(line)}</text>`;
+    return `  <text x="${b.x + b.paddingX}" y="${y}" ${fontAttr(FONTS.rules, b.font)} fill="#F5F7FA" text-anchor="start" dominant-baseline="middle">${escapeXml(line)}</text>`;
   });
 
   return [rect, ...textLines].join('\n');

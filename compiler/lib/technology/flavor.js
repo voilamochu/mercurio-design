@@ -1,17 +1,13 @@
-const { FLAVOR_BOX, FONTS } = require('./layout');
+const { CARD_W, FLAVOR_TEXT, FONTS } = require('./layout');
 const { escapeXml, fontAttr } = require('./title');
 
 const PLACEHOLDER_FLAVOR = 'The future belongs to those willing to build it.';
 
-function renderFlavorBox(flavorText) {
-  const b = FLAVOR_BOX;
+function renderFlavorText(flavorText, y) {
   const text = flavorText && flavorText.trim() ? flavorText : PLACEHOLDER_FLAVOR;
-  const y = b.y + b.firstYOffset;
+  const cx = CARD_W / 2;
 
-  return [
-    `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" />`,
-    `  <text x="${b.x + b.paddingX}" y="${y}" ${fontAttr(FONTS.flavor, b.font)} fill="${b.fillColor}" text-anchor="start" dominant-baseline="middle">${escapeXml(text)}</text>`,
-  ].join('\n');
+  return `  <text x="${cx}" y="${y}" ${fontAttr(FONTS.flavor, FLAVOR_TEXT.font)} fill="${FLAVOR_TEXT.fillColor}" text-anchor="middle" dominant-baseline="middle">${escapeXml(text)}</text>`;
 }
 
-module.exports = { renderFlavorBox, PLACEHOLDER_FLAVOR };
+module.exports = { renderFlavorText, PLACEHOLDER_FLAVOR };

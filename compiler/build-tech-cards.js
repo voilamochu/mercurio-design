@@ -10,20 +10,19 @@ const EXPECTED_COUNT = 40;
 
 const {
   RULES_BOX,
-  FOOTER,
   PROJECT_BOX,
-  FLAVOR_BOX,
   ARTWORK_WINDOW,
+  OUTER_FRAME,
 } = require('./lib/technology/layout');
 
 const { renderOuterFrame } = require('./lib/technology/frame');
 const { renderTitleBar } = require('./lib/technology/title');
 const { renderProjectBox } = require('./lib/technology/project');
 const { renderRulesBox } = require('./lib/technology/rules');
-const { renderFlavorBox } = require('./lib/technology/flavor');
-const { renderFooter } = require('./lib/technology/footer');
+const { renderFlavorText } = require('./lib/technology/flavor');
 const { wrapSvg } = require('./lib/technology/svg');
 const { renderArtwork, loadDomain, loadOverlay } = require('./lib/technology/artwork-compositor');
+const { generateFontCss, getEmbeddedFontCount, getEmbeddedFontNames } = require('./lib/svg/font-embed');
 
 function isProject(tech) {
   return tech.type === 'Project';
@@ -31,17 +30,16 @@ function isProject(tech) {
 
 function computeRulesBoxY(hasProject) {
   if (hasProject) {
-    return PROJECT_BOX.y + PROJECT_BOX.height + 14;
+    return PROJECT_BOX.y + PROJECT_BOX.height + 10;
   }
-  return ARTWORK_WINDOW.y + ARTWORK_WINDOW.height + 14;
+  return ARTWORK_WINDOW.y + ARTWORK_WINDOW.height + 10;
 }
 
-function computeFlavorY(rulesY) {
-  return rulesY + RULES_BOX.height + 14;
-}
+const FLAVOR_BOTTOM_PADDING = 24;
+const FLAVOR_FONT_HALF = 12;
 
-function computeFooterY(flavorY) {
-  return flavorY + FLAVOR_BOX.height + 14;
+function computeFlavorY() {
+  return OUTER_FRAME.y + OUTER_FRAME.height - FLAVOR_BOTTOM_PADDING - FLAVOR_FONT_HALF;
 }
 
 async function renderTechSvg(tech, mapping) {
@@ -50,11 +48,7 @@ async function renderTechSvg(tech, mapping) {
   const rulesY = computeRulesBoxY(hasProject);
   RULES_BOX.y = rulesY;
 
-  const flavorY = computeFlavorY(rulesY);
-  FLAVOR_BOX.y = flavorY;
-
-  const footerY = computeFooterY(flavorY);
-  FOOTER.y = footerY;
+  const flavorY = computeFlavorY();
 
   const entry = mapping[tech.id];
   if (!entry) {
@@ -74,8 +68,7 @@ async function renderTechSvg(tech, mapping) {
   }
 
   body.push(renderRulesBox(tech.description));
-  body.push(renderFlavorBox(tech.flavorText));
-  body.push(renderFooter(tech.displayType));
+  body.push(renderFlavorText(tech.flavorText, flavorY));
 
   return wrapSvg(body.join('\n'), tech.assetId, art.defs);
 }
@@ -86,6 +79,22 @@ function isWellFormedSvg(content) {
   const opens = (content.match(/<svg/g) || []).length;
   const closes = (content.match(/<\/svg>/g) || []).length;
   return opens === 1 && closes === 1;
+}
+
+const EXTERNAL_PATTERNS = [
+  { name: 'non-data href', re: /href="(?!data:)/ },
+  { name: 'url(http', re: /url\(https?:\/\// },
+  { name: '@import', re: /@import\s/ },
+  { name: '<link', re: /<link\s/ },
+];
+
+function validateSelfContained(content, assetId) {
+  for (const { name, re } of EXTERNAL_PATTERNS) {
+    if (re.test(content)) {
+      throw new Error(`Self-contained validation failed for ${assetId}: pattern "${name}"`);
+    }
+  }
+  return true;
 }
 
 async function main() {
@@ -131,6 +140,10 @@ async function main() {
       throw new Error(`Malformed SVG for ${tech.assetId}`);
     }
 
+    if (!validateSelfContained(svg, tech.assetId)) {
+      throw new Error(`External reference detected in ${tech.assetId}`);
+    }
+
     const entry = mapping[tech.id];
     if (!loadDomain(entry.domain)) {
       missingAssets.push({ id: tech.id, kind: 'domain', value: entry.domain });
@@ -148,7 +161,10 @@ async function main() {
     throw new Error(`Expected ${EXPECTED_COUNT} SVGs, wrote ${written.length}`);
   }
 
+  generateFontCss();
   console.log(`Generated ${written.length} technology cards in ${OUTPUT_DIR}`);
+  console.log(`Embedded ${getEmbeddedFontCount()} font faces: ${getEmbeddedFontNames().join(', ')}`);
+  console.log('All SVGs are self-contained: ✓ artwork embedded, ✓ fonts embedded, ✓ no external references');
   if (missingAssets.length) {
     console.log(`WARNING: ${missingAssets.length} artwork asset(s) not found (falling back to placeholder):`);
     for (const m of missingAssets) {
