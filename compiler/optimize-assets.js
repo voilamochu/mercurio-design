@@ -10,7 +10,7 @@ const PATHS = {
   output: path.join(ROOT, 'generated', 'optimized-assets'),
 };
 
-const ARTWORK_SIZE = 576;
+const ARTWORK_SIZE = 384;
 const ICON_SIZE = 96;
 
 async function optimizeArtwork() {
@@ -26,8 +26,7 @@ async function optimizeArtwork() {
     await sharp(inputPath)
       .resize({ width: ARTWORK_SIZE, kernel: 'lanczos3', withoutEnlargement: true })
       .flatten()
-      .withMetadata()
-      .png({ compressionLevel: 9, palette: false, effort: 10, adaptiveFiltering: true })
+      .png({ compressionLevel: 9, palette: true, effort: 10, adaptiveFiltering: false })
       .toFile(outputPath);
   }
 
