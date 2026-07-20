@@ -23,50 +23,55 @@ source/         – Source data (CSV), artwork, design tokens, icons
 work/           – Design workspace (gitignored)
 ```
 
-## Build Pipeline
+## Pipeline
 
-```
-Source Assets (CSV, artwork, icons)
-  │
-  ▼
-build:model  (compiler/build-card-model.js)   — CSV → validated planets.json
-  │
-  ▼
-build:cards  (compiler/build-cards.js)         — optimize PNGs → render 81 SVG cards
-  │
-  ▼
-export:bga   (compiler/export-bga.js)          — SVGO → copy → manifest.json → validate
-  │
-  ▼
-exports/bga  — production-ready BGA asset bundle
-```
+The pipeline is organized into four layers:
+
+| Layer | Commands | Purpose |
+|---|---|---|
+| Bootstrap | `bootstrap:tech-artwork` | One-time split of technology collages |
+| Generation | `build:model` `build:cards` `build:tech-model` `build:tech-cards` | Generate all artwork assets |
+| Optimization | `optimize:planet` `optimize:tech` | (Placeholder) Optimize generated SVGs |
+| Deployment | `export:planet-bga` `export:tech-bga` | Copy assets into target repository |
 
 The pipeline is deterministic. Identical source assets always produce identical output.
 
-## Production Workflow
+## Workflow
 
-The canonical build command runs the full pipeline:
-
+**Build — generate all assets (no deployment):**
 ```bash
 npm run build
 ```
+Executes: `build:model` → `build:cards` → `build:tech-model` → `build:tech-cards`
 
-This executes: `build:model` → `build:cards` → `export:bga`.
+**Release — full pipeline before committing:**
+```bash
+npm run release
+```
+Executes: `build` → `optimize:planet` → `optimize:tech` → `deploy`
 
-After `npm run build` completes successfully:
+**Deploy — copy generated assets (no rebuild, no optimization):**
+```bash
+npm run deploy
+```
+Executes: `export:planet-bga` → `export:tech-bga`
 
-- A BGA export bundle is generated at `exports/bga/`
-- Runtime assets are written to `exports/bga/img/` — 81 SVGs (`card_001_1.svg` … `card_027_3.svg`)
-- The runtime layout is flat (no `img/planets/` subdirectory)
-- `exports/bga/manifest.json` contains production metadata
-
-Individual pipeline steps (for reference):
+### Individual Steps
 
 ```bash
-npm run build:model    # Parse CSV → generated/models/planets.json
-npm run build:cards    # Optimize PNGs + render 81 SVG cards
-npm run export:bga     # SVGO → copy → manifest.json → exports/bga/
+npm run build:model          # CSV → generated/models/planets.json
+npm run build:cards          # Optimize PNGs + render 81 planet card SVGs
+npm run build:tech-model     # technologies.json → generated/models/technologies.json
+npm run build:tech-cards     # Render 40 technology card SVGs
+npm run export:planet-bga    # SVGO → copy → manifest → exports/bga/
+npm run export:tech-bga      # (Not yet implemented)
 ```
+
+After a successful deployment, `exports/bga/` contains:
+
+- `img/` — 81 planet card SVGs (`card_001_1.svg` … `card_027_3.svg`)
+- `data/planets.json` — Canonical card model
+- `manifest.json` — Production metadata
 
 ## Production Resolutions
 

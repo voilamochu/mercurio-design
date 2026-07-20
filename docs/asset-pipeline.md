@@ -1,11 +1,61 @@
 # Mercurio Design — Asset Pipeline
 
-**Version:** 1.0
+**Version:** 2.0
 **Status:** Canonical
 
 ---
 
-## Pipeline Overview
+## Pipeline Layers
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  1. BOOTSTRAP (one-time only)                                       │
+│  ─────────────────────────────                                       │
+│  bootstrap:tech-artwork   Split collages → domain/overlay tiles     │
+│                           (safe by default, --force to overwrite)    │
+└──────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  2. ASSET GENERATION                                                │
+│  ────────────────────────                                            │
+│  build:model            CSV → generated/models/planets.json         │
+│  build:cards            Optimize PNGs → render 81 planet card SVGs  │
+│  build:tech-model       technologies.json → generated/models/       │
+│  build:tech-cards       Render 40 technology card SVGs              │
+│                                                                     │
+│  These commands NEVER:                                              │
+│  • Copy files into another repository                               │
+│  • Optimize assets                                                  │
+│  • Split artwork                                                    │
+│  • Modify source artwork                                            │
+└──────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  3. OPTIMIZATION (placeholders — to be implemented)                 │
+│  ─────────────────────────────────────────────                      │
+│  optimize:planet        SVGO optimization for planet card SVGs      │
+│  optimize:tech          SVGO optimization for technology card SVGs  │
+└──────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  4. DEPLOYMENT                                                      │
+│  ──────────────                                                     │
+│  export:planet-bga      Copy + manifest → exports/bga/              │
+│  export:tech-bga        (placeholder — copies tech assets)          │
+│                                                                     │
+│  These commands NEVER:                                              │
+│  • Rebuild assets                                                   │
+│  • Optimize assets                                                  │
+│  • Modify source artwork                                            │
+└──────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Pipeline Overview (Planet Cards)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -325,20 +375,23 @@ Artwork communicates planet type and atmosphere. It never carries gameplay infor
 
 ## 7. Repository Philosophy
 
-The repository contains three core pipeline scripts:
+The repository contains layered pipeline scripts divided into four stages:
 
-- `compiler/build-card-model.js` — CSV → model
-- `compiler/build-cards.js` — optimize assets + model → SVGs
-- `compiler/export-bga.js` — SVGO + export + manifest + validation
+| Stage | Scripts | Responsibility |
+|---|---|---|
+| Bootstrap | `compiler/split-tech-artwork.js` | One-time artwork import |
+| Generation | `compiler/build-*.js` | Produce validated models and rendered SVGs |
+| Optimization | `compiler/optimize-*.js` | (Placeholder) SVGO and asset optimisation |
+| Deployment | `compiler/export-*.js` | Copy + manifest into target repository |
 
-This minimalism is deliberate. Each script has exactly one input, one output, and one responsibility. There is no build system, no task runner, no configuration file to learn. The pipeline is transparent: you can open either script and understand exactly what it does in under a minute.
+Each script has exactly one input, one output, and one responsibility. There is no build system, no task runner, no configuration file to learn. The pipeline is transparent: you can open either script and understand exactly what it does in under a minute.
 
-Future pipeline stages (board generation, WEBP export, BGA packaging, sprite-sheet creation) should follow the same pattern: each stage reads the canonical model (or the output of the previous stage), transforms it, and writes a new artifact. No stage should perform work that belongs to another stage.
+Future pipeline stages should follow the same pattern: each stage reads the canonical model (or the output of the previous stage), transforms it, and writes a new artifact. No stage should perform work that belongs to another stage.
 
 This philosophy makes the pipeline:
 
 - **Easy to debug.** When output is wrong, the responsible stage is unambiguous.
-- **Easy to extend.** A new export target is a new script that reads `planets.json`, not a modification to an existing script.
+- **Easy to extend.** A new export target is a new script that reads the model, not a modification to an existing script.
 - **Easy to parallelise.** Stages are independent and can be run or skipped independently.
 - **Resistant to bit rot.** Simple scripts with no dependency graph have fewer ways to break.
 
@@ -346,27 +399,52 @@ This philosophy makes the pipeline:
 
 ## 8. Build Commands
 
-The canonical build command runs the full pipeline:
+### Quick Reference
 
+| Command | Purpose |
+|---|---|
+| `bootstrap:tech-artwork` | One-time split of technology collages into domain/overlay tiles |
+| `build` | Generate all artwork assets (model + cards for both planets and technology) |
+| `build:model` | CSV → `generated/models/planets.json` |
+| `build:cards` | Optimize PNGs → render 81 planet card SVGs |
+| `build:tech-model` | `technologies.json` → `generated/models/technologies.json` |
+| `build:tech-cards` | Render 40 technology card SVGs |
+| `optimize:planet` | (Placeholder) Optimize planet card SVGs |
+| `optimize:tech` | (Placeholder) Optimize technology card SVGs |
+| `deploy` | Run all export commands |
+| `export:planet-bga` | SVGO → copy → manifest → `exports/bga/` |
+| `export:tech-bga` | (Placeholder) Copy technology assets to BGA repository |
+| `release` | Full pipeline: build → optimize → deploy |
+
+### Primary Commands
+
+**Build — generate all assets (no deployment, no optimization):**
 ```bash
 npm run build
 ```
+Executes: `build:model` → `build:cards` → `build:tech-model` → `build:tech-cards`
 
-This executes: `build:model` → `build:cards` → `export:bga`.
+**Release — full pipeline before committing:**
+```bash
+npm run release
+```
+Executes: `build` → `optimize:planet` → `optimize:tech` → `deploy`
 
-After `npm run build` completes successfully:
+**Deploy — copy generated assets to target repository (no rebuild, no optimization):**
+```bash
+npm run deploy
+```
+Executes: `export:planet-bga` → `export:tech-bga`
 
-- A BGA export bundle is generated at `exports/bga/`
-- Runtime assets are written to `exports/bga/img/` — 81 SVGs (`card_001_1.svg` … `card_027_3.svg`)
-- The runtime layout is flat (no `img/planets/` subdirectory)
-- `exports/bga/manifest.json` contains production metadata
-
-Individual pipeline steps (for reference):
+### Individual Stages
 
 ```bash
-npm run build:model    # CSV → generated/models/planets.json
-npm run build:cards    # optimize PNGs + render 81 SVGs
-npm run export:bga     # SVGO → copy → manifest → exports/bga/
+npm run build:model          # CSV → generated/models/planets.json
+npm run build:cards          # Optimize PNGs + render 81 planet card SVGs
+npm run build:tech-model     # technologies.json → generated/models/technologies.json
+npm run build:tech-cards     # Render 40 technology card SVGs
+npm run export:planet-bga    # SVGO → copy → manifest → exports/bga/
+npm run export:tech-bga      # (Not yet implemented)
 ```
 
 For development, run `npm run build` after any change to CSV data, artwork, or icons.
@@ -462,4 +540,14 @@ writes to these directories.
 
 ## 10. Compatibility
 
-This document describes the pipeline as of pipeline version 1.0. The schema of `planets.json` is versioned via the `schema` field. Future pipeline revisions should bump this version when making backwards-incompatible changes to the model schema.
+This document describes the pipeline as of pipeline version 2.0. The schema of `planets.json` is versioned via the `schema` field. Future pipeline revisions should bump this version when making backwards-incompatible changes to the model schema.
+
+### Migration from v1.0
+
+The v1.0 `npm run build` included deployment (`export:bga`). In v2.0:
+
+- `npm run build` is now generation-only (model + cards for both planets and technology)
+- `npm run release` is the new full-pipeline command (build → optimize → deploy)
+- `npm run deploy` handles all exports without rebuilding or optimizing
+- `export:bga` is renamed to `export:planet-bga`
+- `export:tech-bga` is a new placeholder for technology deployment

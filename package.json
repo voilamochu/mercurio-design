@@ -3,14 +3,24 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "build:model": "node compiler/build-card-model.js",
-    "build:tech-model": "node compiler/build-tech-model.js",
     "bootstrap:tech-artwork": "node compiler/split-tech-artwork.js",
-    "build:tech-cards": "node compiler/build-tech-cards.js",
-    "generate:tech-preview": "node compiler/generate-tech-preview.js",
+
+    "build:model": "node compiler/build-card-model.js",
     "build:cards": "node compiler/build-cards.js",
-    "export:bga": "node compiler/export-bga.js",
-    "build": "npm run build:model && npm run build:cards && npm run export:bga"
+    "build:tech-model": "node compiler/build-tech-model.js",
+    "build:tech-cards": "node compiler/build-tech-cards.js",
+
+    "optimize:planet": "node compiler/optimize-planet.js",
+    "optimize:tech": "node compiler/optimize-tech.js",
+
+    "export:planet-bga": "node compiler/export-bga.js",
+    "export:tech-bga": "node compiler/export-tech-bga.js",
+
+    "build": "npm run build:model && npm run build:cards && npm run build:tech-model && npm run build:tech-cards",
+    "deploy": "npm run export:planet-bga && npm run export:tech-bga",
+    "release": "npm run build && npm run optimize:planet && npm run optimize:tech && npm run deploy",
+
+    "generate:tech-preview": "node compiler/generate-tech-preview.js"
   },
   "dependencies": {
     "sharp": "^0.35.3"

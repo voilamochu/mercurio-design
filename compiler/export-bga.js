@@ -1,3 +1,6 @@
+// TODO: Migrate SVGO optimization (runSvgo) to compiler/optimize-planet.js
+//       and remove it from here so that export stays deployment-only.
+
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
