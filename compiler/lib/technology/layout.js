@@ -1,6 +1,9 @@
 const CARD_W = 744;
 const CARD_H = 1039;
 
+const ARTWORK_RENDER_WIDTH = 384;
+const ARTWORK_RENDER_HEIGHT = 320;
+
 const MARGIN = 24;
 
 const FRAME_COLORS = {
@@ -94,6 +97,8 @@ const FLAVOR_TEXT = {
 module.exports = {
   CARD_W,
   CARD_H,
+  ARTWORK_RENDER_WIDTH,
+  ARTWORK_RENDER_HEIGHT,
   MARGIN,
   RADIUS,
   FRAME_COLORS,

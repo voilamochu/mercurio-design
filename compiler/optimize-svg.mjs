@@ -44,11 +44,20 @@ async function optimizeDir(dir, label) {
 }
 
 async function main() {
+  const args = process.argv.slice(2);
+  const planetOnly = args.includes('--planet-only');
+  const techOnly = args.includes('--tech-only');
+
   const cardsDir = path.join(ROOT, 'generated', 'cards');
   const cardsTechDir = path.join(ROOT, 'generated', 'cards-tech');
 
-  await optimizeDir(cardsDir, 'Planet cards');
-  await optimizeDir(cardsTechDir, 'Tech cards');
+  if (!planetOnly && !techOnly) {
+    await optimizeDir(cardsDir, 'Planet cards');
+    await optimizeDir(cardsTechDir, 'Tech cards');
+  } else {
+    if (planetOnly) await optimizeDir(cardsDir, 'Planet cards');
+    if (techOnly) await optimizeDir(cardsTechDir, 'Tech cards');
+  }
 }
 
 main().catch(err => {

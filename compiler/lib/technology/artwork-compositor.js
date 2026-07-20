@@ -6,14 +6,14 @@ function buildClipDef(id, rect) {
   </clipPath>`;
 }
 
-async function renderArtwork(assetId, rect, domainId, overlayId) {
-  const dataUri = await composeArtworkDataUri(domainId, overlayId, rect);
+async function renderArtwork(assetId, displayRect, domainId, overlayId) {
+  const dataUri = await composeArtworkDataUri(domainId, overlayId);
 
-  const defs = buildClipDef(assetId, rect);
+  const defs = buildClipDef(assetId, displayRect);
 
   const groupOpen = `  <g clip-path="url(#artclip-${assetId})">`;
   const layers = [
-    `    <image href="${dataUri}" x="${rect.x}" y="${rect.y}" width="${rect.width}" height="${rect.height}" preserveAspectRatio="xMidYMid slice" />`,
+    `    <image href="${dataUri}" x="${displayRect.x}" y="${displayRect.y}" width="${displayRect.width}" height="${displayRect.height}" preserveAspectRatio="xMidYMid slice" />`,
   ];
   const body = `${groupOpen}\n${layers.join('\n')}\n  </g>`;
 

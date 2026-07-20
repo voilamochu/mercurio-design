@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 const MODEL_FILE = path.join(ROOT, 'generated', 'models', 'technologies.json');
 const MAP_FILE = path.join(ROOT, 'source', 'data', 'technology-artwork-map.json');
 const OUTPUT_DIR = path.join(ROOT, 'generated', 'cards-tech');
+const SVGO_SCRIPT = path.join(ROOT, 'compiler', 'optimize-svg.mjs');
 
 const EXPECTED_COUNT = 40;
 
@@ -23,6 +25,7 @@ const { renderFlavorText } = require('./lib/technology/flavor');
 const { wrapSvg } = require('./lib/technology/svg');
 const { renderArtwork, loadDomain, loadOverlay } = require('./lib/technology/artwork-compositor');
 const { generateFontCss, getEmbeddedFontCount, getEmbeddedFontNames } = require('./lib/svg/font-embed');
+const { optimizeTechAssets } = require('./lib/technology/optimize-tech-assets');
 
 function isProject(tech) {
   return tech.type === 'Project';
@@ -98,6 +101,10 @@ function validateSelfContained(content, assetId) {
 }
 
 async function main() {
+  console.log('Optimizing tech artwork assets...');
+  const opt = await optimizeTechAssets();
+  console.log(`  Domains: ${opt.domainCount} files, Overlays: ${opt.overlayCount} files → generated/optimized-tech-assets/`);
+
   if (!fs.existsSync(MODEL_FILE)) {
     throw new Error(`Renderer model not found: ${MODEL_FILE}. Run npm run build:tech-model first.`);
   }
@@ -170,6 +177,14 @@ async function main() {
     for (const m of missingAssets) {
       console.log(`  ${m.id}: missing ${m.kind} "${m.value}"`);
     }
+  }
+
+  console.log('\nRunning SVGO optimization...');
+  try {
+    execSync(`node "${SVGO_SCRIPT}" --tech-only`, { cwd: ROOT, stdio: 'inherit' });
+  } catch (err) {
+    console.error('SVGO optimization failed:', err.message);
+    process.exit(1);
   }
 }
 

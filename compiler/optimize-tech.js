@@ -1,3 +1,13 @@
-console.log('optimize:tech — Not yet implemented');
-console.log('TODO: Add SVGO tech-card optimization here,');
-console.log('      mirroring the pattern in optimize-svg.mjs for generated/cards-tech/.');
+const { execSync } = require('child_process');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const script = path.join(__dirname, 'optimize-svg.mjs');
+
+console.log('Optimizing technology card SVGs...');
+try {
+  execSync(`node "${script}" --tech-only`, { cwd: ROOT, stdio: 'inherit' });
+} catch (err) {
+  console.error('Technology SVG optimization failed:', err.message);
+  process.exit(1);
+}

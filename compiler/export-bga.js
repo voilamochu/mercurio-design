@@ -1,9 +1,5 @@
-// TODO: Migrate SVGO optimization (runSvgo) to compiler/optimize-planet.js
-//       and remove it from here so that export stays deployment-only.
-
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -14,7 +10,6 @@ const PATHS = {
   imgDir: path.join(ROOT, 'exports', 'bga', 'img'),
   dataDir: path.join(ROOT, 'exports', 'bga', 'data'),
   manifestFile: path.join(ROOT, 'exports', 'bga', 'manifest.json'),
-  optimizeScript: path.join(ROOT, 'compiler', 'optimize-svg.mjs'),
 };
 
 const ARTWORK_SIZE = 576;
@@ -35,17 +30,6 @@ function rimraf(dir) {
     }
   }
   fs.rmdirSync(dir);
-}
-
-function runSvgo() {
-  console.log('Running SVGO optimization...');
-  const script = path.join(ROOT, 'compiler', 'optimize-svg.mjs');
-  try {
-    execSync(`node "${script}"`, { cwd: ROOT, stdio: 'inherit' });
-  } catch (err) {
-    console.error('SVGO optimization failed:', err.message);
-    process.exit(1);
-  }
 }
 
 function computeStats(cardFiles) {
@@ -164,8 +148,6 @@ function build() {
   const modelRaw = JSON.parse(fs.readFileSync(PATHS.modelFile, 'utf-8'));
   const modelPlanets = modelRaw.planets;
   const modelPlanetIds = modelPlanets.map(p => p.id);
-
-  runSvgo();
 
   if (fs.existsSync(PATHS.exportDir)) {
     rimraf(PATHS.exportDir);

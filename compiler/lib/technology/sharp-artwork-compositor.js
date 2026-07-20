@@ -3,6 +3,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 const ROOT = path.join(__dirname, '..', '..', '..');
+const { ARTWORK_RENDER_WIDTH, ARTWORK_RENDER_HEIGHT } = require('./layout');
 
 const DOMAIN_DIR = path.join(ROOT, 'source', 'artwork', 'technology', 'domains');
 const OVERLAY_DIR = path.join(ROOT, 'source', 'artwork', 'technology', 'overlays');
@@ -27,7 +28,21 @@ function loadOverlay(overlayId) {
   return fs.readFileSync(p);
 }
 
-async function createFallbackBuffer(domainId, w, h) {
+function loadOptimized(domainId) {
+  const p = path.join(ROOT, 'generated', 'optimized-tech-assets', 'domains', `${domainId}${DOMAIN_EXT}`);
+  if (!fs.existsSync(p)) return null;
+  return fs.readFileSync(p);
+}
+
+function loadOptimizedOverlay(overlayId) {
+  const p = path.join(ROOT, 'generated', 'optimized-tech-assets', 'overlays', `${overlayId}${OVERLAY_EXT}`);
+  if (!fs.existsSync(p)) return null;
+  return fs.readFileSync(p);
+}
+
+async function createFallbackBuffer(domainId) {
+  const w = ARTWORK_RENDER_WIDTH;
+  const h = ARTWORK_RENDER_HEIGHT;
   const fallbackSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
     <rect width="${w}" height="${h}" fill="#c9ccd1"/>
     <text x="${w / 2}" y="${h / 2}" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">artwork: ${domainId}</text>
@@ -39,35 +54,27 @@ async function createFallbackBuffer(domainId, w, h) {
     .toBuffer();
 }
 
-async function composeArtwork(domainId, overlayId, rect) {
-  const w = rect.width;
-  const h = rect.height;
+async function composeArtwork(domainId, overlayId) {
+  const w = ARTWORK_RENDER_WIDTH;
+  const h = ARTWORK_RENDER_HEIGHT;
 
-  const domainBuf = loadDomain(domainId);
+  const domainBuf = loadOptimized(domainId);
 
   if (!domainBuf) {
-    return createFallbackBuffer(domainId, w, h);
+    return createFallbackBuffer(domainId);
   }
 
-  const domainResized = await sharp(domainBuf)
-    .resize(w, h, { fit: 'cover', kernel: 'lanczos3' })
-    .withMetadata()
-    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
-    .toBuffer();
-
-  const overlayBuf = loadOverlay(overlayId);
+  const overlayBuf = loadOptimizedOverlay(overlayId);
   if (!overlayBuf) {
-    return domainResized;
+    return sharp(domainBuf)
+      .flatten()
+      .withMetadata()
+      .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+      .toBuffer();
   }
 
-  const overlayResized = await sharp(overlayBuf)
-    .resize(w, h, { fit: 'cover', kernel: 'lanczos3' })
-    .withMetadata()
-    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
-    .toBuffer();
-
-  const result = await sharp(domainResized)
-    .composite([{ input: overlayResized, blend: ART_CONFIG.blendMode, opacity: ART_CONFIG.overlayOpacity }])
+  const result = await sharp(domainBuf)
+    .composite([{ input: overlayBuf, blend: ART_CONFIG.blendMode, opacity: ART_CONFIG.overlayOpacity }])
     .flatten()
     .withMetadata()
     .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
@@ -76,8 +83,8 @@ async function composeArtwork(domainId, overlayId, rect) {
   return result;
 }
 
-async function composeArtworkDataUri(domainId, overlayId, rect) {
-  const buf = await composeArtwork(domainId, overlayId, rect);
+async function composeArtworkDataUri(domainId, overlayId) {
+  const buf = await composeArtwork(domainId, overlayId);
   return `data:image/png;base64,${buf.toString('base64')}`;
 }
 
