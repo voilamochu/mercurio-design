@@ -5,6 +5,7 @@
   "scripts": {
     "build:model": "node compiler/build-card-model.js",
     "build:tech-model": "node compiler/build-tech-model.js",
+    "split:tech-artwork": "node compiler/split-tech-artwork.js",
     "build:tech-cards": "node compiler/build-tech-cards.js",
     "build:cards": "node compiler/build-cards.js",
     "export:bga": "node compiler/export-bga.js",

@@ -373,6 +373,62 @@ For development, run `npm run build` after any change to CSV data, artwork, or i
 
 ---
 
-## 9. Compatibility
+## 9. Technology Artwork
+
+Technology cards use collage source art rather than one PNG per card. Two canonical
+collages are the immutable source; the individual tile PNGs are disposable generated
+assets, mirroring the same source/generated philosophy used throughout the pipeline.
+
+```
+Technology collages
+        ↓
+split-tech-artwork
+        ↓
+individual PNG assets
+        ↓
+technology renderer
+```
+
+### Canonical source collages — `source/artwork/technology/`
+
+- `tech_domain.png` — 4 columns × 2 rows (8 domain tiles)
+- `tech_overlay.png` — 5 columns × 1 row (5 overlay tiles)
+
+The collages are hand-authored and version-controlled. They are never overwritten by
+the pipeline.
+
+### Splitter — `compiler/split-tech-artwork.js`
+
+`npm run split:tech-artwork` reads each collage, computes tile size from the image
+dimensions (`tileWidth = width / columns`, `tileHeight = height / rows` — no hardcoded
+coordinates), crops every tile row-major (left-to-right, top-to-bottom), and writes
+named PNGs. Colours and transparency are preserved; tiles are cropped, never resized.
+
+The script fails with a clear error if a collage is missing, if the dimensions are not
+divisible by the grid, or if an output directory cannot be written. It overwrites any
+existing generated tiles and prints a validation summary.
+
+### Generated tiles
+
+`source/artwork/technology/domains/` (8 PNGs):
+
+```
+exploration.png  energy.png       infrastructure.png  computation.png
+biosphere.png    civilization.png commerce.png        transcendence.png
+```
+
+`source/artwork/technology/overlays/` (5 PNGs):
+
+```
+construction.png  optimization.png  conversion.png  expansion.png  mastery.png
+```
+
+These tiles are consumed downstream by the technology renderer. Like everything in
+`generated/`, they can be deleted and rebuilt from the collages with zero information
+loss by re-running `npm run split:tech-artwork`.
+
+---
+
+## 10. Compatibility
 
 This document describes the pipeline as of pipeline version 1.0. The schema of `planets.json` is versioned via the `schema` field. Future pipeline revisions should bump this version when making backwards-incompatible changes to the model schema.

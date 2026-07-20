@@ -1,18 +1,22 @@
-const { TITLE_BAR } = require('./layout');
+const { TITLE_BAR, FONTS } = require('./layout');
+
+function fontAttr(spec, size) {
+  const parts = [`font-family="${spec.family}"`, `font-size="${size}"`];
+  if (spec.weight) parts.push(`font-weight="${spec.weight}"`);
+  if (spec.style) parts.push(`font-style="${spec.style}"`);
+  return parts.join(' ');
+}
 
 function renderTitleBar(name, romanLevel) {
   const b = TITLE_BAR;
-  const cx = b.x + b.paddingX;
+  const nameX = b.x + b.paddingX;
   const cy = b.y + b.height / 2;
-
-  const badgeX = b.x + b.width - b.paddingX - b.levelBadgeSize;
-  const badgeY = b.y + (b.height - b.levelBadgeSize) / 2;
+  const levelX = b.x + b.width - b.levelInset;
 
   return [
     `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" />`,
-    `  <text x="${cx}" y="${cy}" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1a1a1a" text-anchor="start" dominant-baseline="middle">${escapeXml(name)}</text>`,
-    `  <rect x="${badgeX}" y="${badgeY}" width="${b.levelBadgeSize}" height="${b.levelBadgeSize}" rx="10" ry="10" fill="#1f2937" />`,
-    `  <text x="${badgeX + b.levelBadgeSize / 2}" y="${badgeY + b.levelBadgeSize / 2}" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">${escapeXml(romanLevel)}</text>`,
+    `  <text x="${nameX}" y="${cy}" ${fontAttr(FONTS.title, b.nameFont)} fill="#1a1a1a" text-anchor="start" dominant-baseline="middle">${escapeXml(name)}</text>`,
+    `  <text x="${levelX}" y="${cy}" ${fontAttr(FONTS.roman, b.levelFont)} fill="${b.levelColor}" text-anchor="end" dominant-baseline="middle">${escapeXml(romanLevel)}</text>`,
   ].join('\n');
 }
 
@@ -25,4 +29,4 @@ function escapeXml(value) {
     .replace(/'/g, '&apos;');
 }
 
-module.exports = { renderTitleBar, escapeXml };
+module.exports = { renderTitleBar, escapeXml, fontAttr };
