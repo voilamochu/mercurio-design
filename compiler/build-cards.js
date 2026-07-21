@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 const { renderResourcePanel } = require('./svg/resource-panel');
 const { optimizeArtwork, optimizeIcons } = require('./optimize-assets');
 
@@ -11,6 +12,8 @@ const PATHS = {
   artworkPlanets: path.join(ROOT, 'generated', 'optimized-assets', 'artwork'),
   outputDir: path.join(ROOT, 'generated', 'cards'),
 };
+
+const SVGO_SCRIPT = path.join(__dirname, 'optimize-svg.mjs');
 
 const CARD_W = 744;
 const CARD_H = 1039;
@@ -330,6 +333,14 @@ async function build() {
     console.log('    PASSED - all checks OK');
   }
   console.log('────────────────────────────────────────');
+
+  console.log('\nRunning SVGO optimization...');
+  try {
+    execSync(`node "${SVGO_SCRIPT}" --planet-only`, { cwd: ROOT, stdio: 'inherit' });
+  } catch (err) {
+    console.error('SVGO optimization failed:', err.message);
+    process.exit(1);
+  }
 }
 
 function renderContactSheet(cardSvgContents) {

@@ -25,7 +25,7 @@
     "build": "npm run build:model && npm run build:cards && npm run build:tech-model && npm run build:tech-cards && npm run build:contract-model && npm run build:contract-cards",
     "build:assets": "npm run build:cards && npm run build:tech-cards && npm run build:contract-cards && npm run build:resource-icons",
     "deploy": "npm run export:planet-bga && npm run export:tech-bga && npm run export:contract-bga && npm run export:resource-icons-bga",
-    "release": "npm run build && npm run build:resource-icons && npm run optimize:planet && npm run optimize:tech && npm run deploy",
+    "release": "npm run build && npm run build:resource-icons && npm run deploy",
 
     "generate:tech-preview": "node compiler/experiments/generate-tech-preview.js"
   },
