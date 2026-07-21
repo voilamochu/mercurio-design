@@ -5,6 +5,7 @@
   "scripts": {
     "bootstrap:tech-artwork": "node compiler/split-tech-artwork.js",
     "bootstrap:contract-artwork": "node compiler/bootstrap-contract-artwork.js",
+    "bootstrap:resource-icons": "node compiler/bootstrap-resource-icons.js",
 
     "build:model": "node compiler/build-card-model.js",
     "build:cards": "node compiler/build-cards.js",

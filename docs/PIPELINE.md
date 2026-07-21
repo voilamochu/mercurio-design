@@ -68,8 +68,9 @@ No stage performs work that belongs to another stage.
 
 | Stage | Script / Command | Input | Output |
 |---|---|---|---|
+| Bootstrap collages | — | `source/artwork/resources/ResourceIcons_2.png` (3 tiles)<br>`source/icons/resources/*.png` (8 legacy icons) | — |
 | Canonical source | — | `source/data/resource-icons.json`<br>`source/artwork/resources/*.png` | — |
-| Bootstrap (one‑time) | `bootstrap-resource-icons.js` | (various source icons) | `source/artwork/resources/*.png` |
+| Bootstrap (one‑time) | `bootstrap:resource-icons` | collages + legacy icons | `source/artwork/resources/*.png` |
 | Optimization | `build:resource-icons` | source PNGs | `generated/bga/img/*.png` |
 | Export | `export:resource-icons-bga` | optimized PNGs | `exports/bga/img/*.png` |
 
@@ -83,7 +84,7 @@ Resource icons are PNG (not SVG), so there is no SVGO stage.
 
 - `bootstrap:tech-artwork` — splits domain/overlay collages into individual tile PNGs
 - `bootstrap:contract-artwork` — slices the civilization mural into 25 contract portraits
-- `bootstrap-resource-icons.js` — imports/generates the 11 resource icon PNGs
+- `bootstrap:resource-icons` — imports the 11 resource icon PNGs from two collages and legacy source icons
 - `import-contracts.js` — one‑time import from legacy scratch data
 
 These are not part of any automated pipeline. Run once when source assets change.
