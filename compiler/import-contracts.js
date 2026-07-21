@@ -36,6 +36,41 @@ const OVERRIDE_ID = {
   'korrn_5': 'value-trade',
 };
 
+const TYPE_MAP = {
+  1: 'Bounty',
+  2: 'Deal',
+  4: 'Permanent',
+  hybrid: 'Accord',
+};
+
+const CONTRACT_NAMES = {
+  'aelyr_1': 'Contacts',
+  'aelyr_2': 'Supply Line',
+  'aelyr_3': 'Heritage',
+  'aelyr_4': 'Diaspora',
+  'aelyr_5': 'Deep Scan',
+  'varuuk_1': 'Heavy Haul',
+  'varuuk_2': 'Reactor Tech',
+  'varuuk_3': 'Mineral Rights',
+  'varuuk_4': 'Workshop',
+  'varuuk_5': 'Automation',
+  'ephydri_1': 'Ecosystem',
+  'ephydri_2': 'Sample',
+  'ephydri_3': 'Aquifer',
+  'ephydri_4': 'Conduction',
+  'ephydri_5': 'Nourishment',
+  'thyrnekin_1': 'Research Grant',
+  'thyrnekin_2': 'Think Tank',
+  'thyrnekin_3': 'Recovery',
+  'thyrnekin_4': 'Grid',
+  'thyrnekin_5': 'Reserve',
+  'korrn_1': 'Emporium',
+  'korrn_2': 'Arbitrage',
+  'korrn_3': 'Leverage',
+  'korrn_4': 'Consignment',
+  'korrn_5': 'Speculation',
+};
+
 function deriveId(desc, faction, index, originalId) {
   const override = OVERRIDE_ID[originalId];
   if (override) return override;
@@ -59,10 +94,11 @@ function deriveId(desc, faction, index, originalId) {
 const contracts = raw.map((c, i) => ({
   id: deriveId(c.contract, c.faction, i, c.id),
   originalId: c.id,
-  faction: c.faction,
-  contract: c.contract,
-  benefit: c.benefit,
-  type: c.type,
+  name: CONTRACT_NAMES[c.id] || '',
+  civilization: c.faction,
+  requirement: c.contract,
+  reward: c.benefit,
+  type: TYPE_MAP[c.type] || c.type,
   requiredTech: c.requiredTech || null,
   row: FACTION_ROW[c.faction],
 }));

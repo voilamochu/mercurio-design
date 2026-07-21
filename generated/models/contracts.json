@@ -1,11 +1,11 @@
 {
   "schema": "v1",
-  "generatedAt": "2026-07-20T09:54:46.102Z",
+  "generatedAt": "2026-07-20T17:44:56.832Z",
   "contractCount": 25,
   "rendererVersion": "v1",
   "contracts": [
     {
-      "id": "aelyr-1",
+      "id": "liaison-office",
       "name": "Contacts",
       "civilization": "Aelyr",
       "requirement": "Have 1 liaison office",
@@ -25,11 +25,11 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "aelyr-2",
+      "id": "crate-science-power",
       "name": "Supply Line",
       "civilization": "Aelyr",
       "requirement": "Deliver 1 Crate + 1 Science + 1 Power",
-      "reward": "Gain a slot. Take 1 L1 tech (free).",
+      "reward": "Gain a slot. Gain a L1 tech (free).",
       "type": "Deal",
       "requiredTech": null,
       "requiredResources": {},
@@ -45,7 +45,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "aelyr-3",
+      "id": "cultural-spires",
       "name": "Heritage",
       "civilization": "Aelyr",
       "requirement": "Build a Cultural Spires",
@@ -67,7 +67,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "aelyr-4",
+      "id": "population-output-planets",
       "name": "Diaspora",
       "civilization": "Aelyr",
       "requirement": "Settle 3 Population Output Planets",
@@ -87,7 +87,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "aelyr-5",
+      "id": "lost-fleet-electronics",
       "name": "Deep Scan",
       "civilization": "Aelyr",
       "requirement": "Spend an extra electronics when exploring a Lost Fleet",
@@ -107,7 +107,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "varuuk-1",
+      "id": "ore-power",
       "name": "Heavy Haul",
       "civilization": "Varuuk",
       "requirement": "Deliver 2 Ore + 1 Power",
@@ -127,7 +127,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "varuuk-2",
+      "id": "mass-reactor",
       "name": "Reactor Tech",
       "civilization": "Varuuk",
       "requirement": "Build 1 reactor core or mass reactor",
@@ -150,7 +150,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "varuuk-3",
+      "id": "planets-ore-outputs",
       "name": "Mineral Rights",
       "civilization": "Varuuk",
       "requirement": "Have 2 planets with ore outputs",
@@ -170,11 +170,11 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "varuuk-4",
+      "id": "projects",
       "name": "Workshop",
       "civilization": "Varuuk",
       "requirement": "Have 3 projects",
-      "reward": "Get a sell action immediately",
+      "reward": "Get a free sell action immediately",
       "type": "Deal",
       "requiredTech": null,
       "requiredResources": {},
@@ -190,7 +190,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "varuuk-5",
+      "id": "robot",
       "name": "Automation",
       "civilization": "Varuuk",
       "requirement": "Deliver 1 Robot",
@@ -210,7 +210,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "ephydri-1",
+      "id": "types-planets-resources",
       "name": "Ecosystem",
       "civilization": "Ephydri",
       "requirement": "Settle 3 different types of planets producing 3 different resources",
@@ -230,10 +230,10 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "ephydri-2",
+      "id": "water-algae",
       "name": "Sample",
       "civilization": "Ephydri",
-      "requirement": "Deliver Water + Algae",
+      "requirement": "Deliver Water +  Algae",
       "reward": "Gain 2 credits",
       "type": "Bounty",
       "requiredTech": null,
@@ -250,7 +250,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "ephydri-3",
+      "id": "planets-algae-water",
       "name": "Aquifer",
       "civilization": "Ephydri",
       "requirement": "Settle 3 planets that produce Algae or Water",
@@ -270,7 +270,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "ephydri-4",
+      "id": "beam-tap-goods-turn",
       "name": "Conduction",
       "civilization": "Ephydri",
       "requirement": "Beam/Tap 3 goods in a single turn",
@@ -290,7 +290,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "ephydri-5",
+      "id": "agri-dome",
       "name": "Nourishment",
       "civilization": "Ephydri",
       "requirement": "Build 1 agri dome",
@@ -312,7 +312,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "thyrnekin-1",
+      "id": "science-electronics-power",
       "name": "Research Grant",
       "civilization": "Thyrnekin",
       "requirement": "Deliver Science + Electronics + Power",
@@ -332,7 +332,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "thyrnekin-2",
+      "id": "research-arrays",
       "name": "Think Tank",
       "civilization": "Thyrnekin",
       "requirement": "Build 1 Research Arrays",
@@ -354,7 +354,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "thyrnekin-3",
+      "id": "explore-lost-fleets",
       "name": "Recovery",
       "civilization": "Thyrnekin",
       "requirement": "Explore 2 Lost Fleets",
@@ -374,7 +374,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "thyrnekin-4",
+      "id": "power",
       "name": "Grid",
       "civilization": "Thyrnekin",
       "requirement": "Deliver Power",
@@ -394,7 +394,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "thyrnekin-5",
+      "id": "cards-hand",
       "name": "Reserve",
       "civilization": "Thyrnekin",
       "requirement": "Have 3 cards in hand",
@@ -414,7 +414,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "korrn-1",
+      "id": "trade-ports",
       "name": "Emporium",
       "civilization": "Korrn",
       "requirement": "Build 1 Trade Ports",
@@ -436,7 +436,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "korrn-2",
+      "id": "buy-sell-good-turn",
       "name": "Arbitrage",
       "civilization": "Korrn",
       "requirement": "Buy and Sell the same good in a turn",
@@ -456,7 +456,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "korrn-3",
+      "id": "tap-counter",
       "name": "Leverage",
       "civilization": "Korrn",
       "requirement": "Tap counter at 2",
@@ -476,11 +476,11 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "korrn-4",
+      "id": "basic-goods",
       "name": "Consignment",
       "civilization": "Korrn",
       "requirement": "Deliver 3 different basic goods",
-      "reward": "Take 1 free L1 tech and 1 credit",
+      "reward": "Gain 1 free L1 tech and 1 credit",
       "type": "Accord",
       "requiredTech": null,
       "requiredResources": {},
@@ -496,7 +496,7 @@
       "rendererVersion": "v1"
     },
     {
-      "id": "korrn-5",
+      "id": "value-trade",
       "name": "Speculation",
       "civilization": "Korrn",
       "requirement": "Sell a good when value is 1 or Buy a good when value is 6",
