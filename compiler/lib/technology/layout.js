@@ -70,7 +70,7 @@ const PROJECT_BOX = {
   fill: '#141C27',
   paddingX: 28,
   nameFont: 56,
-  descFont: 52,
+  descFont: 46,
 };
 
 const RULES_BOX = {
@@ -80,7 +80,7 @@ const RULES_BOX = {
   ry: RADIUS,
   fill: '#141C27',
   paddingX: 28,
-  font: 56,
+  font: 48,
 };
 
 const FLAVOR_TEXT = {

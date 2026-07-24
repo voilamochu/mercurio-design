@@ -21,7 +21,6 @@ const {
   GAP_BETWEEN_BOXES,
   computeLineCount,
   computeBoxHeight,
-  computeProjectBoxHeight,
 } = require('./lib/technology/layout');
 
 const { renderOuterFrame } = require('./lib/technology/frame');
@@ -50,22 +49,19 @@ function computeLayout(tech) {
 
   const innerWidth = PROJECT_BOX.width - PROJECT_BOX.paddingX * 2;
 
-  let projectBoxHeight = 0;
+  let effectBoxHeight = 0;
   if (hasProject) {
-    const headingText = tech.projectName ? `Project: ${tech.projectName}` : 'Project';
     const descText = tech.projectDescription ? tech.projectDescription : '';
-    const headingLines = computeLineCount(headingText, PROJECT_BOX.nameFont, innerWidth);
-    const descLines = computeLineCount(descText, PROJECT_BOX.descFont, innerWidth);
-    projectBoxHeight = computeProjectBoxHeight(Math.max(headingLines, 1), descLines, PROJECT_BOX.nameFont, PROJECT_BOX.descFont);
+    const descLines = descText ? computeLineCount(descText, PROJECT_BOX.descFont, innerWidth) : 0;
+    effectBoxHeight = descLines > 0 ? computeBoxHeight(descLines, PROJECT_BOX.descFont) : 0;
   }
 
   const rulesLines = computeLineCount(tech.description, RULES_BOX.font, innerWidth);
   const rulesBoxHeight = rulesLines > 0 ? computeBoxHeight(rulesLines, RULES_BOX.font) : 0;
 
-  const gaps = GAP_AFTER_ARTWORK
-    + (hasProject ? GAP_BETWEEN_BOXES : 0);
-
-  const fixedContentHeight = projectBoxHeight + rulesBoxHeight + gaps;
+  const fixedContentHeight = rulesBoxHeight
+    + (hasProject ? effectBoxHeight + GAP_BETWEEN_BOXES : 0)
+    + GAP_AFTER_ARTWORK;
 
   let artworkHeight = ARTWORK_PREFERRED_HEIGHT;
   const totalHeight = artworkHeight + fixedContentHeight;
@@ -76,20 +72,13 @@ function computeLayout(tech) {
 
   const artworkBottom = artworkTop + artworkHeight;
 
-  let projectBoxY = 0;
-  let rulesBoxY = 0;
-
-  if (hasProject) {
-    projectBoxY = artworkBottom + GAP_AFTER_ARTWORK;
-    rulesBoxY = projectBoxY + projectBoxHeight + GAP_BETWEEN_BOXES;
-  } else {
-    rulesBoxY = artworkBottom + GAP_AFTER_ARTWORK;
-  }
+  const rulesBoxY = artworkBottom + GAP_AFTER_ARTWORK;
+  const effectBoxY = hasProject ? rulesBoxY + rulesBoxHeight + GAP_BETWEEN_BOXES : 0;
 
   return {
     artworkHeight,
-    projectBoxY,
-    projectBoxHeight,
+    effectBoxY,
+    effectBoxHeight,
     rulesBoxY,
     rulesBoxHeight,
   };
@@ -100,8 +89,8 @@ async function renderTechSvg(tech, mapping) {
 
   ARTWORK_WINDOW.height = layout.artworkHeight;
 
-  PROJECT_BOX.y = layout.projectBoxY;
-  PROJECT_BOX.height = layout.projectBoxHeight;
+  PROJECT_BOX.y = layout.effectBoxY;
+  PROJECT_BOX.height = layout.effectBoxHeight;
 
   RULES_BOX.y = layout.rulesBoxY;
   RULES_BOX.height = layout.rulesBoxHeight;
@@ -119,11 +108,11 @@ async function renderTechSvg(tech, mapping) {
     art.body,
   ];
 
-  if (isProject(tech)) {
-    body.push(renderProjectBox(tech.projectName, tech.projectDescription));
-  }
-
   body.push(renderRulesBox(tech.description));
+
+  if (isProject(tech)) {
+    body.push(renderProjectBox(tech.projectDescription));
+  }
 
   return wrapSvg(body.join('\n'), tech.assetId, art.defs);
 }
