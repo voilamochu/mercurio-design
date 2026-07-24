@@ -48,19 +48,23 @@ async function main() {
   const planetOnly = args.includes('--planet-only');
   const techOnly = args.includes('--tech-only');
   const contractOnly = args.includes('--contract-only');
+  const governorOnly = args.includes('--governor-only');
 
   const cardsDir = path.join(ROOT, 'generated', 'cards');
   const cardsTechDir = path.join(ROOT, 'generated', 'cards-tech');
   const contractsDir = path.join(ROOT, 'generated', 'contracts');
+  const governorsDir = path.join(ROOT, 'generated', 'governors');
 
-  if (!planetOnly && !techOnly && !contractOnly) {
+  if (!planetOnly && !techOnly && !contractOnly && !governorOnly) {
     await optimizeDir(cardsDir, 'Planet cards');
     await optimizeDir(cardsTechDir, 'Tech cards');
     await optimizeDir(contractsDir, 'Contract cards');
+    await optimizeDir(governorsDir, 'Governor tiles');
   } else {
     if (planetOnly) await optimizeDir(cardsDir, 'Planet cards');
     if (techOnly) await optimizeDir(cardsTechDir, 'Tech cards');
     if (contractOnly) await optimizeDir(contractsDir, 'Contract cards');
+    if (governorOnly) await optimizeDir(governorsDir, 'Governor tiles');
   }
 }
 

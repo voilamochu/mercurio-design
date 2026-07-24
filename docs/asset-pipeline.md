@@ -593,7 +593,7 @@ writes to these directories.
 | `source/artwork/resources/ResourceIcons_2.png` | Bootstrap collage (3 icons) | Artist only |
 | `source/artwork/resources/*.png` | **Canonical source artwork** | Bootstrap or artist |
 | `source/data/resource-icons.json` | **Canonical manifest** | Developer when adding/removing icons |
-| `generated/bga/img/*.png` | Build output (disposable) | `build:resource-icons` |
+| `generated/optimized-resource-icons/*.png` | Build output (disposable) | `build:resource-icons` |
 | `exports/bga/img/*.png` | BGA export | `export:resource-icons-bga` |
 
 ### Pipeline Diagram
@@ -609,34 +609,34 @@ Bootstrap collages                    Source icons (legacy)
 source/artwork/resources/*.png         ← CANONICAL SOURCE (11 PNGs)
 source/data/resource-icons.json        ← CANONICAL MANIFEST
     │
-    ▼  npm run build:resource-icons  (compiler/export-resource-icons.js)
+    ▼  npm run build:resource-icons  (compiler/normalize-resource-icons.mjs)
     │
-generated/bga/img/*.png               ← optimized PNGs (disposable)
+generated/optimized-resource-icons/*.png ← optimized PNGs (disposable)
     │
     ▼  npm run export:resource-icons-bga  (compiler/export-resource-icons-bga.js)
     │
 exports/bga/img/*.png                 ← BGA-ready (alongside card SVGs)
 ```
 
-### Pipeline Script — `compiler/export-resource-icons.js`
+### Pipeline Script — `compiler/normalize-resource-icons.mjs`
 
 Responsibilities:
 
 1. **Read** `source/data/resource-icons.json` manifest
 2. **Validate** every asset exists, no duplicate ids, no duplicate filenames, no orphaned PNGs, no invalid ids
-3. **Optimize** each PNG using deterministic Sharp settings (metadata stripping, `compressionLevel: 9`, `palette: true`, `effort: 10`, `adaptiveFiltering: true`)
-4. **Write** output to `generated/bga/img/` preserving filenames
+3. **Optimize** each PNG using deterministic Sharp settings (metadata stripping, 64×64 contain-fit, Lanczos3, `compressionLevel: 9`, `palette: true`, `effort: 10`)
+4. **Write** output to `generated/optimized-resource-icons/` preserving filenames
 
 Rules the pipeline enforces:
 
-- No resizing — source dimensions are preserved exactly
+- Normalize to a 64×64 transparent canvas with contain-fit and Lanczos3
 - No recoloring — pixel data is never modified
 - No directory scanning — the manifest is the sole source of truth
 - Fail fast on any validation error with a clear message
 
 ### BGA Export — `compiler/export-resource-icons-bga.js`
 
-Copies optimized PNGs from `generated/bga/img/` to `exports/bga/img/` (flat, alongside planet and technology card SVGs) and updates `manifest.json` with resource icon metadata.
+Copies optimized PNGs from `generated/optimized-resource-icons/` to `exports/bga/img/` (flat, alongside planet and technology card SVGs) and updates `manifest.json` with resource icon metadata.
 
 ### Validation Guarantees
 
@@ -660,7 +660,7 @@ To add a new resource icon:
 1. Add the artwork to a bootstrap collage in `source/artwork/resources/` (or add individual source PNGs)
 2. Update `compiler/bootstrap-resource-icons.js` with the new icon's extraction coordinates or source mapping
 3. Add an entry to `source/data/resource-icons.json`
-4. Update `EXPECTED_COUNT` in both `compiler/export-resource-icons.js` and `compiler/export-resource-icons-bga.js`
+4. Update `EXPECTED_COUNT` in `compiler/normalize-resource-icons.mjs` and `compiler/export-resource-icons-bga.js`
 5. Run `npm run bootstrap:resource-icons` to import the new icon
 6. Run `npm run build:resource-icons` to verify
 

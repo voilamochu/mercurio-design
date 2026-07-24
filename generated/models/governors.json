@@ -1,0 +1,1049 @@
+{
+  "schema": "v1",
+  "generatedAt": "2026-07-24T03:21:39.091Z",
+  "governorCount": 40,
+  "rendererVersion": "v1",
+  "governors": [
+    {
+      "id": "industrial_symbiosis",
+      "name": "Industrial Symbiosis",
+      "vp": 3,
+      "description": "Score 3 VP if sector has planets with Ore and Robot outputs.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Ore"
+        },
+        {
+          "type": "planetType",
+          "value": "Robots"
+        }
+      ],
+      "sequentialIndex": 0,
+      "assetId": "governor_000",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "life_support_loop",
+      "name": "Life Support Loop",
+      "vp": 2,
+      "description": "Score 2 VP if sector has planets with Water and Population outputs.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Water"
+        },
+        {
+          "type": "planetType",
+          "value": "Humans"
+        }
+      ],
+      "sequentialIndex": 1,
+      "assetId": "governor_001",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "synthetic_exchange",
+      "name": "Synthetic Exchange",
+      "vp": 3,
+      "description": "Score 3 VP if sector has planets with Electronics and Robots outputs.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Electronics"
+        },
+        {
+          "type": "planetType",
+          "value": "Robots"
+        }
+      ],
+      "sequentialIndex": 2,
+      "assetId": "governor_002",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "bio_processing_ring",
+      "name": "Bio-Processing Ring",
+      "vp": 2,
+      "description": "Score 2 VP if sector has planets with Algae, Water and Grain outputs.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Algae"
+        },
+        {
+          "type": "planetType",
+          "value": "Water"
+        },
+        {
+          "type": "planetType",
+          "value": "Grain"
+        }
+      ],
+      "sequentialIndex": 3,
+      "assetId": "governor_003",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "extraction_corridor",
+      "name": "Extraction Corridor",
+      "vp": 2,
+      "description": "Score 2 VP if sector has at least 2 planets and 1 project.",
+      "requirements": [
+        {
+          "type": "minPlanetCount",
+          "value": 2
+        },
+        {
+          "type": "minProjectCount",
+          "value": 1
+        }
+      ],
+      "sequentialIndex": 4,
+      "assetId": "governor_004",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "civil_military_complex",
+      "name": "Civil-Military Complex",
+      "vp": 3,
+      "description": "Score 2 VP if sector has planets with Population and Robot outputs.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Humans"
+        },
+        {
+          "type": "planetType",
+          "value": "Robots"
+        }
+      ],
+      "sequentialIndex": 5,
+      "assetId": "governor_005",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "tri_specialization_hub",
+      "name": "Tri-Specialization Hub",
+      "vp": 2,
+      "description": "Score 2 VP if sector produces at least 3 different outputs.",
+      "requirements": [
+        {
+          "type": "minDifferentOutputs",
+          "value": 3
+        }
+      ],
+      "sequentialIndex": 6,
+      "assetId": "governor_006",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "vertical_integration",
+      "name": "Vertical Integration",
+      "vp": 3,
+      "description": "Score 3 VP if sector has planets with Crates & Electronics outputs.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Crates"
+        },
+        {
+          "type": "planetType",
+          "value": "Electronics"
+        }
+      ],
+      "sequentialIndex": 7,
+      "assetId": "governor_007",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "sector_megacity",
+      "name": "Sector Megacity",
+      "vp": 3,
+      "description": "Score 3 VP if a sector is fully occupied (5 planets).",
+      "requirements": [
+        {
+          "type": "fullSector"
+        }
+      ],
+      "sequentialIndex": 8,
+      "assetId": "governor_008",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "self_sufficient_sector",
+      "name": "Self-Sufficient Sector",
+      "vp": 3,
+      "description": "Score 3 VP if 3 planets in the sector have all inputs satisfied.",
+      "requirements": [
+        {
+          "type": "minSatisfiedInputs",
+          "value": 3
+        }
+      ],
+      "sequentialIndex": 9,
+      "assetId": "governor_009",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "mono_output_array",
+      "name": "Mono-Output Array",
+      "vp": 3,
+      "description": "Score 3 VP if outputs of 3 planets are fully consumed.",
+      "requirements": [
+        {
+          "type": "minConsumedOutputs",
+          "value": 3
+        }
+      ],
+      "sequentialIndex": 10,
+      "assetId": "governor_010",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "diverse_economic_zone",
+      "name": "Diverse Economic Zone",
+      "vp": 4,
+      "description": "Score 4 VP if the sector has 5 different outputs.",
+      "requirements": [
+        {
+          "type": "minDifferentOutputs",
+          "value": 5
+        }
+      ],
+      "sequentialIndex": 11,
+      "assetId": "governor_011",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "industrial_wastes",
+      "name": "Industrial Wastes",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Forge + Scrap planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Forge"
+        },
+        {
+          "type": "planetType",
+          "value": "Scrap"
+        }
+      ],
+      "sequentialIndex": 12,
+      "assetId": "governor_012",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "salvage_loop",
+      "name": "Salvage Loop",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Scrap planets and 1 Project.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Scrap",
+          "count": 2
+        },
+        {
+          "type": "minProjectCount",
+          "value": 1
+        }
+      ],
+      "sequentialIndex": 13,
+      "assetId": "governor_013",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "manufacturing_spine",
+      "name": "Manufacturing Spine",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Forge + Scrap planets and Electronics output.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Forge"
+        },
+        {
+          "type": "planetType",
+          "value": "Scrap"
+        },
+        {
+          "type": "requiredOutput",
+          "value": "Electronics"
+        }
+      ],
+      "sequentialIndex": 14,
+      "assetId": "governor_014",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "proto_development_zone",
+      "name": "Proto-Development Zone",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Proto planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Proto",
+          "count": 2
+        }
+      ],
+      "sequentialIndex": 15,
+      "assetId": "governor_015",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "emergent_biosphere",
+      "name": "Emergent Biosphere",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Proto + Jungle + Swamp planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Proto"
+        },
+        {
+          "type": "planetType",
+          "value": "Jungle"
+        },
+        {
+          "type": "planetType",
+          "value": "Swamp"
+        }
+      ],
+      "sequentialIndex": 16,
+      "assetId": "governor_016",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "terraforming_cluster",
+      "name": "Terraforming Cluster",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Earth + Jungle + Ocean planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Earth"
+        },
+        {
+          "type": "planetType",
+          "value": "Jungle"
+        },
+        {
+          "type": "planetType",
+          "value": "Ocean"
+        }
+      ],
+      "sequentialIndex": 17,
+      "assetId": "governor_017",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "oceanic_network",
+      "name": "Oceanic Network",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Ocean planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Ocean",
+          "count": 2
+        }
+      ],
+      "sequentialIndex": 18,
+      "assetId": "governor_018",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "cold_chain_logistics",
+      "name": "Cold Chain Logistics",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Cold + Ice planets and a project.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Cold"
+        },
+        {
+          "type": "planetType",
+          "value": "Ice"
+        },
+        {
+          "type": "minProjectCount",
+          "value": 1
+        }
+      ],
+      "sequentialIndex": 19,
+      "assetId": "governor_019",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "environmental_contrast",
+      "name": "Environmental Contrast",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Cold + Jungle planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Cold"
+        },
+        {
+          "type": "planetType",
+          "value": "Jungle"
+        }
+      ],
+      "sequentialIndex": 20,
+      "assetId": "governor_020",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "planetary_melting_pot",
+      "name": "Planetary Melting Pot",
+      "vp": 4,
+      "description": "Score 4 VP if sector has 4 planets of different types.",
+      "requirements": [
+        {
+          "type": "minDifferentTypes",
+          "value": 4
+        }
+      ],
+      "sequentialIndex": 21,
+      "assetId": "governor_021",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "wetland_exploitation",
+      "name": "Wetland Exploitation",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Swamp + Jungle planets and Water output.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Swamp"
+        },
+        {
+          "type": "planetType",
+          "value": "Jungle"
+        },
+        {
+          "type": "requiredOutput",
+          "value": "Water"
+        }
+      ],
+      "sequentialIndex": 22,
+      "assetId": "governor_022",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "polar_research_sector",
+      "name": "Polar Research Sector",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Ice + Proto planets and Robots input.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Ice"
+        },
+        {
+          "type": "planetType",
+          "value": "Proto"
+        },
+        {
+          "type": "requiredInput",
+          "value": "Robot"
+        }
+      ],
+      "sequentialIndex": 23,
+      "assetId": "governor_023",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "frozen_industrial_zone",
+      "name": "Frozen Industrial Zone",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Forge + Cold + Ice planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Forge"
+        },
+        {
+          "type": "planetType",
+          "value": "Cold"
+        },
+        {
+          "type": "planetType",
+          "value": "Ice"
+        }
+      ],
+      "sequentialIndex": 24,
+      "assetId": "governor_024",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "harsh_frontier",
+      "name": "Harsh Frontier",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Cold + Scrap + Proto planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Cold"
+        },
+        {
+          "type": "planetType",
+          "value": "Scrap"
+        },
+        {
+          "type": "planetType",
+          "value": "Proto"
+        }
+      ],
+      "sequentialIndex": 25,
+      "assetId": "governor_025",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "deep_freeze_network",
+      "name": "Deep Freeze Network",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Ice planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Ice",
+          "count": 2
+        }
+      ],
+      "sequentialIndex": 26,
+      "assetId": "governor_026",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "ecological_pressure_zone",
+      "name": "Ecological Pressure Zone",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Swamp + Jungle + Cold planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Swamp"
+        },
+        {
+          "type": "planetType",
+          "value": "Jungle"
+        },
+        {
+          "type": "planetType",
+          "value": "Cold"
+        }
+      ],
+      "sequentialIndex": 27,
+      "assetId": "governor_027",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "overdeveloped_sector",
+      "name": "Overdeveloped Sector",
+      "vp": 4,
+      "description": "Score 4 VP if sector has 4 planets and at least 2 Projects.",
+      "requirements": [
+        {
+          "type": "fullSector"
+        },
+        {
+          "type": "minProjectCount",
+          "value": 2
+        }
+      ],
+      "sequentialIndex": 28,
+      "assetId": "governor_028",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "fragmented_biosphere",
+      "name": "Fragmented Biosphere",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 3 different planets among Earth/Jungle/Swamp/Ocean.",
+      "requirements": [
+        {
+          "type": "minDifferentBioTypes",
+          "value": 3,
+          "pool": [
+            "Earth",
+            "Jungle",
+            "Swamp",
+            "Ocean"
+          ]
+        }
+      ],
+      "sequentialIndex": 29,
+      "assetId": "governor_029",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "industrial_overlap",
+      "name": "Industrial Overlap",
+      "vp": 4,
+      "description": "Score 4 VP if sector has 2 Forge + 1 Scrap planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Forge",
+          "count": 2
+        },
+        {
+          "type": "planetType",
+          "value": "Scrap"
+        }
+      ],
+      "sequentialIndex": 30,
+      "assetId": "governor_030",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "mixed_climate_corridor",
+      "name": "Mixed Climate Corridor",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Ice + Ocean + Earth planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Ice"
+        },
+        {
+          "type": "planetType",
+          "value": "Ocean"
+        },
+        {
+          "type": "planetType",
+          "value": "Earth"
+        }
+      ],
+      "sequentialIndex": 31,
+      "assetId": "governor_031",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "resource_bottleneck",
+      "name": "Resource Bottleneck",
+      "vp": 3,
+      "description": "Score 3 VP if 2 planets in this sector require the same input good.",
+      "requirements": [
+        {
+          "type": "minSameInputGood",
+          "value": 2
+        }
+      ],
+      "sequentialIndex": 32,
+      "assetId": "governor_032",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "redundant_infrastructure",
+      "name": "Redundant Infrastructure",
+      "vp": 3,
+      "description": "Score 3 VP if 2 planets produce the same output.",
+      "requirements": [
+        {
+          "type": "minSameOutputGood",
+          "value": 2
+        }
+      ],
+      "sequentialIndex": 33,
+      "assetId": "governor_033",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "settlement_density",
+      "name": "Settlement Density",
+      "vp": 3,
+      "description": "Score 3 VP if sector has at least 3 planets and no Projects.",
+      "requirements": [
+        {
+          "type": "minPlanetCount",
+          "value": 3
+        },
+        {
+          "type": "noProjects"
+        }
+      ],
+      "sequentialIndex": 34,
+      "assetId": "governor_034",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "industrial_biological_interface",
+      "name": "Industrial–Biological Interface",
+      "vp": 4,
+      "description": "Score 4 VP if sector Forge, Swamp and Jungle planets.",
+      "requirements": [
+        {
+          "type": "planetType",
+          "value": "Forge"
+        },
+        {
+          "type": "planetType",
+          "value": "Swamp"
+        },
+        {
+          "type": "planetType",
+          "value": "Jungle"
+        }
+      ],
+      "sequentialIndex": 35,
+      "assetId": "governor_035",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "harsh_coexistence",
+      "name": "Harsh Coexistence",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Cold or Ice planets and Water or Algae as outputs.",
+      "requirements": [
+        {
+          "type": "coldIcePlanets"
+        },
+        {
+          "type": "outputAnyOf",
+          "value": [
+            "Water",
+            "Algae"
+          ]
+        }
+      ],
+      "sequentialIndex": 36,
+      "assetId": "governor_036",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "sector_specialization",
+      "name": "Sector Specialization",
+      "vp": 4,
+      "description": "Score 4 VP if all planets have 1 specific basic good as either output or input.",
+      "requirements": [
+        {
+          "type": "singleGoodAll"
+        }
+      ],
+      "sequentialIndex": 37,
+      "assetId": "governor_037",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "input_convergence",
+      "name": "Input Convergence",
+      "vp": 2,
+      "description": "Score 2 VP if 2 planets have 1 specific basic good as either output or input.",
+      "requirements": [
+        {
+          "type": "singleGoodCount",
+          "value": 2
+        }
+      ],
+      "sequentialIndex": 38,
+      "assetId": "governor_038",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    },
+    {
+      "id": "climate_crossroads",
+      "name": "Climate Crossroads",
+      "vp": 4,
+      "description": "Score 3 VP if sector has at least 1 Cold or Ice planet and 2 bio planets (Earth/Jungle/Swamp/Ocean).",
+      "requirements": [
+        {
+          "type": "coldIcePlanets",
+          "count": 1
+        },
+        {
+          "type": "bioPlanetCluster",
+          "value": 2
+        }
+      ],
+      "sequentialIndex": 39,
+      "assetId": "governor_039",
+      "artworkDomain": "unassigned",
+      "artworkOverlay": "unassigned",
+      "artworkVariant": "placeholder",
+      "frameStyle": "Governor",
+      "frameColor": "#8957e5",
+      "displayType": "Governor",
+      "flavorText": "",
+      "rendererVersion": "v1"
+    }
+  ]
+}

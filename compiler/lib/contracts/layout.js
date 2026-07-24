@@ -30,12 +30,12 @@ const TITLE_BAR = {
   x: MARGIN + 24,
   y: MARGIN + 24,
   width: CARD_W - MARGIN * 2 - 48,
-  height: 64,
+  height: 128,
   rx: RADIUS,
   ry: RADIUS,
   fill: '#141C27',
   paddingX: 24,
-  nameFont: 32,
+  nameFont: 64,
   nameColor: '#F5F7FA',
 };
 
@@ -46,13 +46,13 @@ const TITLE_BAR = {
 const FRAME_BOTTOM = OUTER_FRAME.y + OUTER_FRAME.height;
 
 const FLAVOR = {
-  y: FRAME_BOTTOM - 24,
-  font: 22,
+  y: FRAME_BOTTOM - 48,
+  font: 44,
   fillColor: '#A8B4C5',
 };
 
 const _flavorHalf = FLAVOR.font / 2;
-const _slotGap = 16;
+const _slotGap = 32;
 const _slotSize = 60;
 
 const CLAIM_SLOTS = {
@@ -64,8 +64,8 @@ const CLAIM_SLOTS = {
   strokeOpacity: 0.5,
 };
 
-const _rewardGap = 20;
-const _boxHeight = 80;
+const _rewardGap = 40;
+const _boxHeight = 160;
 
 const REWARD_BOX = {
   x: MARGIN + 24,
@@ -78,16 +78,16 @@ const REWARD_BOX = {
   stroke: '#4A5A70',
   strokeOpacity: 0.5,
   paddingX: 24,
-  font: 26,
-  labelFont: 18,
-  labelY: 24,
-  textY: 50,
+  font: 46,
+  labelFont: 36,
+  labelY: 48,
+  textY: 100,
   label: 'Reward',
   labelColor: '#8B9AAB',
   textColor: '#F5F7FA',
 };
 
-const _reqGap = 12;
+const _reqGap = 24;
 
 const REQUIREMENT_BOX = {
   x: MARGIN + 24,
@@ -100,10 +100,10 @@ const REQUIREMENT_BOX = {
   stroke: '#4A5A70',
   strokeOpacity: 0.5,
   paddingX: 24,
-  font: 26,
-  labelFont: 18,
-  labelY: 24,
-  textY: 50,
+  font: 46,
+  labelFont: 36,
+  labelY: 48,
+  textY: 100,
   label: 'Requirement',
   labelColor: '#8B9AAB',
   textColor: '#F5F7FA',

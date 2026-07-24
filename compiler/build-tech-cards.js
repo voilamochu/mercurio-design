@@ -11,17 +11,24 @@ const SVGO_SCRIPT = path.join(ROOT, 'compiler', 'optimize-svg.mjs');
 const EXPECTED_COUNT = 40;
 
 const {
-  RULES_BOX,
-  PROJECT_BOX,
   ARTWORK_WINDOW,
+  ARTWORK_PREFERRED_HEIGHT,
+  ARTWORK_MIN_HEIGHT,
   OUTER_FRAME,
+  PROJECT_BOX,
+  RULES_BOX,
+  GAP_AFTER_ARTWORK,
+  GAP_BETWEEN_BOXES,
+  computeLineCount,
+  computeBoxHeight,
+  computeProjectBoxHeight,
 } = require('./lib/technology/layout');
 
 const { renderOuterFrame } = require('./lib/technology/frame');
 const { renderTitleBar } = require('./lib/technology/title');
 const { renderProjectBox } = require('./lib/technology/project');
 const { renderRulesBox } = require('./lib/technology/rules');
-const { renderFlavorText } = require('./lib/technology/flavor');
+
 const { wrapSvg } = require('./lib/technology/svg');
 const { renderArtwork, loadDomain, loadOverlay } = require('./lib/technology/artwork-compositor');
 const { generateFontCss, getEmbeddedFontCount, getEmbeddedFontNames } = require('./lib/svg/font-embed');
@@ -31,27 +38,73 @@ function isProject(tech) {
   return tech.type === 'Project';
 }
 
-function computeRulesBoxY(hasProject) {
-  if (hasProject) {
-    return PROJECT_BOX.y + PROJECT_BOX.height + 10;
-  }
-  return ARTWORK_WINDOW.y + ARTWORK_WINDOW.height + 10;
+function computeArtworkTop() {
+  return ARTWORK_WINDOW.y;
 }
 
-const FLAVOR_BOTTOM_PADDING = 24;
-const FLAVOR_FONT_HALF = 12;
+function computeLayout(tech) {
+  const hasProject = isProject(tech);
+  const artworkTop = computeArtworkTop();
+  const frameBottom = OUTER_FRAME.y + OUTER_FRAME.height;
+  const availableHeight = frameBottom - 12 - artworkTop;
 
-function computeFlavorY() {
-  return OUTER_FRAME.y + OUTER_FRAME.height - FLAVOR_BOTTOM_PADDING - FLAVOR_FONT_HALF;
+  const innerWidth = PROJECT_BOX.width - PROJECT_BOX.paddingX * 2;
+
+  let projectBoxHeight = 0;
+  if (hasProject) {
+    const headingText = tech.projectName ? `Project: ${tech.projectName}` : 'Project';
+    const descText = tech.projectDescription ? tech.projectDescription : '';
+    const headingLines = computeLineCount(headingText, PROJECT_BOX.nameFont, innerWidth);
+    const descLines = computeLineCount(descText, PROJECT_BOX.descFont, innerWidth);
+    projectBoxHeight = computeProjectBoxHeight(Math.max(headingLines, 1), descLines, PROJECT_BOX.nameFont, PROJECT_BOX.descFont);
+  }
+
+  const rulesLines = computeLineCount(tech.description, RULES_BOX.font, innerWidth);
+  const rulesBoxHeight = rulesLines > 0 ? computeBoxHeight(rulesLines, RULES_BOX.font) : 0;
+
+  const gaps = GAP_AFTER_ARTWORK
+    + (hasProject ? GAP_BETWEEN_BOXES : 0);
+
+  const fixedContentHeight = projectBoxHeight + rulesBoxHeight + gaps;
+
+  let artworkHeight = ARTWORK_PREFERRED_HEIGHT;
+  const totalHeight = artworkHeight + fixedContentHeight;
+
+  if (totalHeight > availableHeight) {
+    artworkHeight = Math.max(ARTWORK_MIN_HEIGHT, availableHeight - fixedContentHeight);
+  }
+
+  const artworkBottom = artworkTop + artworkHeight;
+
+  let projectBoxY = 0;
+  let rulesBoxY = 0;
+
+  if (hasProject) {
+    projectBoxY = artworkBottom + GAP_AFTER_ARTWORK;
+    rulesBoxY = projectBoxY + projectBoxHeight + GAP_BETWEEN_BOXES;
+  } else {
+    rulesBoxY = artworkBottom + GAP_AFTER_ARTWORK;
+  }
+
+  return {
+    artworkHeight,
+    projectBoxY,
+    projectBoxHeight,
+    rulesBoxY,
+    rulesBoxHeight,
+  };
 }
 
 async function renderTechSvg(tech, mapping) {
-  const hasProject = isProject(tech);
+  const layout = computeLayout(tech);
 
-  const rulesY = computeRulesBoxY(hasProject);
-  RULES_BOX.y = rulesY;
+  ARTWORK_WINDOW.height = layout.artworkHeight;
 
-  const flavorY = computeFlavorY();
+  PROJECT_BOX.y = layout.projectBoxY;
+  PROJECT_BOX.height = layout.projectBoxHeight;
+
+  RULES_BOX.y = layout.rulesBoxY;
+  RULES_BOX.height = layout.rulesBoxHeight;
 
   const entry = mapping[tech.id];
   if (!entry) {
@@ -66,12 +119,11 @@ async function renderTechSvg(tech, mapping) {
     art.body,
   ];
 
-  if (hasProject) {
+  if (isProject(tech)) {
     body.push(renderProjectBox(tech.projectName, tech.projectDescription));
   }
 
   body.push(renderRulesBox(tech.description));
-  body.push(renderFlavorText(tech.flavorText, flavorY));
 
   return wrapSvg(body.join('\n'), tech.assetId, art.defs);
 }

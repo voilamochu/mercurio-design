@@ -1,0 +1,406 @@
+{
+  "schema": "v1",
+  "generatedAt": "2026-07-22T00:00:00.000Z",
+  "description": "Canonical, engine-independent Governor (Sector Tile) data for Mercurio. Single source of truth for renderers.",
+  "governorCount": 40,
+  "governors": [
+    {
+      "id": "industrial_symbiosis",
+      "name": "Industrial Symbiosis",
+      "vp": 3,
+      "description": "Score 3 VP if sector has planets with Ore and Robot outputs.",
+      "requirements": [
+        { "type": "planetType", "value": "Ore" },
+        { "type": "planetType", "value": "Robots" }
+      ]
+    },
+    {
+      "id": "life_support_loop",
+      "name": "Life Support Loop",
+      "vp": 2,
+      "description": "Score 2 VP if sector has planets with Water and Population outputs.",
+      "requirements": [
+        { "type": "planetType", "value": "Water" },
+        { "type": "planetType", "value": "Humans" }
+      ]
+    },
+    {
+      "id": "synthetic_exchange",
+      "name": "Synthetic Exchange",
+      "vp": 3,
+      "description": "Score 3 VP if sector has planets with Electronics and Robots outputs.",
+      "requirements": [
+        { "type": "planetType", "value": "Electronics" },
+        { "type": "planetType", "value": "Robots" }
+      ]
+    },
+    {
+      "id": "bio_processing_ring",
+      "name": "Bio-Processing Ring",
+      "vp": 2,
+      "description": "Score 2 VP if sector has planets with Algae, Water and Grain outputs.",
+      "requirements": [
+        { "type": "planetType", "value": "Algae" },
+        { "type": "planetType", "value": "Water" },
+        { "type": "planetType", "value": "Grain" }
+      ]
+    },
+    {
+      "id": "extraction_corridor",
+      "name": "Extraction Corridor",
+      "vp": 2,
+      "description": "Score 2 VP if sector has at least 2 planets and 1 project.",
+      "requirements": [
+        { "type": "minPlanetCount", "value": 2 },
+        { "type": "minProjectCount", "value": 1 }
+      ]
+    },
+    {
+      "id": "civil_military_complex",
+      "name": "Civil-Military Complex",
+      "vp": 3,
+      "description": "Score 2 VP if sector has planets with Population and Robot outputs.",
+      "requirements": [
+        { "type": "planetType", "value": "Humans" },
+        { "type": "planetType", "value": "Robots" }
+      ]
+    },
+    {
+      "id": "tri_specialization_hub",
+      "name": "Tri-Specialization Hub",
+      "vp": 2,
+      "description": "Score 2 VP if sector produces at least 3 different outputs.",
+      "requirements": [
+        { "type": "minDifferentOutputs", "value": 3 }
+      ]
+    },
+    {
+      "id": "vertical_integration",
+      "name": "Vertical Integration",
+      "vp": 3,
+      "description": "Score 3 VP if sector has planets with Crates & Electronics outputs.",
+      "requirements": [
+        { "type": "planetType", "value": "Crates" },
+        { "type": "planetType", "value": "Electronics" }
+      ]
+    },
+    {
+      "id": "sector_megacity",
+      "name": "Sector Megacity",
+      "vp": 3,
+      "description": "Score 3 VP if a sector is fully occupied (5 planets).",
+      "requirements": [
+        { "type": "fullSector" }
+      ]
+    },
+    {
+      "id": "self_sufficient_sector",
+      "name": "Self-Sufficient Sector",
+      "vp": 3,
+      "description": "Score 3 VP if 3 planets in the sector have all inputs satisfied.",
+      "requirements": [
+        { "type": "minSatisfiedInputs", "value": 3 }
+      ]
+    },
+    {
+      "id": "mono_output_array",
+      "name": "Mono-Output Array",
+      "vp": 3,
+      "description": "Score 3 VP if outputs of 3 planets are fully consumed.",
+      "requirements": [
+        { "type": "minConsumedOutputs", "value": 3 }
+      ]
+    },
+    {
+      "id": "diverse_economic_zone",
+      "name": "Diverse Economic Zone",
+      "vp": 4,
+      "description": "Score 4 VP if the sector has 5 different outputs.",
+      "requirements": [
+        { "type": "minDifferentOutputs", "value": 5 }
+      ]
+    },
+    {
+      "id": "industrial_wastes",
+      "name": "Industrial Wastes",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Forge + Scrap planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Forge" },
+        { "type": "planetType", "value": "Scrap" }
+      ]
+    },
+    {
+      "id": "salvage_loop",
+      "name": "Salvage Loop",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Scrap planets and 1 Project.",
+      "requirements": [
+        { "type": "planetType", "value": "Scrap", "count": 2 },
+        { "type": "minProjectCount", "value": 1 }
+      ]
+    },
+    {
+      "id": "manufacturing_spine",
+      "name": "Manufacturing Spine",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Forge + Scrap planets and Electronics output.",
+      "requirements": [
+        { "type": "planetType", "value": "Forge" },
+        { "type": "planetType", "value": "Scrap" },
+        { "type": "requiredOutput", "value": "Electronics" }
+      ]
+    },
+    {
+      "id": "proto_development_zone",
+      "name": "Proto-Development Zone",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Proto planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Proto", "count": 2 }
+      ]
+    },
+    {
+      "id": "emergent_biosphere",
+      "name": "Emergent Biosphere",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Proto + Jungle + Swamp planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Proto" },
+        { "type": "planetType", "value": "Jungle" },
+        { "type": "planetType", "value": "Swamp" }
+      ]
+    },
+    {
+      "id": "terraforming_cluster",
+      "name": "Terraforming Cluster",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Earth + Jungle + Ocean planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Earth" },
+        { "type": "planetType", "value": "Jungle" },
+        { "type": "planetType", "value": "Ocean" }
+      ]
+    },
+    {
+      "id": "oceanic_network",
+      "name": "Oceanic Network",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Ocean planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Ocean", "count": 2 }
+      ]
+    },
+    {
+      "id": "cold_chain_logistics",
+      "name": "Cold Chain Logistics",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Cold + Ice planets and a project.",
+      "requirements": [
+        { "type": "planetType", "value": "Cold" },
+        { "type": "planetType", "value": "Ice" },
+        { "type": "minProjectCount", "value": 1 }
+      ]
+    },
+    {
+      "id": "environmental_contrast",
+      "name": "Environmental Contrast",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Cold + Jungle planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Cold" },
+        { "type": "planetType", "value": "Jungle" }
+      ]
+    },
+    {
+      "id": "planetary_melting_pot",
+      "name": "Planetary Melting Pot",
+      "vp": 4,
+      "description": "Score 4 VP if sector has 4 planets of different types.",
+      "requirements": [
+        { "type": "minDifferentTypes", "value": 4 }
+      ]
+    },
+    {
+      "id": "wetland_exploitation",
+      "name": "Wetland Exploitation",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Swamp + Jungle planets and Water output.",
+      "requirements": [
+        { "type": "planetType", "value": "Swamp" },
+        { "type": "planetType", "value": "Jungle" },
+        { "type": "requiredOutput", "value": "Water" }
+      ]
+    },
+    {
+      "id": "polar_research_sector",
+      "name": "Polar Research Sector",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Ice + Proto planets and Robots input.",
+      "requirements": [
+        { "type": "planetType", "value": "Ice" },
+        { "type": "planetType", "value": "Proto" },
+        { "type": "requiredInput", "value": "Robot" }
+      ]
+    },
+    {
+      "id": "frozen_industrial_zone",
+      "name": "Frozen Industrial Zone",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Forge + Cold + Ice planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Forge" },
+        { "type": "planetType", "value": "Cold" },
+        { "type": "planetType", "value": "Ice" }
+      ]
+    },
+    {
+      "id": "harsh_frontier",
+      "name": "Harsh Frontier",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Cold + Scrap + Proto planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Cold" },
+        { "type": "planetType", "value": "Scrap" },
+        { "type": "planetType", "value": "Proto" }
+      ]
+    },
+    {
+      "id": "deep_freeze_network",
+      "name": "Deep Freeze Network",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 2 Ice planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Ice", "count": 2 }
+      ]
+    },
+    {
+      "id": "ecological_pressure_zone",
+      "name": "Ecological Pressure Zone",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Swamp + Jungle + Cold planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Swamp" },
+        { "type": "planetType", "value": "Jungle" },
+        { "type": "planetType", "value": "Cold" }
+      ]
+    },
+    {
+      "id": "overdeveloped_sector",
+      "name": "Overdeveloped Sector",
+      "vp": 4,
+      "description": "Score 4 VP if sector has 4 planets and at least 2 Projects.",
+      "requirements": [
+        { "type": "fullSector" },
+        { "type": "minProjectCount", "value": 2 }
+      ]
+    },
+    {
+      "id": "fragmented_biosphere",
+      "name": "Fragmented Biosphere",
+      "vp": 3,
+      "description": "Score 3 VP if sector has 3 different planets among Earth/Jungle/Swamp/Ocean.",
+      "requirements": [
+        { "type": "minDifferentBioTypes", "value": 3, "pool": ["Earth", "Jungle", "Swamp", "Ocean"] }
+      ]
+    },
+    {
+      "id": "industrial_overlap",
+      "name": "Industrial Overlap",
+      "vp": 4,
+      "description": "Score 4 VP if sector has 2 Forge + 1 Scrap planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Forge", "count": 2 },
+        { "type": "planetType", "value": "Scrap" }
+      ]
+    },
+    {
+      "id": "mixed_climate_corridor",
+      "name": "Mixed Climate Corridor",
+      "vp": 4,
+      "description": "Score 4 VP if sector has Ice + Ocean + Earth planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Ice" },
+        { "type": "planetType", "value": "Ocean" },
+        { "type": "planetType", "value": "Earth" }
+      ]
+    },
+    {
+      "id": "resource_bottleneck",
+      "name": "Resource Bottleneck",
+      "vp": 3,
+      "description": "Score 3 VP if 2 planets in this sector require the same input good.",
+      "requirements": [
+        { "type": "minSameInputGood", "value": 2 }
+      ]
+    },
+    {
+      "id": "redundant_infrastructure",
+      "name": "Redundant Infrastructure",
+      "vp": 3,
+      "description": "Score 3 VP if 2 planets produce the same output.",
+      "requirements": [
+        { "type": "minSameOutputGood", "value": 2 }
+      ]
+    },
+    {
+      "id": "settlement_density",
+      "name": "Settlement Density",
+      "vp": 3,
+      "description": "Score 3 VP if sector has at least 3 planets and no Projects.",
+      "requirements": [
+        { "type": "minPlanetCount", "value": 3 },
+        { "type": "noProjects" }
+      ]
+    },
+    {
+      "id": "industrial_biological_interface",
+      "name": "Industrial–Biological Interface",
+      "vp": 4,
+      "description": "Score 4 VP if sector Forge, Swamp and Jungle planets.",
+      "requirements": [
+        { "type": "planetType", "value": "Forge" },
+        { "type": "planetType", "value": "Swamp" },
+        { "type": "planetType", "value": "Jungle" }
+      ]
+    },
+    {
+      "id": "harsh_coexistence",
+      "name": "Harsh Coexistence",
+      "vp": 3,
+      "description": "Score 3 VP if sector has Cold or Ice planets and Water or Algae as outputs.",
+      "requirements": [
+        { "type": "coldIcePlanets" },
+        { "type": "outputAnyOf", "value": ["Water", "Algae"] }
+      ]
+    },
+    {
+      "id": "sector_specialization",
+      "name": "Sector Specialization",
+      "vp": 4,
+      "description": "Score 4 VP if all planets have 1 specific basic good as either output or input.",
+      "requirements": [
+        { "type": "singleGoodAll" }
+      ]
+    },
+    {
+      "id": "input_convergence",
+      "name": "Input Convergence",
+      "vp": 2,
+      "description": "Score 2 VP if 2 planets have 1 specific basic good as either output or input.",
+      "requirements": [
+        { "type": "singleGoodCount", "value": 2 }
+      ]
+    },
+    {
+      "id": "climate_crossroads",
+      "name": "Climate Crossroads",
+      "vp": 4,
+      "description": "Score 3 VP if sector has at least 1 Cold or Ice planet and 2 bio planets (Earth/Jungle/Swamp/Ocean).",
+      "requirements": [
+        { "type": "coldIcePlanets", "count": 1 },
+        { "type": "bioPlanetCluster", "value": 2 }
+      ]
+    }
+  ]
+}

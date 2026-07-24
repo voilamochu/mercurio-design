@@ -1,0 +1,40 @@
+{
+  "schema": "v1",
+  "description": "Lab level definitions — 7-row grid rendered as a euro-game board component",
+  "canvas": {
+    "width": 620,
+    "height": 540
+  },
+  "rowHeight": 66,
+  "iconSize": 34,
+  "levels": [
+    {
+      "inputs": [],
+      "outputs": ["tech-slot", "tech-slot", "science", "science", "science"]
+    },
+    {
+      "inputs": ["population", "algae"],
+      "outputs": ["tech-slot", "science", "science"]
+    },
+    {
+      "inputs": ["electronics"],
+      "outputs": ["tech-slot", "science", "vp"]
+    },
+    {
+      "inputs": ["population", "algae"],
+      "outputs": ["tech-slot", "science", "science", "vp"]
+    },
+    {
+      "inputs": ["robot"],
+      "outputs": ["tech-slot", "science", "vp"]
+    },
+    {
+      "inputs": ["population", "robot"],
+      "outputs": ["tech-slot", "science", "vp", "vp"]
+    },
+    {
+      "inputs": ["electronics"],
+      "outputs": ["tech-slot", "tech-slot", "vp", "vp", "vp"]
+    }
+  ]
+}

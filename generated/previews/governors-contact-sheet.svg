@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1950 2000" width="1950" height="2000">
+  <rect width="100%" height="100%" fill="#0A0D14" />
+  <defs>
+    <style>
+      .g-name { font-family: 'Exo 2', sans-serif; font-size: 11px; font-weight: 600; fill: #8899AA; text-anchor: middle; }
+      .g-desc { font-family: 'Inter', sans-serif; font-size: 9px; fill: #5A6A7D; text-anchor: middle; }
+    </style>
+  </defs>
+  <g transform="translate(5, 5)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-ore"/><use width="64" height="64" x="199" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-robot"/>
+  </g>
+  <text x="190" y="206" class="g-name">Industrial Symbiosis</text>
+  <text x="190" y="220" class="g-desc">Score 3 VP if sector has planets with Ore</text>
+  <text x="190" y="232" class="g-desc">and Robot outputs.</text>
+  <g transform="translate(395, 5)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use width="64" height="64" x="95" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-water"/><use width="64" height="64" x="199" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-population"/>
+  </g>
+  <text x="580" y="206" class="g-name">Life Support Loop</text>
+  <text x="580" y="220" class="g-desc">Score 2 VP if sector has planets with</text>
+  <text x="580" y="232" class="g-desc">Water and Population outputs.</text>
+  <g transform="translate(785, 5)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-electronics"/><use width="64" height="64" x="199" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-robot"/>
+  </g>
+  <text x="970" y="206" class="g-name">Synthetic Exchange</text>
+  <text x="970" y="220" class="g-desc">Score 3 VP if sector has planets with</text>
+  <text x="970" y="232" class="g-desc">Electronics and Robots outputs.</text>
+  <g transform="translate(1175, 5)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use width="64" height="64" x="43" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-algae"/><use width="64" height="64" x="147" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-water"/><use width="64" height="64" x="251" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-grain"/>
+  </g>
+  <text x="1360" y="206" class="g-name">Bio-Processing Ring</text>
+  <text x="1360" y="220" class="g-desc">Score 2 VP if sector has planets with</text>
+  <text x="1360" y="232" class="g-desc">Algae, Water and Grain outputs.</text>
+  <g transform="translate(1565, 5)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use width="64" height="64" x="95" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="151" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text><use width="64" height="64" x="199" y="63" stroke="#8899AA" href="#gv-generic-project"/><text x="255" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">1</text>
+  </g>
+  <text x="1750" y="206" class="g-name">Extraction Corridor</text>
+  <text x="1750" y="220" class="g-desc">Score 2 VP if sector has at least 2</text>
+  <text x="1750" y="232" class="g-desc">planets and 1 project.</text>
+  <g transform="translate(5, 255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-population"/><use width="64" height="64" x="199" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-robot"/>
+  </g>
+  <text x="190" y="456" class="g-name">Civil-Military Complex</text>
+  <text x="190" y="470" class="g-desc">Score 2 VP if sector has planets with</text>
+  <text x="190" y="482" class="g-desc">Population and Robot outputs.</text>
+  <g transform="translate(395, 255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" filter="url(#gv-glow-orange)" href="#gv-generic-resource_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">3</text><text x="216" y="115" fill="#FF9800" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="600" text-anchor="middle">≠</text>
+  </g>
+  <text x="580" y="456" class="g-name">Tri-Specialization Hub</text>
+  <text x="580" y="470" class="g-desc">Score 2 VP if sector produces at least 3</text>
+  <text x="580" y="482" class="g-desc">different outputs.</text>
+  <g transform="translate(785, 255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-crate"/><use width="64" height="64" x="199" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-electronics"/>
+  </g>
+  <text x="970" y="456" class="g-name">Vertical Integration</text>
+  <text x="970" y="470" class="g-desc">Score 3 VP if sector has planets with</text>
+  <text x="970" y="482" class="g-desc">Crates &amp; Electronics outputs.</text>
+  <g transform="translate(1175, 255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">5</text>
+  </g>
+  <text x="1360" y="456" class="g-name">Sector Megacity</text>
+  <text x="1360" y="470" class="g-desc">Score 3 VP if a sector is fully occupied</text>
+  <text x="1360" y="482" class="g-desc">(5 planets).</text>
+  <g transform="translate(1565, 255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" filter="url(#gv-glow-green)" href="#gv-generic-planet_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">3</text>
+  </g>
+  <text x="1750" y="456" class="g-name">Self-Sufficient Sector</text>
+  <text x="1750" y="470" class="g-desc">Score 3 VP if 3 planets in the sector have</text>
+  <text x="1750" y="482" class="g-desc">all inputs satisfied.</text>
+  <g transform="translate(5, 505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" filter="url(#gv-glow-orange)" href="#gv-generic-planet_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">3</text>
+  </g>
+  <text x="190" y="706" class="g-name">Mono-Output Array</text>
+  <text x="190" y="720" class="g-desc">Score 3 VP if outputs of 3 planets are</text>
+  <text x="190" y="732" class="g-desc">fully consumed.</text>
+  <g transform="translate(395, 505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" filter="url(#gv-glow-orange)" href="#gv-generic-resource_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">5</text><text x="216" y="115" fill="#FF9800" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="600" text-anchor="middle">≠</text>
+  </g>
+  <text x="580" y="706" class="g-name">Diverse Economic Zone</text>
+  <text x="580" y="720" class="g-desc">Score 4 VP if the sector has 5 different</text>
+  <text x="580" y="732" class="g-desc">outputs.</text>
+  <g transform="translate(785, 505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" href="#gv-planet-forge"/><use width="64" height="64" x="199" y="63" href="#gv-planet-scrap"/>
+  </g>
+  <text x="970" y="706" class="g-name">Industrial Wastes</text>
+  <text x="970" y="720" class="g-desc">Score 3 VP if sector has Forge + Scrap</text>
+  <text x="970" y="732" class="g-desc">planets.</text>
+  <g transform="translate(1175, 505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" href="#gv-planet-scrap"/><text x="151" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text><use width="64" height="64" x="199" y="63" stroke="#8899AA" href="#gv-generic-project"/><text x="255" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">1</text>
+  </g>
+  <text x="1360" y="706" class="g-name">Salvage Loop</text>
+  <text x="1360" y="720" class="g-desc">Score 3 VP if sector has 2 Scrap planets</text>
+  <text x="1360" y="732" class="g-desc">and 1 Project.</text>
+  <g transform="translate(1565, 505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-forge"/><use width="64" height="64" x="147" y="63" href="#gv-planet-scrap"/><use width="64" height="64" x="251" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-electronics"/>
+  </g>
+  <text x="1750" y="706" class="g-name">Manufacturing Spine</text>
+  <text x="1750" y="720" class="g-desc">Score 4 VP if sector has Forge + Scrap</text>
+  <text x="1750" y="732" class="g-desc">planets and Electronics output.</text>
+  <g transform="translate(5, 755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" href="#gv-planet-proto"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text>
+  </g>
+  <text x="190" y="956" class="g-name">Proto-Development Zone</text>
+  <text x="190" y="970" class="g-desc">Score 3 VP if sector has 2 Proto planets.</text>
+  <g transform="translate(395, 755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-proto"/><use width="64" height="64" x="147" y="63" href="#gv-planet-jungle"/><use width="64" height="64" x="251" y="63" href="#gv-planet-swamp"/>
+  </g>
+  <text x="580" y="956" class="g-name">Emergent Biosphere</text>
+  <text x="580" y="970" class="g-desc">Score 4 VP if sector has Proto + Jungle +</text>
+  <text x="580" y="982" class="g-desc">Swamp planets.</text>
+  <g transform="translate(785, 755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-earth"/><use width="64" height="64" x="147" y="63" href="#gv-planet-jungle"/><use width="64" height="64" x="251" y="63" href="#gv-planet-ocean"/>
+  </g>
+  <text x="970" y="956" class="g-name">Terraforming Cluster</text>
+  <text x="970" y="970" class="g-desc">Score 4 VP if sector has Earth + Jungle +</text>
+  <text x="970" y="982" class="g-desc">Ocean planets.</text>
+  <g transform="translate(1175, 755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" href="#gv-planet-ocean"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text>
+  </g>
+  <text x="1360" y="956" class="g-name">Oceanic Network</text>
+  <text x="1360" y="970" class="g-desc">Score 3 VP if sector has 2 Ocean planets.</text>
+  <g transform="translate(1565, 755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-cold"/><use width="64" height="64" x="147" y="63" href="#gv-planet-ice"/><use width="64" height="64" x="251" y="63" stroke="#8899AA" href="#gv-generic-project"/><text x="307" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">1</text>
+  </g>
+  <text x="1750" y="956" class="g-name">Cold Chain Logistics</text>
+  <text x="1750" y="970" class="g-desc">Score 3 VP if sector has Cold + Ice</text>
+  <text x="1750" y="982" class="g-desc">planets and a project.</text>
+  <g transform="translate(5, 1005)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" href="#gv-planet-cold"/><use width="64" height="64" x="199" y="63" href="#gv-planet-jungle"/>
+  </g>
+  <text x="190" y="1206" class="g-name">Environmental Contrast</text>
+  <text x="190" y="1220" class="g-desc">Score 3 VP if sector has Cold + Jungle</text>
+  <text x="190" y="1232" class="g-desc">planets.</text>
+  <g transform="translate(395, 1005)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">4</text><text x="216" y="115" fill="#FF9800" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="600" text-anchor="middle">≠</text>
+  </g>
+  <text x="580" y="1206" class="g-name">Planetary Melting Pot</text>
+  <text x="580" y="1220" class="g-desc">Score 4 VP if sector has 4 planets of</text>
+  <text x="580" y="1232" class="g-desc">different types.</text>
+  <g transform="translate(785, 1005)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-swamp"/><use width="64" height="64" x="147" y="63" href="#gv-planet-jungle"/><use width="64" height="64" x="251" y="63" filter="url(#gv-glow-orange)" href="#gv-resource-water"/>
+  </g>
+  <text x="970" y="1206" class="g-name">Wetland Exploitation</text>
+  <text x="970" y="1220" class="g-desc">Score 3 VP if sector has Swamp + Jungle</text>
+  <text x="970" y="1232" class="g-desc">planets and Water output.</text>
+  <g transform="translate(1175, 1005)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-ice"/><use width="64" height="64" x="147" y="63" href="#gv-planet-proto"/><use width="64" height="64" x="251" y="63" filter="url(#gv-glow-green)" href="#gv-resource-robot"/>
+  </g>
+  <text x="1360" y="1206" class="g-name">Polar Research Sector</text>
+  <text x="1360" y="1220" class="g-desc">Score 4 VP if sector has Ice + Proto</text>
+  <text x="1360" y="1232" class="g-desc">planets and Robots input.</text>
+  <g transform="translate(1565, 1005)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-forge"/><use width="64" height="64" x="147" y="63" href="#gv-planet-cold"/><use width="64" height="64" x="251" y="63" href="#gv-planet-ice"/>
+  </g>
+  <text x="1750" y="1206" class="g-name">Frozen Industrial Zone</text>
+  <text x="1750" y="1220" class="g-desc">Score 4 VP if sector has Forge + Cold +</text>
+  <text x="1750" y="1232" class="g-desc">Ice planets.</text>
+  <g transform="translate(5, 1255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-cold"/><use width="64" height="64" x="147" y="63" href="#gv-planet-scrap"/><use width="64" height="64" x="251" y="63" href="#gv-planet-proto"/>
+  </g>
+  <text x="190" y="1456" class="g-name">Harsh Frontier</text>
+  <text x="190" y="1470" class="g-desc">Score 4 VP if sector has Cold + Scrap +</text>
+  <text x="190" y="1482" class="g-desc">Proto planets.</text>
+  <g transform="translate(395, 1255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" href="#gv-planet-ice"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text>
+  </g>
+  <text x="580" y="1456" class="g-name">Deep Freeze Network</text>
+  <text x="580" y="1470" class="g-desc">Score 3 VP if sector has 2 Ice planets.</text>
+  <g transform="translate(785, 1255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-swamp"/><use width="64" height="64" x="147" y="63" href="#gv-planet-jungle"/><use width="64" height="64" x="251" y="63" href="#gv-planet-cold"/>
+  </g>
+  <text x="970" y="1456" class="g-name">Ecological Pressure Zone</text>
+  <text x="970" y="1470" class="g-desc">Score 4 VP if sector has Swamp + Jungle +</text>
+  <text x="970" y="1482" class="g-desc">Cold planets.</text>
+  <g transform="translate(1175, 1255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="95" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="151" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">5</text><use width="64" height="64" x="199" y="63" stroke="#8899AA" href="#gv-generic-project"/><text x="255" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text>
+  </g>
+  <text x="1360" y="1456" class="g-name">Overdeveloped Sector</text>
+  <text x="1360" y="1470" class="g-desc">Score 4 VP if sector has 4 planets and at</text>
+  <text x="1360" y="1482" class="g-desc">least 2 Projects.</text>
+  <g transform="translate(1565, 1255)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="52.66" height="52.66" x="12.49" y="68.67" href="#gv-planet-earth"/><text x="82.15" y="95" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="52.66" height="52.66" x="99.15" y="68.67" href="#gv-planet-jungle"/><text x="168.81" y="95" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="52.66" height="52.66" x="185.81" y="68.67" href="#gv-planet-swamp"/><text x="255.47" y="95" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="52.66" height="52.66" x="272.47" y="68.67" href="#gv-planet-ocean"/><text x="341.32" y="71" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle">3</text>
+  </g>
+  <text x="1750" y="1456" class="g-name">Fragmented Biosphere</text>
+  <text x="1750" y="1470" class="g-desc">Score 3 VP if sector has 3 different</text>
+  <text x="1750" y="1482" class="g-desc">planets among Earth/Jungle/Swamp/Ocean.</text>
+  <g transform="translate(5, 1505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="95" y="63" href="#gv-planet-forge"/><text x="151" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text><use width="64" height="64" x="199" y="63" href="#gv-planet-scrap"/>
+  </g>
+  <text x="190" y="1706" class="g-name">Industrial Overlap</text>
+  <text x="190" y="1720" class="g-desc">Score 4 VP if sector has 2 Forge + 1 Scrap</text>
+  <text x="190" y="1732" class="g-desc">planets.</text>
+  <g transform="translate(395, 1505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-ice"/><use width="64" height="64" x="147" y="63" href="#gv-planet-ocean"/><use width="64" height="64" x="251" y="63" href="#gv-planet-earth"/>
+  </g>
+  <text x="580" y="1706" class="g-name">Mixed Climate Corridor</text>
+  <text x="580" y="1720" class="g-desc">Score 4 VP if sector has Ice + Ocean +</text>
+  <text x="580" y="1732" class="g-desc">Earth planets.</text>
+  <g transform="translate(785, 1505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" filter="url(#gv-glow-green)" href="#gv-generic-resource_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text><text x="218" y="116" fill="#8899AA" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="700" text-anchor="middle">=</text>
+  </g>
+  <text x="970" y="1706" class="g-name">Resource Bottleneck</text>
+  <text x="970" y="1720" class="g-desc">Score 3 VP if 2 planets in this sector</text>
+  <text x="970" y="1732" class="g-desc">require the same input good.</text>
+  <g transform="translate(1175, 1505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="147" y="63" stroke="#8899AA" filter="url(#gv-glow-orange)" href="#gv-generic-resource_any"/><text x="203" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text><text x="218" y="116" fill="#8899AA" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="700" text-anchor="middle">=</text>
+  </g>
+  <text x="1360" y="1706" class="g-name">Redundant Infrastructure</text>
+  <text x="1360" y="1720" class="g-desc">Score 3 VP if 2 planets produce the same</text>
+  <text x="1360" y="1732" class="g-desc">output.</text>
+  <g transform="translate(1565, 1505)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="64" height="64" x="95" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="151" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">3</text><use width="64" height="64" x="199" y="63" stroke="#8899AA" href="#gv-generic-project"/><line x1="201" x2="261" y1="65" y2="125" stroke="#EF5350" stroke-linecap="round" stroke-width="2.5"/><line x1="261" x2="201" y1="65" y2="125" stroke="#EF5350" stroke-linecap="round" stroke-width="2.5"/>
+  </g>
+  <text x="1750" y="1706" class="g-name">Settlement Density</text>
+  <text x="1750" y="1720" class="g-desc">Score 3 VP if sector has at least 3</text>
+  <text x="1750" y="1732" class="g-desc">planets and no Projects.</text>
+  <g transform="translate(5, 1755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="43" y="63" href="#gv-planet-forge"/><use width="64" height="64" x="147" y="63" href="#gv-planet-swamp"/><use width="64" height="64" x="251" y="63" href="#gv-planet-jungle"/>
+  </g>
+  <text x="190" y="1956" class="g-name">Industrial–Biological Interface</text>
+  <text x="190" y="1970" class="g-desc">Score 4 VP if sector Forge, Swamp and</text>
+  <text x="190" y="1982" class="g-desc">Jungle planets.</text>
+  <g transform="translate(395, 1755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 65)"/><use href="#gv-star" transform="translate(357, 95)"/><use href="#gv-star" transform="translate(357, 125)"/><use width="56" height="56" x="106" y="27" href="#gv-planet-cold"/><text x="179" y="55" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="56" height="56" x="196" y="27" href="#gv-planet-ice"/><use width="60" height="60" x="103.78" y="105" filter="url(#gv-glow-orange)" href="#gv-resource-water"/><text x="179" y="135" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="18" font-weight="600" text-anchor="middle">/</text><use width="60" height="60" x="194.22" y="105" filter="url(#gv-glow-orange)" href="#gv-resource-algae"/>
+  </g>
+  <text x="580" y="1956" class="g-name">Harsh Coexistence</text>
+  <text x="580" y="1970" class="g-desc">Score 3 VP if sector has Cold or Ice</text>
+  <text x="580" y="1982" class="g-desc">planets and Water or Algae as outputs.</text>
+  <g transform="translate(785, 1755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="64" height="64" x="81" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="162" y="95" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">:</text><text x="137" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">3</text><g clip-path="url(#gv-clip-left)"><use width="64" height="64" x="213" y="63" stroke="#8899AA" filter="url(#gv-glow-green)" href="#gv-generic-resource_any"/></g><g clip-path="url(#gv-clip-right)"><use width="64" height="64" x="213" y="63" stroke="#8899AA" filter="url(#gv-glow-orange)" href="#gv-generic-resource_any"/></g><text x="284" y="116" fill="#8899AA" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="700" text-anchor="middle">=</text>
+  </g>
+  <text x="970" y="1956" class="g-name">Sector Specialization</text>
+  <text x="970" y="1970" class="g-desc">Score 4 VP if all planets have 1 specific</text>
+  <text x="970" y="1982" class="g-desc">basic good as either output or input.</text>
+  <g transform="translate(1175, 1755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use width="64" height="64" x="81" y="63" stroke="#8899AA" href="#gv-generic-planet_any"/><text x="162" y="95" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">:</text><text x="137" y="71" fill="#F0F2F5" dominant-baseline="middle" font-family="Inter" font-size="20" font-weight="700" text-anchor="middle">2</text><g clip-path="url(#gv-clip-left)"><use width="64" height="64" x="213" y="63" stroke="#8899AA" filter="url(#gv-glow-green)" href="#gv-generic-resource_any"/></g><g clip-path="url(#gv-clip-right)"><use width="64" height="64" x="213" y="63" stroke="#8899AA" filter="url(#gv-glow-orange)" href="#gv-generic-resource_any"/></g><text x="284" y="116" fill="#8899AA" dominant-baseline="central" font-family="Exo 2" font-size="27" font-weight="700" text-anchor="middle">=</text>
+  </g>
+  <text x="1360" y="1956" class="g-name">Input Convergence</text>
+  <text x="1360" y="1970" class="g-desc">Score 2 VP if 2 planets have 1 specific</text>
+  <text x="1360" y="1982" class="g-desc">basic good as either output or input.</text>
+  <g transform="translate(1565, 1755)">
+    <rect width="363" height="166" x="12" y="12" fill="url(#gv-bg)" stroke="url(#gv-fg)" stroke-width="1.5" rx="10" ry="10"/><rect width="357" height="160" x="15" y="15" fill="none" stroke="#2A3440" stroke-width=".5" rx="8" ry="8"/><use href="#gv-star" transform="translate(357, 50)"/><use href="#gv-star" transform="translate(357, 80)"/><use href="#gv-star" transform="translate(357, 110)"/><use href="#gv-star" transform="translate(357, 140)"/><use width="56" height="56" x="95.81" y="27" href="#gv-planet-cold"/><text x="168.81" y="55" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="56" height="56" x="185.81" y="27" href="#gv-planet-ice"/><text x="258" y="31" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle">1</text><use width="52.66" height="52.66" x="12.49" y="108.67" href="#gv-planet-earth"/><text x="82.15" y="135" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="52.66" height="52.66" x="99.15" y="108.67" href="#gv-planet-jungle"/><text x="168.81" y="135" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="52.66" height="52.66" x="185.81" y="108.67" href="#gv-planet-swamp"/><text x="255.47" y="135" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="22" font-weight="700" text-anchor="middle">/</text><use width="52.66" height="52.66" x="272.47" y="108.67" href="#gv-planet-ocean"/><text x="341.32" y="111" fill="#C4A35A" dominant-baseline="middle" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle">2</text>
+  </g>
+  <text x="1750" y="1956" class="g-name">Climate Crossroads</text>
+  <text x="1750" y="1970" class="g-desc">Score 3 VP if sector has at least 1 Cold</text>
+  <text x="1750" y="1982" class="g-desc">or Ice planet and 2 bio planets (Earth/...</text>
+</svg>

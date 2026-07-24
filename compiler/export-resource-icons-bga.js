@@ -4,7 +4,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 
 const PATHS = {
-  sourceDir: path.join(ROOT, 'generated', 'bga', 'img'),
+  sourceDir: path.join(ROOT, 'generated', 'optimized-resource-icons'),
   exportDir: path.join(ROOT, 'exports', 'bga', 'img'),
   manifestFile: path.join(ROOT, 'exports', 'bga', 'manifest.json'),
 };
