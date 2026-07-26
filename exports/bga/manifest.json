@@ -2,7 +2,7 @@
   "$schema": "v1",
   "project": "mercurio-design",
   "exportType": "bga",
-  "generatedAt": "2026-07-26T10:48:54.799Z",
+  "generatedAt": "2026-07-26T10:51:50.110Z",
   "assetVersion": 1,
   "resolutions": {
     "artwork": 576,
@@ -88,7 +88,7 @@
       "governor_038.svg",
       "governor_039.svg"
     ],
-    "exportedAt": "2026-07-26T10:48:57.113Z",
+    "exportedAt": "2026-07-26T10:51:52.231Z",
     "assetVersion": 1
   },
   "resourceIcons": {
