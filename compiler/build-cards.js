@@ -15,23 +15,6 @@ const PATHS = {
 
 const SVGO_SCRIPT = path.join(__dirname, 'optimize-svg.mjs');
 
-const CARD_W = 744;
-const CARD_H = 1039;
-
-const PANEL_W = 664;
-const PANEL_H = 430;
-const BOTTOM_MARGIN = 24;
-
-const INPUT_CELL_CENTER_X = 160;
-const OUTPUT_CELL_CENTER_X = 584;
-const ICON_SIZE = 96;
-const TWO_ICON_OFFSET = 50;
-
-const WATERMARK_PATCH_X = 620;
-const WATERMARK_PATCH_Y = 920;
-const WATERMARK_PATCH_SIZE = 74;
-const WATERMARK_PATCH_COLOR = '#080D1A';
-
 const RESOURCE_ICON_MAP = {
   algae: 'Algae.png',
   crate: 'Crate.png',
@@ -42,6 +25,11 @@ const RESOURCE_ICON_MAP = {
   robot: 'Robot.png',
   water: 'Water.png',
 };
+
+const WATERMARK_PATCH_X = 620;
+const WATERMARK_PATCH_Y = 920;
+const WATERMARK_PATCH_SIZE = 74;
+const WATERMARK_PATCH_COLOR = '#080D1A';
 
 function exists(p) {
   return fs.existsSync(p);
@@ -72,9 +60,9 @@ function loadFlowChevronSvg() {
   return _flowChevronSvg;
 }
 
-function groupByLevelSide(planet, stageCount) {
+function groupByLevelSide(planet) {
   const groups = {};
-  for (let level = 1; level <= stageCount; level++) {
+  for (let level = 1; level <= 3; level++) {
     const ins = planet.inputs.filter(r => r.level === level);
     const outs = planet.outputs.filter(r => r.level === level);
     groups[level] = { inputs: ins, outputs: outs };
@@ -88,21 +76,6 @@ function getStageCount(planet) {
     levels.add(r.level);
   }
   return Math.max(1, levels.size);
-}
-
-function computeStageCenters(panelY, panelH, stageCount) {
-  if (stageCount === 2) {
-    const rowH = panelH / 3;
-    return [
-      Math.round(panelY + rowH / 2),
-      Math.round(panelY + rowH + (panelH - rowH) / 2),
-    ];
-  }
-  const centers = [];
-  for (let i = 0; i < stageCount; i++) {
-    centers.push(Math.round(panelY + (i + 0.5) * panelH / stageCount));
-  }
-  return centers;
 }
 
 function preloadAllIcons(planets) {
@@ -129,54 +102,60 @@ function iconCenters(count, cellCenter, offset) {
   return centers;
 }
 
-function renderPlanetSvg(planet, artworkUri, iconDataUris) {
+function renderPlanetSvg(planet, artworkUri, iconDataUris, layout) {
   const inputLevelCount = getStageCount(planet);
+  const template = layout.layoutTemplates.find(t => t.id === planet.layoutTemplate);
+  if (!template) {
+    throw new Error(`Unknown layout template "${planet.layoutTemplate}" for planet ${planet.id}`);
+  }
 
-  const panelX = Math.round((CARD_W - PANEL_W) / 2);
-  const panelY = CARD_H - BOTTOM_MARGIN - PANEL_H;
+  const panelX = layout.panel.x;
+  const panelY = layout.panel.y;
+  const iconSize = layout.icon.size;
+  const dualOffset = layout.icon.dualOffset;
   const chevronSvg = loadFlowChevronSvg();
 
   const panelSvg = renderResourcePanel({
     stageCount: inputLevelCount,
     x: panelX,
     y: panelY,
-    width: PANEL_W,
-    height: PANEL_H,
+    width: layout.panel.width,
+    height: layout.panel.height,
     chevronSvg,
   });
 
-  const inputRowY = computeStageCenters(panelY, PANEL_H, inputLevelCount);
-  const outputRowY = computeStageCenters(panelY, PANEL_H, 3);
+  const inputRowY = template.inputRowYCenters;
+  const outputRowY = template.outputRowYCenters;
 
   const iconLines = [];
 
   for (let level = 1; level <= inputLevelCount; level++) {
     const y = inputRowY[level - 1];
     const ins = planet.inputs.filter(r => r.level === level);
-    const inputCenters = iconCenters(ins.length, INPUT_CELL_CENTER_X, TWO_ICON_OFFSET);
+    const inputCenters = iconCenters(ins.length, layout.icon.inputCellCenterX, dualOffset);
 
     for (let i = 0; i < ins.length; i++) {
       const uri = iconDataUris[ins[i].resource.id];
       if (!uri) continue;
       const cx = inputCenters[i];
-      iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" filter="url(#icon-enhance)" />`);
+      iconLines.push(`    <image href="${uri}" x="${cx - iconSize / 2}" y="${y - iconSize / 2}" width="${iconSize}" height="${iconSize}" filter="url(#icon-enhance)" />`);
     }
   }
 
   for (let level = 1; level <= 3; level++) {
     const y = outputRowY[level - 1];
     const outs = planet.outputs.filter(r => r.level === level);
-    const outputCenters = iconCenters(outs.length, OUTPUT_CELL_CENTER_X, TWO_ICON_OFFSET);
+    const outputCenters = iconCenters(outs.length, layout.icon.outputCellCenterX, dualOffset);
 
     for (let i = 0; i < outs.length; i++) {
       const uri = iconDataUris[outs[i].resource.id];
       if (!uri) continue;
       const cx = outputCenters[i];
-      iconLines.push(`    <image href="${uri}" x="${cx - ICON_SIZE / 2}" y="${y - ICON_SIZE / 2}" width="${ICON_SIZE}" height="${ICON_SIZE}" filter="url(#icon-enhance)" />`);
+      iconLines.push(`    <image href="${uri}" x="${cx - iconSize / 2}" y="${y - iconSize / 2}" width="${iconSize}" height="${iconSize}" filter="url(#icon-enhance)" />`);
     }
   }
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${CARD_W} ${CARD_H}" width="${CARD_W}" height="${CARD_H}">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${layout.card.width} ${layout.card.height}" width="${layout.card.width}" height="${layout.card.height}">
   <defs>
     <filter id="icon-enhance" color-interpolation-filters="sRGB">
       <feColorMatrix type="saturate" values="1.35"/>
@@ -187,7 +166,7 @@ function renderPlanetSvg(planet, artworkUri, iconDataUris) {
       </feComponentTransfer>
     </filter>
   </defs>
-  <image href="${artworkUri}" x="0" y="0" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="xMidYMid slice" />
+  <image href="${artworkUri}" x="0" y="0" width="${layout.card.width}" height="${layout.card.height}" preserveAspectRatio="xMidYMid slice" />
 
   <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
 
@@ -216,9 +195,20 @@ async function build() {
     console.error('ERROR: planets.json has no planets array');
     process.exit(1);
   }
+  if (!raw.layoutTemplates || !raw.layoutTemplates.length) {
+    console.error('ERROR: planets.json has no layoutTemplates');
+    process.exit(1);
+  }
 
   const planets = raw.planets;
-  console.log(`Loaded ${planets.length} planets from model`);
+  const layout = {
+    card: raw.card,
+    panel: raw.panel,
+    icon: raw.icon,
+    layoutTemplates: raw.layoutTemplates,
+  };
+  console.log(`Loaded ${planets.length} planets from model (schema: ${raw.schema || 'unknown'})`);
+  console.log(`Layout templates: ${layout.layoutTemplates.map(t => t.id).join(', ')}`);
 
   const iconDataUris = preloadAllIcons(planets);
   for (const [id, uri] of Object.entries(iconDataUris)) {
@@ -252,7 +242,7 @@ async function build() {
     const outputCount = planet.outputs.length;
     const totalIcons = inputCount + outputCount;
 
-    const svg = renderPlanetSvg(planet, artworkUri, iconDataUris);
+    const svg = renderPlanetSvg(planet, artworkUri, iconDataUris, layout);
 
     const iconRefs = (svg.match(/<image /g) || []).length - 1;
     if (iconRefs !== totalIcons) {

@@ -36,6 +36,16 @@ const BACKGROUND = 'deep-space-v1';
 
 const LEVELS = [1, 2, 3];
 
+const CARD_W = 744;
+const CARD_H = 1039;
+const PANEL_W = 664;
+const PANEL_H = 430;
+const BOTTOM_MARGIN = 24;
+const INPUT_CELL_CENTER_X = 160;
+const OUTPUT_CELL_CENTER_X = 584;
+const ICON_SIZE = 96;
+const ICON_DUAL_OFFSET = 50;
+
 function loadCsv(filePath) {
   const text = fs.readFileSync(filePath, 'utf-8').trim();
   const lines = text.split('\n');
@@ -75,6 +85,60 @@ function buildResourceEntry(resourceName) {
   };
 }
 
+function computeStageCenters(panelY, panelH, stageCount) {
+  if (stageCount === 2) {
+    const rowH = panelH / 3;
+    return [
+      Math.round(panelY + rowH / 2),
+      Math.round(panelY + rowH + (panelH - rowH) / 2),
+    ];
+  }
+  const centers = [];
+  for (let i = 0; i < stageCount; i++) {
+    centers.push(Math.round(panelY + (i + 0.5) * panelH / stageCount));
+  }
+  return centers;
+}
+
+const PANEL_X = Math.round((CARD_W - PANEL_W) / 2);
+const PANEL_Y = CARD_H - BOTTOM_MARGIN - PANEL_H;
+
+const LAYOUT_TEMPLATES = [
+  {
+    id: 'stage-1',
+    stageCount: 1,
+    inputRowYCenters: computeStageCenters(PANEL_Y, PANEL_H, 1),
+    outputRowYCenters: computeStageCenters(PANEL_Y, PANEL_H, 3),
+  },
+  {
+    id: 'stage-2',
+    stageCount: 2,
+    inputRowYCenters: computeStageCenters(PANEL_Y, PANEL_H, 2),
+    outputRowYCenters: computeStageCenters(PANEL_Y, PANEL_H, 3),
+  },
+  {
+    id: 'stage-3',
+    stageCount: 3,
+    inputRowYCenters: computeStageCenters(PANEL_Y, PANEL_H, 3),
+    outputRowYCenters: computeStageCenters(PANEL_Y, PANEL_H, 3),
+  },
+];
+
+function getStageCount(resourceRow) {
+  const levels = new Set();
+  LEVELS.forEach(level => {
+    const inputCell = resourceRow[`Level${level}_Input`] || '';
+    if (inputCell) levels.add(level);
+  });
+  return Math.max(1, levels.size);
+}
+
+function getLayoutTemplateId(stageCount) {
+  if (stageCount === 1) return 'stage-1';
+  if (stageCount === 2) return 'stage-2';
+  return 'stage-3';
+}
+
 function buildPlanetModel(resourceRow, typeRow) {
   const cardFilename = resourceRow.Card_Filename;
   const cardId = cardFilename.replace(/\.webp$/i, '');
@@ -84,6 +148,8 @@ function buildPlanetModel(resourceRow, typeRow) {
   if (!TYPE_ARTWORK[planetTypeId]) {
     throw new Error(`Unknown planet type: "${planetTypeName}" for ${cardFilename}`);
   }
+
+  const stageCount = getStageCount(resourceRow);
 
   const inputs = [];
   const outputs = [];
@@ -114,6 +180,7 @@ function buildPlanetModel(resourceRow, typeRow) {
       artwork: TYPE_ARTWORK[planetTypeId],
       background: BACKGROUND,
     },
+    layoutTemplate: getLayoutTemplateId(stageCount),
     inputs,
     outputs,
   };
@@ -137,6 +204,12 @@ function validatePlanetModel(planets) {
       if (!planet.planetType.id) errors.push(`Planet ${planet.id}: missing planetType.id`);
       if (!planet.planetType.displayName) errors.push(`Planet ${planet.id}: missing planetType.displayName`);
       if (!planet.planetType.artwork) errors.push(`Planet ${planet.id}: missing planetType.artwork mapping`);
+    }
+
+    if (!planet.layoutTemplate) {
+      errors.push(`Planet ${planet.id}: missing layoutTemplate`);
+    } else if (!LAYOUT_TEMPLATES.find(t => t.id === planet.layoutTemplate)) {
+      errors.push(`Planet ${planet.id}: unknown layoutTemplate "${planet.layoutTemplate}"`);
     }
 
     [...planet.inputs, ...planet.outputs].forEach(res => {
@@ -177,9 +250,27 @@ function main() {
   validatePlanetModel(planets);
 
   const output = {
-    schema: 'v1',
+    schema: 'v2',
     generatedAt: new Date().toISOString(),
     planetCount: planets.length,
+    card: {
+      width: CARD_W,
+      height: CARD_H,
+    },
+    panel: {
+      x: PANEL_X,
+      y: PANEL_Y,
+      width: PANEL_W,
+      height: PANEL_H,
+      bottomMargin: BOTTOM_MARGIN,
+    },
+    icon: {
+      size: ICON_SIZE,
+      dualOffset: ICON_DUAL_OFFSET,
+      inputCellCenterX: INPUT_CELL_CENTER_X,
+      outputCellCenterX: OUTPUT_CELL_CENTER_X,
+    },
+    layoutTemplates: LAYOUT_TEMPLATES,
     planets,
   };
 
@@ -187,6 +278,7 @@ function main() {
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2) + '\n');
 
   console.log(`Generated ${OUTPUT_FILE} with ${planets.length} planets`);
+  console.log(`Layout templates: ${LAYOUT_TEMPLATES.map(t => t.id).join(', ')}`);
 }
 
 main();

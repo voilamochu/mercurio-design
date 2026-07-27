@@ -100,6 +100,16 @@ function validateExport(cardFiles, modelData, planetIds) {
     errors.push(`Expected ${EXPECTED_CARDS} SVGs, found ${cardFiles.length}`);
   }
 
+  if (!modelData.schema) {
+    errors.push('Model missing schema version');
+  }
+  if (!modelData.layoutTemplates || !modelData.layoutTemplates.length) {
+    errors.push('Model missing layoutTemplates');
+  }
+  if (!modelData.panel || !modelData.icon) {
+    errors.push('Model missing layout geometry (panel/icon)');
+  }
+
   const exportedIds = cardFiles.map(f => path.basename(f, '.svg')).sort();
   const modelIds = planetIds.sort();
 
@@ -117,6 +127,15 @@ function validateExport(cardFiles, modelData, planetIds) {
     }
     if (!content.startsWith('<svg ')) {
       errors.push(`${path.basename(f)}: invalid SVG structure`);
+    }
+  }
+
+  const layoutTemplateIds = modelData.layoutTemplates
+    ? new Set(modelData.layoutTemplates.map(t => t.id))
+    : new Set();
+  for (const p of modelData.planets) {
+    if (p.layoutTemplate && !layoutTemplateIds.has(p.layoutTemplate)) {
+      errors.push(`Planet ${p.id}: references unknown layoutTemplate "${p.layoutTemplate}"`);
     }
   }
 
@@ -186,6 +205,11 @@ function build() {
   console.log(`  Total deck size:   ${(manifest.size.totalBytes / 1048576).toFixed(2)} MB`);
   console.log(`  Avg card size:     ${(manifest.size.averageBytes / 1024).toFixed(1)} KB`);
   console.log(`  Median card size:  ${(manifest.size.medianBytes / 1024).toFixed(1)} KB`);
+
+  if (modelRaw.layoutTemplates) {
+    console.log(`  Layout templates:  ${modelRaw.layoutTemplates.length}`);
+    console.log(`  Model schema:      ${modelRaw.schema || 'unknown'}`);
+  }
 
   if (validationErrors.length) {
     console.log(`\n  Validation:        FAILED — ${validationErrors.length} issue(s)`);
