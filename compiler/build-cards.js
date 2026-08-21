@@ -29,7 +29,7 @@ const RESOURCE_ICON_MAP = {
 const WATERMARK_PATCH_X = 620;
 const WATERMARK_PATCH_Y = 920;
 const WATERMARK_PATCH_SIZE = 74;
-const WATERMARK_PATCH_COLOR = '#080D1A';
+const WATERMARK_PATCH_COLOR = '#080F19';
 
 function exists(p) {
   return fs.existsSync(p);
