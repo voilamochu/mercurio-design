@@ -12,19 +12,23 @@ const EXPECTED_COUNT = 40;
 
 const {
   ARTWORK_WINDOW,
+  ARTWORK_FULL,
   ARTWORK_PREFERRED_HEIGHT,
   ARTWORK_MIN_HEIGHT,
   OUTER_FRAME,
   PROJECT_BOX,
   RULES_BOX,
+  TITLE_BAR,
   GAP_AFTER_ARTWORK,
   GAP_BETWEEN_BOXES,
   computeLineCount,
   computeBoxHeight,
 } = require('./lib/technology/layout');
+const { CARD, BOX } = require('./lib/shared/card');
+const { stackBoxes } = require('./lib/shared/stack');
 
 const { renderOuterFrame } = require('./lib/technology/frame');
-const { renderTitleBar } = require('./lib/technology/title');
+const { renderTitleBar, wrapTitle, computeTitleHeight } = require('./lib/technology/title');
 const { renderProjectBox } = require('./lib/technology/project');
 const { renderRulesBox } = require('./lib/technology/rules');
 
@@ -37,19 +41,23 @@ function isProject(tech) {
   return tech.type === 'Project';
 }
 
-function computeArtworkTop() {
-  return ARTWORK_WINDOW.y;
+function computeArtworkTop(tech) {
+  if (tech) {
+    const { lines } = wrapTitle(tech.name, tech.romanLevel);
+    const h = computeTitleHeight(lines);
+    TITLE_BAR.height = h;
+  }
+  return TITLE_BAR.y;
 }
 
 function computeLayout(tech) {
-  const hasProject = isProject(tech);
-  const artworkTop = computeArtworkTop();
-  const frameBottom = OUTER_FRAME.y + OUTER_FRAME.height;
-  const availableHeight = frameBottom - 12 - artworkTop;
+  // Title height flex via wrapTitle (80h at y12 for single line, taller if wrapped)
+  computeArtworkTop(tech);
 
   const innerWidth = PROJECT_BOX.width - PROJECT_BOX.paddingX * 2;
 
   let effectBoxHeight = 0;
+  const hasProject = isProject(tech);
   if (hasProject) {
     const descText = tech.projectDescription ? tech.projectDescription : '';
     const descLines = descText ? computeLineCount(descText, PROJECT_BOX.descFont, innerWidth) : 0;
@@ -59,23 +67,21 @@ function computeLayout(tech) {
   const rulesLines = computeLineCount(tech.description, RULES_BOX.font, innerWidth);
   const rulesBoxHeight = rulesLines > 0 ? computeBoxHeight(rulesLines, RULES_BOX.font) : 0;
 
-  const fixedContentHeight = rulesBoxHeight
-    + (hasProject ? effectBoxHeight + GAP_BETWEEN_BOXES : 0)
-    + GAP_AFTER_ARTWORK;
+  // Art is full-bleed 500x700 background (not a window), boxes stacked below title with standardized gap 8 via stackBoxes
+  const boxes = [];
+  boxes.push({ height: rulesBoxHeight });
+  if (hasProject) boxes.push({ height: effectBoxHeight });
+  // stackBoxes uses TITLE as anchor: y = TITLE.y + TITLE.height + gapAfterArt
+  const stacked = stackBoxes(TITLE_BAR.y, TITLE_BAR.height, boxes);
+  const rulesBoxY = stacked.boxes[0] ? stacked.boxes[0].y : 0;
+  const effectBoxY = hasProject ? (stacked.boxes[1] ? stacked.boxes[1].y : 0) : 0;
 
-  let artworkHeight = ARTWORK_PREFERRED_HEIGHT;
-  const totalHeight = artworkHeight + fixedContentHeight;
-
-  if (totalHeight > availableHeight) {
-    artworkHeight = Math.max(ARTWORK_MIN_HEIGHT, availableHeight - fixedContentHeight);
-  }
-
-  const artworkBottom = artworkTop + artworkHeight;
-
-  const rulesBoxY = artworkBottom + GAP_AFTER_ARTWORK;
-  const effectBoxY = hasProject ? rulesBoxY + rulesBoxHeight + GAP_BETWEEN_BOXES : 0;
+  // Art is full-bleed 500x700 at 0,0 — not computed as window height; return full for artwork
+  const artworkHeight = CARD.H;
+  const artworkY = 0;
 
   return {
+    artworkY,
     artworkHeight,
     effectBoxY,
     effectBoxHeight,
@@ -86,8 +92,6 @@ function computeLayout(tech) {
 
 async function renderTechSvg(tech, mapping) {
   const layout = computeLayout(tech);
-
-  ARTWORK_WINDOW.height = layout.artworkHeight;
 
   PROJECT_BOX.y = layout.effectBoxY;
   PROJECT_BOX.height = layout.effectBoxHeight;
@@ -100,12 +104,14 @@ async function renderTechSvg(tech, mapping) {
     throw new Error(`No artwork mapping for technology id: ${tech.id}`);
   }
 
-  const art = await renderArtwork(tech.assetId, ARTWORK_WINDOW, entry.domain, entry.overlay);
+  // Art is full-bleed 500x700 background at 0,0 with preserveAspectRatio slice (like planet)
+  const art = await renderArtwork(tech.assetId, ARTWORK_FULL, entry.domain, entry.overlay);
 
+  // Z-order: art at very back (full-bleed), then title/rules/project translucent boxes (0.78) on top of art, border stroke last on top
+  // Title is on top of card at y12 80h, boxes stacked with gap 8 via stackBoxes, all full-width 500 x0 rx0 with paddingX24 so text not under border
   const body = [
-    renderOuterFrame(tech.frameStyle),
-    renderTitleBar(tech.name, tech.romanLevel),
     art.body,
+    renderTitleBar(tech.name, tech.romanLevel),
   ];
 
   body.push(renderRulesBox(tech.description));
@@ -113,6 +119,8 @@ async function renderTechSvg(tech, mapping) {
   if (isProject(tech)) {
     body.push(renderProjectBox(tech.projectDescription));
   }
+
+  body.push(renderOuterFrame(tech.frameStyle));
 
   return wrapSvg(body.join('\n'), tech.assetId, art.defs);
 }

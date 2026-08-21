@@ -12,7 +12,7 @@ function renderRulesBox(description) {
   const lineHeight = b.font * LINE_HEIGHT_RATIO;
   const firstCenter = b.y + BOX_PADDING_TOP + b.font / 2;
 
-  const rect = `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" stroke="#3A4658" stroke-opacity="0.4" stroke-width="1" />`;
+  const rect = `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" fill-opacity="${b.fillOpacity}" stroke="#3A4658" stroke-opacity="0.4" stroke-width="1" />`;
   const textLines = lines.map((line, i) => {
     const y = firstCenter + i * lineHeight;
     return `  <text x="${b.x + b.paddingX}" y="${y}" ${fontAttr(FONTS.rules, b.font)} fill="#F5F7FA" text-anchor="start" dominant-baseline="middle">${escapeXml(line)}</text>`;

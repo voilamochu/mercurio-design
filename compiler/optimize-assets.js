@@ -23,8 +23,14 @@ async function optimizeArtwork() {
     const inputPath = path.join(PATHS.artwork, file);
     const outputPath = path.join(outDir, file);
 
+    // Captain 2026-08-21: planet source PNGs have baked 26-29px white cardstock border
+    // (opaque white, not transparent). sharp.trim() cannot remove it because the top/bottom
+    // rows contain mixed white + dark pixels (the border is not a full row/col).
+    // Crop to the dark content area via extract before resize so the 500x700 full-bleed
+    // card shows no white edge. Inset derived from verified dark bounds (28,30 -> 809x1156 at 864x1216).
     await sharp(inputPath)
-      .resize({ width: ARTWORK_SIZE, kernel: 'lanczos3', withoutEnlargement: true })
+      .extract({ left: 58, top: 60, width: 749, height: 1094 })
+      .resize({ width: ARTWORK_SIZE, kernel: 'lanczos3' })
       .flatten()
       .png({ compressionLevel: 9, palette: true, effort: 10, adaptiveFiltering: false })
       .toFile(outputPath);

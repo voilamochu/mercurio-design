@@ -26,9 +26,10 @@ const RESOURCE_ICON_MAP = {
   water: 'Water.png',
 };
 
-const WATERMARK_PATCH_X = 620;
-const WATERMARK_PATCH_Y = 920;
-const WATERMARK_PATCH_SIZE = 74;
+const { CARD } = require('./lib/shared/card');
+const WATERMARK_PATCH_X = Math.round(620 * CARD.W / 744);
+const WATERMARK_PATCH_Y = Math.round(920 * CARD.H / 1039);
+const WATERMARK_PATCH_SIZE = Math.round(74 * CARD.W / 744);
 const WATERMARK_PATCH_COLOR = '#080D1A';
 
 function exists(p) {
@@ -165,14 +166,17 @@ function renderPlanetSvg(planet, artworkUri, iconDataUris, layout) {
         <feFuncB type="linear" slope="1.35"/>
       </feComponentTransfer>
     </filter>
+    <clipPath id="cardClip">
+      <rect x="0" y="0" width="${layout.card.width}" height="${layout.card.height}" rx="12.8" ry="12.8" />
+    </clipPath>
   </defs>
-  <image href="${artworkUri}" x="0" y="0" width="${layout.card.width}" height="${layout.card.height}" preserveAspectRatio="xMidYMid slice" />
-
-  <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
-
-  <g id="top-layer">
+  <g clip-path="url(#cardClip)">
+    <image href="${artworkUri}" x="0" y="0" width="${layout.card.width}" height="${layout.card.height}" preserveAspectRatio="xMidYMid slice" />
+    <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
+    <g id="top-layer">
 ${panelSvg}
 ${iconLines.join('\n')}
+    </g>
   </g>
 </svg>`;
 
@@ -336,8 +340,8 @@ async function build() {
 function renderContactSheet(cardSvgContents) {
   const COLS = 9;
   const ROWS = 9;
-  const CARD_W = 744;
-  const CARD_H = 1039;
+  const CARD_W = CARD.W;
+  const CARD_H = CARD.H;
   const THUMB_W = 100;
   const THUMB_H = Math.round(100 * CARD_H / CARD_W);
   const GAP = 12;
@@ -360,7 +364,7 @@ function renderContactSheet(cardSvgContents) {
     const viewBoxMatch = rawSvg.match(/viewBox="([^"]+)"/);
     const innerContent = rawSvg.replace(/<\?xml[^>]+\?>/, '').replace(/<svg[^>]*>/, '').replace(/<\/svg>/, '').trim();
 
-    lines.push(`    <svg x="${x}" y="${y}" width="${THUMB_W}" height="${THUMB_H}" viewBox="${viewBoxMatch ? viewBoxMatch[1] : '0 0 744 1039'}" preserveAspectRatio="xMidYMid meet">`);
+    lines.push(`    <svg x="${x}" y="${y}" width="${THUMB_W}" height="${THUMB_H}" viewBox="${viewBoxMatch ? viewBoxMatch[1] : '0 0 500 700'}" preserveAspectRatio="xMidYMid meet">`);
     lines.push(innerContent);
     lines.push(`    </svg>`);
   }

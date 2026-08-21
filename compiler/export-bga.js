@@ -13,9 +13,9 @@ const PATHS = {
 };
 
 const ARTWORK_SIZE = 576;
-const ICON_SIZE = 96;
-const CARD_W = 744;
-const CARD_H = 1039;
+const ICON_SIZE = 64;
+const CARD_W = 500;
+const CARD_H = 700;
 const EXPECTED_CARDS = 81;
 const RESOURCE_ICON_COUNT = 8;
 

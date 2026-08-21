@@ -14,7 +14,7 @@ function renderProjectBox(projectDescription) {
   const lineHeight = b.descFont * LINE_HEIGHT_RATIO;
   const firstCenter = b.y + BOX_PADDING_TOP + b.descFont / 2;
 
-  const rect = `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" stroke="#3A4658" stroke-opacity="0.4" stroke-width="1" />`;
+  const rect = `  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="${b.rx}" ry="${b.ry}" fill="${b.fill}" fill-opacity="${b.fillOpacity}" stroke="#3A4658" stroke-opacity="0.4" stroke-width="1" />`;
 
   const textLines = descLines.map((line, i) => {
     const y = firstCenter + i * lineHeight;

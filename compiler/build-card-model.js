@@ -36,15 +36,16 @@ const BACKGROUND = 'deep-space-v1';
 
 const LEVELS = [1, 2, 3];
 
-const CARD_W = 744;
-const CARD_H = 1039;
-const PANEL_W = 664;
-const PANEL_H = 430;
-const BOTTOM_MARGIN = 24;
-const INPUT_CELL_CENTER_X = 160;
-const OUTPUT_CELL_CENTER_X = 584;
-const ICON_SIZE = 96;
-const ICON_DUAL_OFFSET = 50;
+const { CARD } = require('./lib/shared/card');
+const CARD_W = CARD.W;
+const CARD_H = CARD.H;
+const PANEL_W = 446;
+const PANEL_H = 362;
+const BOTTOM_MARGIN = CARD.MARGIN;
+const INPUT_CELL_CENTER_X = 114;
+const OUTPUT_CELL_CENTER_X = 386;
+const ICON_SIZE = 108;
+const ICON_DUAL_OFFSET = 55;
 
 function loadCsv(filePath) {
   const text = fs.readFileSync(filePath, 'utf-8').trim();
