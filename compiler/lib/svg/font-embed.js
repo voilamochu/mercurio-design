@@ -6,7 +6,6 @@ const FONT_DIR = path.join(ROOT, 'source', 'fonts');
 
 const FONT_FACES = [
   { family: 'Orbitron', weight: '600 700', style: 'normal', filename: 'Orbitron-SemiBold.woff2' },
-  { family: 'Exo 2', weight: '600 700', style: 'normal', filename: 'Exo2-SemiBold.woff2' },
   { family: 'Inter', weight: '400 500', style: 'normal', filename: 'Inter-Regular.woff2' },
   { family: 'Inter', weight: '400', style: 'italic', filename: 'Inter-Italic.woff2' },
 ];
