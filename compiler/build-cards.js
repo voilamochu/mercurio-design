@@ -26,11 +26,10 @@ const RESOURCE_ICON_MAP = {
   water: 'Water.png',
 };
 
-const WATERMARK_PATCH_X = 598;
-const WATERMARK_PATCH_Y = 871;
-const WATERMARK_PATCH_W = 129;
-const WATERMARK_PATCH_H = 103;
-const WATERMARK_PATCH_COLOR = '#080D1A';
+const WATERMARK_PATCH_X = 620;
+const WATERMARK_PATCH_Y = 920;
+const WATERMARK_PATCH_SIZE = 74;
+const WATERMARK_PATCH_COLOR = '#080F19';
 
 function exists(p) {
   return fs.existsSync(p);
@@ -169,7 +168,7 @@ function renderPlanetSvg(planet, artworkUri, iconDataUris, layout) {
   </defs>
   <image href="${artworkUri}" x="0" y="0" width="${layout.card.width}" height="${layout.card.height}" preserveAspectRatio="xMidYMid slice" />
 
-  <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_W}" height="${WATERMARK_PATCH_H}" fill="${WATERMARK_PATCH_COLOR}" />
+  <rect x="${WATERMARK_PATCH_X}" y="${WATERMARK_PATCH_Y}" width="${WATERMARK_PATCH_SIZE}" height="${WATERMARK_PATCH_SIZE}" fill="${WATERMARK_PATCH_COLOR}" />
 
   <g id="top-layer">
 ${panelSvg}
