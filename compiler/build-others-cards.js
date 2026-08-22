@@ -66,7 +66,7 @@ async function embedArtworkDataUri(filePath) {
     throw new Error(`Artwork not found: ${filePath}`);
   }
   const optimized = await sharp(filePath)
-    .png({ compressionLevel: 9, adaptiveFiltering: true, palette: true, colors: 128 })
+    .png({ compressionLevel: 9, palette: true, colors: 128, effort: 10, adaptiveFiltering: false })
     .toBuffer();
   return optimized.toString('base64');
 }

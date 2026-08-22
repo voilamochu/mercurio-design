@@ -27,7 +27,7 @@ async function optimizeDomains() {
       })
       .flatten()
       .withMetadata()
-      .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+      .png({ compressionLevel: 9, palette: true, colors: 128, effort: 10, adaptiveFiltering: false })
       .toFile(outputPath);
     count++;
   }
@@ -53,7 +53,7 @@ async function optimizeOverlays() {
       })
       .flatten()
       .withMetadata()
-      .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+      .png({ compressionLevel: 9, palette: true, colors: 128, effort: 10, adaptiveFiltering: false })
       .toFile(outputPath);
     count++;
   }

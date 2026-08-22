@@ -50,7 +50,7 @@ async function createFallbackBuffer(domainId) {
   return sharp(Buffer.from(fallbackSvg))
     .flatten()
     .withMetadata()
-    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+    .png({ compressionLevel: 9, palette: true, colors: 128, effort: 10, adaptiveFiltering: false })
     .toBuffer();
 }
 
@@ -69,7 +69,7 @@ async function composeArtwork(domainId, overlayId) {
     return sharp(domainBuf)
       .flatten()
       .withMetadata()
-      .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+      .png({ compressionLevel: 9, palette: true, colors: 128, effort: 10, adaptiveFiltering: false })
       .toBuffer();
   }
 
@@ -77,7 +77,7 @@ async function composeArtwork(domainId, overlayId) {
     .composite([{ input: overlayBuf, blend: ART_CONFIG.blendMode, opacity: ART_CONFIG.overlayOpacity }])
     .flatten()
     .withMetadata()
-    .png({ compressionLevel: 9, effort: 10, adaptiveFiltering: true })
+    .png({ compressionLevel: 9, palette: true, colors: 128, effort: 10, adaptiveFiltering: false })
     .toBuffer();
 
   return result;
